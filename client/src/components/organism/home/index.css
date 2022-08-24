@@ -1,0 +1,15 @@
+.home__outer{
+    width:100%;
+    height:fit-content;
+    border:1px solid black;
+}
+.home__inner{
+    width:100%;
+    height:100%;
+    border:1px solid red;
+}
+.home__inner__section1{
+    width:100%;
+    height:fit-content;
+    
+}
