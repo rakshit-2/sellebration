@@ -7,6 +7,14 @@ import map from './../../assets/image/home_img/map1.svg';
 import HomePanelData from './../../assets/store/homepanelData';
 import HomeDisplayData from './../../assets/store/homedisplayData';
 import HomeCard1 from '../../atom/homeCard1';
+import HomeLatestData from './../../assets/store/homelatestData';
+import HomeCard2 from './../../atom/homeCard2/index';
+import twitter from './../../assets/image/home_img/twitter.svg';
+import facebook from './../../assets/image/home_img/facebook.svg';
+import HomeCard3 from './../../atom/homeCard3/index';
+import HomeNewsData from './../../assets/store/homenewsData';
+import Footer from './../../molecule/footer/index';
+
 
 const Home=(props)=>{
     const responsive = {
@@ -44,8 +52,6 @@ const Home=(props)=>{
                     <div className="home__inner__section1">
                         <img src={map} className="home__inner__section1__img"/>
                     </div>
-
-
                     <div className="home__inner__section2">
                         <div className="home__inner__section2__heading">
                             Our Stories
@@ -91,54 +97,22 @@ const Home=(props)=>{
                                 )
                             })}
                         </Carousel>
-                            
                         </div>
                     </div>
-
-
-
                     <div className="home__inner__section3">
                         <div className="home__inner__section3__heading">
                             Latest news
                         </div>
-
                         <div className='home__inner__section3__display'>
                             <div className='home__inner__section3__display__left'>
-                                <div className='home__inner__section3__display__left__each'>
-                                    <div className='home__inner__section3__display__left__each__heading'>
-                                    1st September
-                                    </div>
-                                    <div className='home__inner__section3__display__left__each__content'>
-                                    Lorem Ipsum is simply dummy text of 
-                                    the printing and typesetting industry. 
-                                    Lorem Ipsum has been the industry's 
-                                    standard dummy text ever since the 1500s,
-                                    </div>
-                                </div>
-
-                                <div className='home__inner__section3__display__left__each'>
-                                    <div className='home__inner__section3__display__left__each__heading'>
-                                    1st September
-                                    </div>
-                                    <div className='home__inner__section3__display__left__each__content'>
-                                    Lorem Ipsum is simply dummy text of 
-                                    the printing and typesetting industry. 
-                                    Lorem Ipsum has been the industry's 
-                                    standard dummy text ever since the 1500s,
-                                    </div>
-                                </div>
-
-                                <div className='home__inner__section3__display__left__each'>
-                                    <div className='home__inner__section3__display__left__each__heading'>
-                                    1st September
-                                    </div>
-                                    <div className='home__inner__section3__display__left__each__content'>
-                                    Lorem Ipsum is simply dummy text of 
-                                    the printing and typesetting industry. 
-                                    Lorem Ipsum has been the industry's 
-                                    standard dummy text ever since the 1500s,
-                                    </div>
-                                </div>
+                            {HomeLatestData.map((ele) => {
+                                const {id,date,info}=ele;
+                                return(
+                                    <>
+                                        <HomeCard2 id={id} date={date} info={info}  />
+                                    </>
+                                )
+                            })}
                             </div>
                             <div className='home__inner__section3__display__right'>
                                 <iframe className='home__inner__section3__display__right__vid' src="https://www.youtube.com/embed/HlWISmjCfb8" title="Kanye West - Heartless (Lyrics)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -150,7 +124,43 @@ const Home=(props)=>{
                             </div>
                         </div>
                     </div>
+                    <div className='home__inner__section3__viewmore'>
+                        <div className='home__inner__section3__viewmorebutton'>
+                            View All
+                        </div>
+                    </div>
+                    {/* section 4 */}
+                    <div className='home__inner__section4'>
+                        <div className='home__inner__section4__left'>
+                            <img src={twitter} className="home__inner__section4__img"/>
+                            <div className='home__inner__section4__left__out'>
+                                {HomeNewsData.map((ele) => {
+                                    const {id,time,info}=ele;
+                                    return(
+                                        <>
+                                            <HomeCard3 id={id} time={time} info={info}  />
+                                        </>
+                                    )
+                                })}
+                            </div>
+                        </div>
+                        <div className='home__inner__section4__left'>
+                            <img src={facebook} className="home__inner__section4__img"/>
+                            <div className='home__inner__section4__left__out'>
+                                {HomeNewsData.map((ele) => {
+                                    const {id,time,info}=ele;
+                                    return(
+                                        <>
+                                            <HomeCard3 id={id} time={time} info={info}  />
+                                        </>
+                                    )
+                                })}
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
+                <Footer/>
             </div>
         </div>
         </>
