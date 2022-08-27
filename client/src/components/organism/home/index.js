@@ -14,7 +14,7 @@ import facebook from './../../assets/image/home_img/facebook.svg';
 import HomeCard3 from './../../atom/homeCard3/index';
 import HomeNewsData from './../../assets/store/homenewsData';
 import Footer from './../../molecule/footer/index';
-
+import Navbar from './../NavBar/index';
 
 const Home=(props)=>{
     const responsive = {
@@ -48,6 +48,7 @@ const Home=(props)=>{
         <>
         <div className="home__outer">
             <div className="home__inner">
+                <Navbar navDisplay={props.navDisplay} openNav={props.openNav}  closeNav={props.closeNav}/>
                 <div className="home__inner__inner">
                     <div className="home__inner__section1">
                         <img src={map} className="home__inner__section1__img"/>
@@ -89,7 +90,15 @@ const Home=(props)=>{
                             </div>
                         </div>
                         <div className="home__inner__section2__display">
-                        <Carousel responsive={responsive} swipeable={true} draggable={true} containerClass="carousel-container" utoPlaySpeed={1000}>
+                        <Carousel 
+                        responsive={responsive} 
+                        draggable
+                        autoPlay
+                        autoPlaySpeed={2000}
+                        pauseOnHover
+                        infinite
+                        showDots={true}
+                        removeArrowOnDeviceType={["tablet", "mobile","desktop"]}>
                             {HomeDisplayData[clickedPanel].map((ele) => {
                                 const {id,heading,info}=ele;
                                 return(

@@ -4,7 +4,7 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-
+import {useState } from 'react';
 
 
 import Home from './components/organism/home/index';
@@ -18,13 +18,27 @@ import Womenleadership from './components/organism/womenleader/index';
 
 const App=(props)=>{
 
-  
+  const [navDisplay,setNavDisplay]=useState({
+      nav:"none",
+      nav1:"block",
+  });
+
+  function openNav(x)
+  {
+    setNavDisplay({nav:"block",nav1:"none",});
+  }
+
+  function closeNav()
+  {
+    setNavDisplay({nav:"none",nav1:"block",});
+  }
+
   return (
     <>
     <BrowserRouter>
       <Routes>
         <Route path="/"></Route>
-        <Route path="/home-page" element={<Home/>} ></Route>
+        <Route path="/home-page" element={<Home navDisplay={navDisplay} openNav={openNav} closeNav={closeNav}/>} ></Route>
         <Route path="/bring-change" element={<Bringchange/>} ></Route>
         <Route path="/bussiness-brand" element={<Businessbrand/>} ></Route>
         <Route path="/csr" element={<Csr/>} ></Route>
