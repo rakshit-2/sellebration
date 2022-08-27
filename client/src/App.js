@@ -39,13 +39,13 @@ const App=(props)=>{
       <Routes>
         <Route path="/"></Route>
         <Route path="/home-page" element={<Home navDisplay={navDisplay} openNav={openNav} closeNav={closeNav}/>} ></Route>
-        <Route path="/bring-change" element={<Bringchange/>} ></Route>
-        <Route path="/bussiness-brand" element={<Businessbrand/>} ></Route>
-        <Route path="/csr" element={<Csr/>} ></Route>
-        <Route path="/leadership" element={<Leadership/>} ></Route>
-        <Route path="/milestone" element={<Milestone/>} ></Route>
-        <Route path="/vision-value" element={<Visionvalue/>} ></Route>
-        <Route path="/women-leadership" element={<Womenleadership/>} ></Route>
+        <Route path="/bring-change" element={<Bringchange  navDisplay={navDisplay} openNav={openNav} closeNav={closeNav}/>} ></Route>
+        <Route path="/bussiness-brand" element={<Businessbrand  navDisplay={navDisplay} openNav={openNav} closeNav={closeNav}/>} ></Route>
+        <Route path="/csr" element={<Csr  navDisplay={navDisplay} openNav={openNav} closeNav={closeNav}/>} ></Route>
+        <Route path="/leadership" element={<Leadership  navDisplay={navDisplay} openNav={openNav} closeNav={closeNav}/>} ></Route>
+        <Route path="/milestone" element={<Milestone  navDisplay={navDisplay} openNav={openNav} closeNav={closeNav}/>} ></Route>
+        <Route path="/vision-value" element={<Visionvalue  navDisplay={navDisplay} openNav={openNav} closeNav={closeNav}/>} ></Route>
+        <Route path="/women-leadership" element={<Womenleadership  navDisplay={navDisplay} openNav={openNav} closeNav={closeNav}/>} ></Route>
       </Routes>
     </BrowserRouter>
     </>
