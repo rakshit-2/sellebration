@@ -19,13 +19,17 @@ const NavBar=(props)=>{
   function scrollFunction() {
     if (document.body.scrollTop>80 || document.documentElement.scrollTop>80) 
     {
-      document.getElementById("navbar").style.height="4rem";
-      document.getElementById("logo").style.width="4rem" ;
+      document.getElementById("navbar").style.height="5.5rem";
+      document.getElementById("navbar").style.background="#2F528E";
+      document.getElementById("logo").style.width="5.5rem" ;
+      document.getElementById("logo").style.backgroundColor="white";
     }
     else 
     {
+      document.getElementById("navbar").style.background="linear-gradient(0deg, rgba(9,9,121,0) 35%, rgba(47,49,50,1) 100%)";
       document.getElementById("navbar").style.height="7rem";
-      document.getElementById("logo").style.width="7rem" ;
+      document.getElementById("logo").style.width="7rem";
+      document.getElementById("logo").style.backgroundColor="rgb(255,255,255,0)";
     }
   }
 
@@ -44,10 +48,11 @@ const NavBar=(props)=>{
   }
   return (
     <>
+    <NavPanel navDisplay={props.navDisplay} closeNav={props.closeNav}/>
     <div className="navbar__outer" id="navbar">
       <div className="navbar__inner">
-        <div className="navbar__left"  id="logo">
-          <img src={navbar_logo} className="navbar__logo" alt=""/>
+        <div className="navbar__left"  id="logo" >
+          <img src={navbar_logo} className="navbar__logo"alt=""/>
         </div>
         <div className="navbar__right">
           <div className="navbar__right__icon" style={{display:navOperator.open}}>
@@ -68,7 +73,7 @@ const NavBar=(props)=>{
           </div>
         </div>
       </div>
-      <NavPanel navDisplay={props.navDisplay} closeNav={props.closeNav}/>
+      
     </div>
     
     </>

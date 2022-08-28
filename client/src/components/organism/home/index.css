@@ -29,6 +29,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    /* background: linear-gradient(to right, #bdc3c78d, #2c3e5081); */
 }
 .home__inner__section1__img{
     width:100%;
