@@ -1,3 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+
+
+
+
+
+
 .leadership__outer{
     width:100%;
     height:fit-content;
@@ -22,7 +30,7 @@
     margin-bottom: 2rem;
     background-repeat: no-repeat;
     background-size: cover;
-    background-image: url('./../../assets/image/test.svg');
+    background-image: url('./../../assets/image/test.png');
 }
 .leadership__inner__seaction1__inner{
     width:90%;
