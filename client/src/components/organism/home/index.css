@@ -23,9 +23,8 @@
     justify-content: center;
 }
 .home__inner__section1{
-    padding-top: 10rem;
     width:90%;
-    height:40rem;
+    height:96vh;
     display: flex;
     align-items: center;
     justify-content: center;
