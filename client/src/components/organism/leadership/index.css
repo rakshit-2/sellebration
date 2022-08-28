@@ -14,12 +14,15 @@
 
 .leadership__inner__seaction1{
     width:100%;
-    height:96vh;
+    height:100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
     margin-bottom: 2rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url('./../../assets/image/test.svg');
 }
 .leadership__inner__seaction1__inner{
     width:90%;
@@ -27,6 +30,8 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    margin-top:2rem;
+    margin-bottom: 2rem;
 }
 .leadership__inner__seaction1__button{
     
@@ -58,7 +63,7 @@
     background-image: url('./../../assets/image/nav_img/nav_background_img.svg');
 }
 .leadership__inner__seaction2__button{
-    
+    text-decoration: none;
     width:fit-content;
     padding: 10px;
     padding-left: 2rem;
