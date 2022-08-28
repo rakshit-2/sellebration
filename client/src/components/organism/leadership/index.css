@@ -58,7 +58,7 @@
     background-image: url('./../../assets/image/nav_img/nav_background_img.svg');
 }
 .leadership__inner__seaction2__button{
-    
+    text-decoration: none;
     width:fit-content;
     padding: 10px;
     padding-left: 2rem;

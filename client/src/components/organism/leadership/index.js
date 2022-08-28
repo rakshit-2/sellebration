@@ -4,10 +4,23 @@ import Nabvbar from './../NavBar/index';
 import LeadershipPanelData from './../../assets/store/leadershippanelData';
 import LeadershipCard1 from '../../atom/leadershipCard1';
 import LeaderShipData from './../../assets/store/LeadershipData';
-import Footer from './../../molecule/footer/index'
+import Footer from './../../molecule/footer/index';
+import { useState,useEffect } from 'react';
 
 
 const Leadership=(props)=>{
+    
+    
+    const[val,setVal]=useState("");
+    function panelClicked(id)
+    {
+        var ele=parseInt(id);
+        var ss="#"+ele.toString();
+        setVal(ss);
+    }
+
+
+
 return (
     <>
     <div className='leadership__outer'>
@@ -27,13 +40,14 @@ return (
                 {LeadershipPanelData.map((ele)=>{
                     const{id,name}=ele;
                     return(
-                        <div key={id} className='leadership__inner__seaction2__button'>
+                        <a href={val} key={id} className='leadership__inner__seaction2__button' onClick={()=>{panelClicked(id)}}>
                             {name}
-                        </div>
+                        </a>
                     )
                 })}
             </div>
             <div className='leadership__inner__seaction3'>
+                <p id="0"></p><br></br><br></br>
                 <div className="leadership__inner__seaction3__innerheading">
                     Directors
                 </div>
@@ -45,7 +59,7 @@ return (
                         )
                     })}
                 </div>
-
+                <p id="1"></p><br></br><br></br>
                 <div className="leadership__inner__seaction3__innerheading">
                     Business Heads
                 </div>
@@ -58,7 +72,8 @@ return (
                     })}
                 </div>
 
-                <div className="leadership__inner__seaction3__innerheading">
+                <p id="2"></p><br></br><br></br>
+                <div className="leadership__inner__seaction3__innerheading" >
                     Senior Leaders
                 </div>
                 <div className="leadership__inner__seaction3__innerdisplay">
@@ -69,7 +84,7 @@ return (
                         )
                     })}
                 </div>
-
+                <p id="3"></p><br></br><br></br>
                 <div className="leadership__inner__seaction3__innerheading">
                     The Vanguard
                 </div>
