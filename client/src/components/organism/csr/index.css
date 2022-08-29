@@ -156,3 +156,50 @@
     justify-content: space-around;
     margin-bottom: 4rem;
 }
+
+
+
+.csr__inner__section6{
+    width:100%;
+    height:fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #D9D9D9;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.csr__inner__section6__inner{
+    width:85%;
+    height:5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.csr__inner__section6__inner__each{
+    width:38rem;
+    height:100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 20px;
+    text-transform: capitalize;
+    color: rgba(0, 0, 0, 0.77);
+}
+
+.csr__inner__section6__inner__each__left{
+    width:50%;
+    height:100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.csr__pdf__img{
+    width:40px;
+    height:40px;
+}

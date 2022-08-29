@@ -8,6 +8,7 @@ import CsrCardData from './../../assets/store/csrcardData';
 import CsrSection4 from '../../molecule/csrSection4';
 import CsrInitiativeData from '../../assets/store/csrinitiativeData';
 import CsrCard2 from '../../atom/csrCard2';
+import csr_pdf_img from './../../assets/image/csr_img/csr_policy_img.svg';
 
 const Csr=(props)=>{
 return (
@@ -104,7 +105,26 @@ return (
             </div>
 
             <div className='csr__inner__section6'>
-                
+                <div className='csr__inner__section6__inner'>
+                    <div className='csr__inner__section6__inner__each'>
+                        <div className='csr__inner__section6__inner__each__left'>
+                            Businesses:
+                        </div>
+                        <div className='csr__inner__section6__inner__each__left' style={{cursor:"pointer"}}>
+                            CSR Policy <img src={csr_pdf_img} className="csr__pdf__img"/>
+                        </div>
+                    </div>
+
+                    <div className='csr__inner__section6__inner__each'>
+                        <div className='csr__inner__section6__inner__each__left'>
+                            Sellebration:
+                        </div>
+                        <div className='csr__inner__section6__inner__each__left'  style={{cursor:"pointer"}}>
+                            Transcending business <img src={csr_pdf_img} className="csr__pdf__img"/>
+                        </div>
+                    </div>
+                </div>
+
             </div>
             <Footer/>
         </div>
