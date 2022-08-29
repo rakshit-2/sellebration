@@ -1,6 +1,6 @@
 .BusinessBrand__outer{
 width: 100%;
-height: 100%;
+height: fit-content;
 }
 
 .BusinessBrand__inner{
@@ -8,22 +8,28 @@ width: 100%;
 height: 100%;
 display: flex;
 flex-direction: column;
-justify-content: center;
+justify-content: flex-start;
 align-items: center;
 }
 .BusinessBrand__sec1{
     height: 100vh;
-    padding: 2rem;
-    width: 87%;
-    /* height: fit-content; */
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items:flex-start;
-    background-color: purple ;
+    align-items:center;
+    background-color: rgba(149, 148, 149, 0.238);
    
 }
-
+.BusinessBrand__sec1__inner{
+    height: 100%;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items:center;
+    padding-bottom: 5rem;
+}
 .BusinessBrand__sec1__head{
     width: 100%;
     height: fit-content;
@@ -85,7 +91,7 @@ align-items: center;
     height: fit-content;
     padding: 2rem;
     width: 87%;
-    height: fit-content;
+    
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -115,15 +121,16 @@ height: fit-content;
         width:fit-content;
         height:fit-content;
         padding-left: 20px;
-    
+        
 }
 .BusinessBrand__sec2__head__right__field{
         width:16rem;
         height:1.7rem;
+        
         border-radius: 20px;
         padding-left: 20px;
         font-size: 15px;
-        border:none;
+        border: 2px solid grey;
         outline:none;
         background: #fff url("./../../assets/image/navbar_img/navbar_searchicon_img.svg") no-repeat;
         background-position: 93%; 
