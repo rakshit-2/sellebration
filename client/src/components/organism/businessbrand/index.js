@@ -16,12 +16,29 @@ return (
                   Latin literature from 45 BC, making it over 2000 years old
                   . Richard McClintock, a Latin professor at Hampden-Sydney 
                   College in Virginia, looked up one of the more obscure 
-                  Latin words, consectetur, from a Lorem Ipsum passage,
-                   and going through the cites of the word in classical
-                    literature, discovered the undoubtable source.
+                  e source.
                 </div>
-                <div >
+                <div className="BusinessBrand__sec1__buttons">
 
+                
+                <div className="BusinessBrand__sec1__button" >
+                    COMPANIES
+                </div>
+                <div className="BusinessBrand__sec1__button" style={{backgroundColor:"grey"}} >
+                    BRANDS
+                </div>
+                </div>
+            </div>
+            <div className="BusinessBrand__sec2">
+                <div className="BusinessBrand__sec2__head">
+                    <div className="BusinessBrand__sec2__head__left">
+                        view by sector
+                    </div>
+                    <div className="BusinessBrand__sec2__head__right">
+                        <div className="BusinessBrand__sec2__head__right__field">
+
+                        </div>
+                    </div>
                 </div>
             </div>
 

@@ -12,13 +12,16 @@ justify-content: center;
 align-items: center;
 }
 .BusinessBrand__sec1{
-    height: fit-content;
-    width: 100%;
-
+    height: 100vh;
+    padding: 2rem;
+    width: 87%;
+    /* height: fit-content; */
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items:flex-start;
+    background-color: purple ;
+   
 }
 
 .BusinessBrand__sec1__head{
@@ -27,15 +30,103 @@ align-items: center;
     display: flex;
     flex-direction: row;
     align-content: center;
-    justify-content: center;
+    justify-content: flex-start;
+    font-size: 2rem;
+    color: #2F528E;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
 }
 
 .BusinessBrand__sec1__content{
-    width: 100%;
+    width: 50%;
     height: fit-content;
     display: flex;
     flex-direction: row;
     align-content: center;
-    justify-content: center;
+    justify-content: flex-start;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+}
+.BusinessBrand__sec1__buttons{
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: fit-content;
 }
 
+.BusinessBrand__sec1__button{
+    text-decoration: none;
+    width:9rem;
+    padding: 10px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin-right: 10px;
+    min-width: 7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 20px;
+    text-transform: capitalize;
+    color: #FFFFFF;
+    background-color: #0AB1EE;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+
+.BusinessBrand__sec2{
+    height: fit-content;
+    padding: 2rem;
+    width: 87%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:flex-start;
+    background-color:yellow
+}
+
+.BusinessBrand__sec2__head{
+display: flex;
+flex-direction: row;
+justify-content: flex-start;
+align-items: center;
+width:100%;
+height: fit-content;
+}
+
+.BusinessBrand__sec2__head__left{
+    border-radius: 20px;
+    padding: 0.5rem 1rem 0.5rem 1rem ;
+    width:40%;
+    height: fit-content;
+    background-color: #0AB1EE80;
+}
+.BusinessBrand__sec2__head__right{
+    
+        
+        width:fit-content;
+        height:fit-content;
+        padding-left: 20px;
+    
+}
+.BusinessBrand__sec2__head__right__field{
+        width:16rem;
+        height:1.7rem;
+        border-radius: 20px;
+        padding-left: 20px;
+        font-size: 15px;
+        border:none;
+        outline:none;
+        background: #fff url("./../../assets/image/navbar_img/navbar_searchicon_img.svg") no-repeat;
+        background-position: 93%; 
+    
+
+}
