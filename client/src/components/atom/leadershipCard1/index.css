@@ -1,0 +1,103 @@
+.leadershipcard1__each__card{
+    width:170px;
+    height:fit-content;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 25px 0px 25px 0px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.leadershipcard1__each__card__image{
+    width:100px;
+    height:100px;
+    margin-bottom: 10px;
+}
+.leadershipcard1__each__card__image__img{
+    width:100%;
+    height:100%;
+    border-radius: 50%;
+}
+.leadershipcard1__each__card__name{
+    width:100%;
+    height:fit-content;
+    word-wrap: break-word;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+.leadershipcard1__each__card__jobtitle{
+    width:100%;
+    height:fit-content;
+    word-wrap: break-word;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #2F528E;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media screen and (min-width:1500px)
+{
+    .leadershipcard1__each__card{
+        width:230px;
+    }
+    .leadershipcard1__each__card__image{
+        width:140px;
+        height:140px;
+    }
+    .leadershipcard1__each__card__name{
+        font-size: 1.2rem;
+    }
+    .leadershipcard1__each__card__jobtitle{
+        font-size: 1.2rem;
+        font-weight: 700;
+    }
+    .leadershipcard1__each__card{
+        margin: 25px 0px 25px 0px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+@media screen and (max-width:1043px)
+{
+    .leadershipcard1__each__card{
+        margin: 25px 0px 25px 0px;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+}
+@media screen and (max-width:767px)
+{
+    .leadershipcard1__each__card{
+        width:150px;
+    }
+}
+@media screen and (max-width:613px)
+{
+    .leadershipcard1__each__card{
+        width:230px;
+    }
+}
+
+@media screen and (max-width:426px)
+{
+    .leadershipcard1__each__card{
+        width:230px;
+    }
+    .leadershipcard1__each__card__image{
+        width:140px;
+        height:140px;
+    }
+    .leadershipcard1__each__card__name{
+        font-size: 1.2rem;
+    }
+    .leadershipcard1__each__card__jobtitle{
+        font-size: 1.2rem;
+        font-weight: 700;
+    }
+}

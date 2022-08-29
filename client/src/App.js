@@ -37,8 +37,7 @@ const App=(props)=>{
     <>
     <BrowserRouter>
       <Routes>
-        <Route path="/" style={{backgroundColor:"black"}}></Route>
-        <Route path="/home-page" element={<Home navDisplay={navDisplay} openNav={openNav} closeNav={closeNav}/>} ></Route>
+        <Route path="/" element={<Home navDisplay={navDisplay} openNav={openNav} closeNav={closeNav}/>} ></Route>
         <Route path="/bring-change" element={<Bringchange  navDisplay={navDisplay} openNav={openNav} closeNav={closeNav}/>} ></Route>
         <Route path="/bussiness-brand" element={<Businessbrand  navDisplay={navDisplay} openNav={openNav} closeNav={closeNav}/>} ></Route>
         <Route path="/csr" element={<Csr  navDisplay={navDisplay} openNav={openNav} closeNav={closeNav}/>} ></Route>

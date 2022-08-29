@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+
+
+
+.csr__outer{
+    width:100%;
+    height:fit-content;
+}
+.csr__inner{
+    width:100%;
+    height:100%;
+}
+
+.csr__inner__section3{
+    width:100%;
+    height:fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 10rem;
+    margin-top: 5rem;
+}
+.csr__inner__section3__each1{
+    width:83%;
+    height:fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.csr__inner__section3__each1__inner{
+    width:650px;
+    height:460px;
+    background-color: rgb(161, 160, 161);
+}
+
+
+.csr__inner__section3__each2{
+    width:83%;
+    height:fit-content;
+    position: absolute;
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.csr__inner__section3__each2__inner{
+    width:600px;
+    height:400px;
+    padding:30px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+.csr__inner__section3__each2__inner__up{
+    width:100%;
+    height:80%;
+}
+.csr__inner__section3__each2__inner__down{
+    width:100%;
+    height:20%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+}
+.csr__inner__section3__each2__inner__heading{
+    width:100%;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 36px;
+    letter-spacing: 0.05em;
+    color: #0AB1EE;
+    margin-bottom: 1rem;
+}
+.csr__inner__section3__each2__inner__text{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 35px;
+    letter-spacing: 0.05em;
+    text-transform: capitalize;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+
+.csr__button{
+    text-decoration: none;
+    width:fit-content;
+    padding: 10px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin: 1rem;
+    min-width: 7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 20px;
+    text-transform: capitalize;
+    color: #FFFFFF;
+    background-color: #0AB1EE;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+
+.csr__section3__img{
+    width:100%;
+    height:100%
+}
+
+
+
+
+.csr__inner__section5{
+    width:100%;
+    height:fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+.csr__inner__section5__heading{
+    width:100%;
+    height:5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 36px;
+    letter-spacing: 0.05em;
+    color: rgba(0, 0, 0, 0.77);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.csr__inner__section5__display{
+    width:100%;
+    height:fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 4rem;
+}
+
+
+
+.csr__inner__section6{
+    width:100%;
+    height:fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #D9D9D9;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.csr__inner__section6__inner{
+    width:85%;
+    height:5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.csr__inner__section6__inner__each{
+    width:38rem;
+    height:100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 20px;
+    text-transform: capitalize;
+    color: rgba(0, 0, 0, 0.77);
+}
+
+.csr__inner__section6__inner__each__left{
+    width:50%;
+    height:100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.csr__pdf__img{
+    width:40px;
+    height:40px;
+}
