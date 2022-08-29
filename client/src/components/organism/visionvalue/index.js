@@ -1,59 +1,21 @@
 
 import './index.css';
+import Navbar from './../NavBar/index';
+import Footer from './../../molecule/footer/index';
+import VisionValueSection1 from '../../molecule/visionvalueSection1';
+import VisionValueSection2 from '../../molecule/visionvalueSection2';
+import quote_img from './../../assets/image/vision&values_img/quote_img.svg'
 
 const VisionValue=(props)=>{
 return (
     <>
     <div className="vision__outer">
         <div className="vision__inner">
-            <div className="vision__top">
-                <div className="vision__top__home">
-                    HOME/ABOUT US
-                </div>
-                <div className="vision__top__values">
-                    VISION & VALUES
-                </div>
-                <div className="vision__top__box">
-                    <div className="vision__top__box__left" >
-                            <div className="vision__top__box__left__inner1">
-                                OUR VISION
-                            </div>
-                            <div className="vision__top__box__left__inner2">
-                            is simply dummy text of the printing and typesetting industry.
-                             Lorem Ipsum has been the industry's standard 
-                            </div>
-                    </div>
-                    <div className="vision__top__box__right">
-                            <div className="vision__top__box__right__inner1">
-                                OUR VALUES
-                            </div>
-                            <div className="vision__top__box__right__inner2">
-                            is simply dummy text of the printing and typesetting industry.
-                             Lorem Ipsum has been the industry's standard 
-                            </div>
-                    </div>
-                </div>
-            </div>
-            <div className="vision__mid">
-                <div className="vision__mid__head">
-                        Our Values
-                </div>
-                <div className="vision__mid__box" >
-                    <div className="vision__mid__card" >
-                        <div className="vision__mid__card__pic">
-
-                        </div>
-                        <div className="vision__mid__card__head">
-                            lorem ipsum
-                        </div>
-                        <div className="vision__mid__card__content">
-                        is simply dummy text of the printing and typesetting industry.
-                             Lorem Ipsum has 
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+            <Navbar  navDisplay={props.navDisplay} openNav={props.openNav}  closeNav={props.closeNav}/>
+            
+            <VisionValueSection1/>
+            
+            <VisionValueSection2/>
 
             <div className="vision__bottom">
                 <div className="vision__bottom__head">
@@ -87,11 +49,12 @@ return (
                     </div>
                     <div className="vision__bottom__content__right">
                         <div className="vision__bottom__content__pic">
-
+                            <img src={quote_img} className="vision__bottom__content__pic__img"/>
                         </div>
                     </div>
                 </div>
             </div>
+            <Footer/>
         </div>
     </div>
     </>
