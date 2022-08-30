@@ -27,7 +27,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
-    margin-bottom: 2rem;
     background-repeat: no-repeat;
     background-size: cover;
     background-image: url('./../../assets/image/test.png');
