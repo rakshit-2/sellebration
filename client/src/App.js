@@ -15,6 +15,7 @@ import Leadership from './components/organism/leadership/index';
 import Milestone from './components/organism/milestone/index';
 import Visionvalue from './components/organism/visionvalue/index';
 import Womenleadership from './components/organism/womenleader/index';
+import ContactUs from './components/organism/contactus/index';
 
 const App=(props)=>{
 
@@ -45,6 +46,7 @@ const App=(props)=>{
         <Route path="/milestone" element={<Milestone  navDisplay={navDisplay} openNav={openNav} closeNav={closeNav}/>} ></Route>
         <Route path="/vision-value" element={<Visionvalue  navDisplay={navDisplay} openNav={openNav} closeNav={closeNav}/>} ></Route>
         <Route path="/women-leadership" element={<Womenleadership  navDisplay={navDisplay} openNav={openNav} closeNav={closeNav}/>} ></Route>
+        <Route path="/contact-us" element={<ContactUs  navDisplay={navDisplay} openNav={openNav} closeNav={closeNav}/>} ></Route>
       </Routes>
     </BrowserRouter>
     </>
