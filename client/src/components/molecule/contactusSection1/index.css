@@ -1,0 +1,24 @@
+.contactus__inner__seaction1{
+    width:100%;
+    height:100vh;
+    background-color: grey;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+.contactus__inner__seaction1__inner{
+    width:90%;
+    height:10rem;
+    margin-bottom: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 36px;
+    letter-spacing: 0.05em;
+    color: #2F528E;
+}
+
