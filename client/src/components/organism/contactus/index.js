@@ -7,8 +7,6 @@ import ContactUsData from '../../assets/store/contactusData';
 import ReCAPTCHA from "react-google-recaptcha";
 
 const ContactUs=(props)=>{
-
-
     function onChange(value) {
         console.log("Captcha value:", value);
       }
@@ -78,7 +76,7 @@ return (
                         <ReCAPTCHA
                             sitekey="Your client site key"
                             onChange={onChange}
-                        />,
+                        />
                     </div>
                     
                 </div>

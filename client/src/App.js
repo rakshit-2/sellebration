@@ -4,9 +4,13 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-import {useState } from 'react';
+import Axios from 'axios';
+import {useState,useEffect} from 'react';
 
 
+
+
+import ApiLink from './components/assets/store/apiLink';
 import Home from './components/organism/home/index';
 import Bringchange from './components/organism/bringchange/index';
 import Businessbrand from './components/organism/businessbrand/index';
@@ -18,6 +22,11 @@ import Womenleadership from './components/organism/womenleader/index';
 import ContactUs from './components/organism/contactus/index';
 
 const App=(props)=>{
+
+
+  
+
+  
 
   const [navDisplay,setNavDisplay]=useState({
       nav:"none",
@@ -33,6 +42,26 @@ const App=(props)=>{
   {
     setNavDisplay({nav:"none",nav1:"block",});
   }
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   return (
     <>

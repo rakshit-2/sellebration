@@ -1,5 +1,5 @@
 
 
-const ApiLink="http://localhost:3001/test"
+const ApiLink="http://localhost:3001"
 
 export default ApiLink;
