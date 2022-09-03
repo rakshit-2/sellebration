@@ -25,6 +25,8 @@ app.get('/test', (req, res) => {
 
 
 
+//Home -- connection 4 table our stories 1 table latest news
+
 app.get('/home/our-stories/OurStories',(req,res)=>{
   const ele1="select * from OurStories_Recommended;";
   const ele2="select * from OurStories_Leadership;";
@@ -57,14 +59,59 @@ app.get('/home/our-stories/OurStories',(req,res)=>{
   }
 })
 
-
-
 app.get('/home/latest-news',(req,res)=>{
   const ele="select * from Home_LatestNews order by date desc;";
   db.query(ele,(err,result)=>{
     res.send(result)
   })
 })
+
+
+
+
+
+
+
+
+
+//Leadership -- connection 4 table
+
+app.get('/leadership/detail-each',(req,res)=>{
+  const ele1="select * from Leadership_Director;";
+  const ele2="select * from Leadership_Head;";
+  const ele3="select * from Leadership_Leader;";
+  const ele4="select * from Leadership_Vanguard;";
+  var y=req.query.name;
+  if(y=="director")
+  {
+    db.query(ele1,(err,result)=>{
+      res.send(result)
+    })
+  }
+  else if(y=="head")
+  {
+    db.query(ele2,(err,result)=>{
+      res.send(result)
+    })
+  }
+  else if(y=="leader")
+  {
+    db.query(ele3,(err,result)=>{
+      res.send(result)
+    })
+  }
+  else if(y=="vanguard")
+  {
+    db.query(ele4,(err,result)=>{
+      res.send(result)
+    })
+  }
+  else
+  {
+    res.send(["error"])
+  }
+})
+
 
 
 app.listen(port, () => {
