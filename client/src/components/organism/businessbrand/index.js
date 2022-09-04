@@ -1,6 +1,12 @@
 
 import './index.css';
 import Navbar from './../NavBar/index';
+import Footer from './../../molecule/footer/index';
+import BusinessBrandData from '../../assets/store/businessbrandData';
+import BusinessbBandCard1 from '../../atom/businessbrandCard1';
+
+
+
 const BusinessBrand=(props)=>{
 return (
     <>     
@@ -33,18 +39,33 @@ return (
                 </div>
             </div>
             <div className="BusinessBrand__sec2">
-                <div className="BusinessBrand__sec2__head">
-                    <div className="BusinessBrand__sec2__head__left">
-                        view by sector
+                <div className="BusinessBrand__sec2__inner">
+                    <div className="BusinessBrand__sec2__head">
+                        <div className="BusinessBrand__sec2__head__left">
+                            view by sector
+                        </div>
+                        <div className="BusinessBrand__sec2__head__right">
+                            <div className="BusinessBrand__sec2__head__right__field">
+                                Search....
+                            </div>
+                        </div>
                     </div>
-                    <div className="BusinessBrand__sec2__head__right">
-                        <div className="BusinessBrand__sec2__head__right__field">
+                    <div className="BusinessBrand__sec2__base">
+                        <div className="BusinessBrand__sec2__base__left">
+                                {BusinessBrandData.map((ele)=>{
+                                    const{id,info}=ele;
+                                    return(
+                                        <BusinessbBandCard1 id={id} info={info}/>
+                                    )
+                                })}
+                        </div>
+                        <div className="BusinessBrand__sec2__base__right">
 
                         </div>
                     </div>
                 </div>
             </div>
-
+            <Footer/>                   
         </div>
     </div>
     </>

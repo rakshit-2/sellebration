@@ -1,3 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+
+
+
+
+
+
 .BusinessBrand__outer{
 width: 100%;
 height: fit-content;
@@ -27,7 +35,7 @@ align-items: center;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    align-items:center;
+    align-items:flex-start;
     padding-bottom: 5rem;
 }
 .BusinessBrand__sec1__head{
@@ -89,51 +97,108 @@ align-items: center;
 
 .BusinessBrand__sec2{
     height: fit-content;
-    padding: 2rem;
-    width: 87%;
+    
+    width: 100%;
     
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items:flex-start;
-    background-color:yellow
+    align-items:center;
+    background-color:yellow;
+    border: 1px solid black;
+    margin-bottom: 8rem;
 }
-
+.BusinessBrand__sec2__inner{
+    height: fit-content;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+}
 .BusinessBrand__sec2__head{
+padding: 3rem 0 3rem 0;
 display: flex;
 flex-direction: row;
-justify-content: flex-start;
+justify-content:flex-start;
 align-items: center;
 width:100%;
 height: fit-content;
+border: 1px solid black;
 }
+
+
 
 .BusinessBrand__sec2__head__left{
     border-radius: 20px;
     padding: 0.5rem 1rem 0.5rem 1rem ;
-    width:40%;
+    width:30rem;
     height: fit-content;
     background-color: #0AB1EE80;
+    font-family: Montserrat;
+font-size: 1rem;
+font-weight: 600;
+/* line-height: 35px; */
+letter-spacing: 0.05em;
+text-align: left;
+border: 1px solid black;
+
 }
 .BusinessBrand__sec2__head__right{
     
-        
+        margin-left: 4rem;
         width:fit-content;
         height:fit-content;
         padding-left: 20px;
+        border: 1px solid black;
         
 }
 .BusinessBrand__sec2__head__right__field{
-        width:16rem;
-        height:1.7rem;
+        width:20rem;
+        height:2rem;
         
         border-radius: 20px;
         padding-left: 20px;
-        font-size: 15px;
+        
         border: 2px solid grey;
         outline:none;
         background: #fff url("./../../assets/image/navbar_img/navbar_searchicon_img.svg") no-repeat;
         background-position: 93%; 
+        font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 1rem;
+line-height: 35px;
+
+        
     
 
 }
+
+.BusinessBrand__sec2__base{
+    height: fit-content;
+    width: 100%;
+    background-color: cyan;
+    border: 1px solid black;
+}
+
+.BusinessBrand__sec2__base__left{
+height: 25rem;
+width: 30rem;
+padding:4rem 2rem 5 rem 2rem;
+
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+overflow-y: scroll;
+}
+
+/* .BusinessBrand__card{
+
+}
+
+.BusinessBrand__sec2__base__right{
+    
+} */

@@ -1,0 +1,21 @@
+.womenleader__outer{
+    height: 100%;
+    width: 100%;
+
+}
+
+.womenleader__inner{
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+.womenleader__sec1{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    
+}
