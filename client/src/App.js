@@ -4,9 +4,13 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-import {useState } from 'react';
+import Axios from 'axios';
+import {useState,useEffect} from 'react';
 
 
+
+
+import ApiLink from './components/assets/store/apiLink';
 import Home from './components/organism/home/index';
 import Bringchange from './components/organism/bringchange/index';
 import Businessbrand from './components/organism/businessbrand/index';
@@ -15,8 +19,18 @@ import Leadership from './components/organism/leadership/index';
 import Milestone from './components/organism/milestone/index';
 import Visionvalue from './components/organism/visionvalue/index';
 import Womenleadership from './components/organism/womenleader/index';
+import ContactUs from './components/organism/contactus/index';
+import Career from './components/organism/career/index';
+import Investor from './components/organism/investor/index';
+
+
 
 const App=(props)=>{
+
+
+  
+
+  
 
   const [navDisplay,setNavDisplay]=useState({
       nav:"none",
@@ -33,6 +47,26 @@ const App=(props)=>{
     setNavDisplay({nav:"none",nav1:"block",});
   }
 
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   return (
     <>
     <BrowserRouter>
@@ -45,6 +79,9 @@ const App=(props)=>{
         <Route path="/milestone" element={<Milestone  navDisplay={navDisplay} openNav={openNav} closeNav={closeNav}/>} ></Route>
         <Route path="/vision-value" element={<Visionvalue  navDisplay={navDisplay} openNav={openNav} closeNav={closeNav}/>} ></Route>
         <Route path="/women-leadership" element={<Womenleadership  navDisplay={navDisplay} openNav={openNav} closeNav={closeNav}/>} ></Route>
+        <Route path="/contact-us" element={<ContactUs  navDisplay={navDisplay} openNav={openNav} closeNav={closeNav}/>} ></Route>
+        <Route path="/career" element={<Career  navDisplay={navDisplay} openNav={openNav} closeNav={closeNav}/>} ></Route>
+        <Route path="/investor" element={<Investor  navDisplay={navDisplay} openNav={openNav} closeNav={closeNav}/>} ></Route>
       </Routes>
     </BrowserRouter>
     </>

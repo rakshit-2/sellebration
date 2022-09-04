@@ -1,6 +1,10 @@
 
 import './index.css';
-import {useState} from 'react';
+import Axios from 'axios';
+import {useState,useEffect} from 'react';
+
+
+import ApiLink from './../../assets/store/apiLink';
 import Carousel from "react-multi-carousel";
 import "./../../../../node_modules/react-multi-carousel/lib/styles.css";
 import map from './../../assets/image/home_img/map1.svg';
@@ -15,8 +19,86 @@ import HomeCard3 from './../../atom/homeCard3/index';
 import HomeNewsData from './../../assets/store/homenewsData';
 import Footer from './../../molecule/footer/index';
 import Navbar from './../NavBar/index';
+import LoadingScreen from './../../atom/loadingScreen/index'
 
 const Home=(props)=>{
+
+    const[recommended,setRecommended]=useState([<></>])
+    const[csr,setCsr]=useState([<></>])
+    const[leadership,setLeadership]=useState([<></>])
+    const[sustainability,setSustainability]=useState([<></>])
+
+    const[latestNews,setLatestNews]=useState([<></>])
+
+
+
+    const li=[recommended,leadership,csr,sustainability];
+
+
+
+
+    const[loadingOurStories,setLoadingOurStories]=useState(true);
+    const[loadingLatestNews,setLoadingLatestNews]=useState(true)
+
+    function getterOurStories(x,i)
+    {
+        Axios.get(ApiLink+'/home/our-stories/OurStories',
+        {
+        params:{
+            name:x,
+        }
+        }).then((res)=>{
+        if(i==0)
+        {
+            setRecommended(res.data);
+        }
+        else if(i==2)
+        {
+            setCsr(res.data);
+        }
+        else if(i==1)
+        {
+            setLeadership(res.data);
+        }
+        else if(i==3)
+        {
+            setSustainability(res.data);
+        }
+        
+        });
+    }
+    useEffect(() => {
+        var li=["recommended",'leadership','csr','sustainability']
+        for(var i=0;i<4;i++)
+        {
+        getterOurStories(li[i],i);
+        }
+        setLoadingOurStories(false);
+    }, []);
+
+
+
+
+
+
+
+    function getterLatestNews()
+    {
+        Axios.get(ApiLink+'/home/latest-news',
+        {
+            test:"test",
+        }).then((res)=>{
+            setLatestNews(res.data);
+            setLoadingLatestNews(false);
+            return;
+        })
+
+    }
+    useEffect(() => {
+        getterLatestNews();
+        
+    }, []);
+
     const responsive = {
         desktop: {
           breakpoint: { max: 3000, min: 1024 },
@@ -36,12 +118,10 @@ const Home=(props)=>{
       };
 
     const[clickedPanel,setClickedPanel]=useState(0);
-        
-    function panelClicked(id,name)
+    function panelClicked(id)
     {
-        setClickedPanel(id);
+        setClickedPanel(parseInt(id));
     }
-
 
 
     return (
@@ -59,29 +139,32 @@ const Home=(props)=>{
                         </div>
                         <div className="home__inner__section2__panel">
                             <div className="home__inner__section2__panel__left">
-                                {HomePanelData.map((item) => {
-                                    const {id,name}=item;
-                                    if(id===clickedPanel)
-                                    {
-                                        return(
-                                            <>
-                                                <div key={id}className="home__inner__section2__panel__left__each" style={{borderBottom:"2px solid orange"}} onClick={()=>{panelClicked(id,name)}}>
-                                                    {name}
-                                                </div>
-                                            </>
-                                            )  
-                                    }
-                                    else
-                                    {
-                                        return(
-                                            <>
-                                                <div key={id}className="home__inner__section2__panel__left__each" onClick={()=>{panelClicked(id,name)}}>
-                                                    {name}
-                                                </div>
-                                            </>
-                                            )
-                                    }
-                                })}
+                                {
+                                    HomePanelData.map((item) => {
+                                        const {id,name}=item;
+                                        if(id===clickedPanel)
+                                        {
+                                            return(
+                                                <>
+                                                    <div key={id}className="home__inner__section2__panel__left__each" style={{borderBottom:"2px solid orange"}} onClick={()=>{panelClicked(id,name)}}>
+                                                        {name}
+                                                    </div>
+                                                </>
+                                                )  
+                                        }
+                                        else
+                                        {
+                                            return(
+                                                <>
+                                                    <div key={id}className="home__inner__section2__panel__left__each" onClick={()=>{panelClicked(id,name)}}>
+                                                        {name}
+                                                    </div>
+                                                </>
+                                                )
+                                        }
+                                    })
+                                }
+                                
                             </div>
                             <div className="home__inner__section2__panel__right">
                                 <div className="home__inner__section2__panel__right__button">
@@ -90,22 +173,32 @@ const Home=(props)=>{
                             </div>
                         </div>
                         <div className="home__inner__section2__display">
-                        <Carousel 
-                        responsive={responsive} 
-                        draggable
-                        autoPlay
-                        autoPlaySpeed={2000}
-                        pauseOnHover
-                        infinite
-                        showDots={true}
-                        removeArrowOnDeviceType={["tablet", "mobile","desktop"]}>
-                            {HomeDisplayData[clickedPanel].map((ele) => {
+                        {
+                            loadingOurStories ? (
+                                <div className='loading__outer'>
+                                    <LoadingScreen/>    
+                                </div>
+                                
+                            ):(
+                            <Carousel 
+                            responsive={responsive} 
+                            draggable
+                            autoPlay
+                            autoPlaySpeed={2000}
+                            pauseOnHover
+                            infinite
+                            showDots={true}
+                            removeArrowOnDeviceType={["tablet", "mobile","desktop"]}>
+                            {li[clickedPanel].map((ele) => {
                                 const {id,heading,info}=ele;
                                 return(
                                     <HomeCard1 id={id} heading={heading} info={info}/>
                                 )
                             })}
-                        </Carousel>
+                            </Carousel>
+                            )
+                        }
+                        
                         </div>
                     </div>
                     <div className="home__inner__section3">
@@ -114,14 +207,40 @@ const Home=(props)=>{
                         </div>
                         <div className='home__inner__section3__display'>
                             <div className='home__inner__section3__display__left'>
-                            {HomeLatestData.map((ele) => {
-                                const {id,date,info}=ele;
-                                return(
-                                    <>
-                                        <HomeCard2 id={id} date={date} info={info}  />
-                                    </>
+                            {
+                                loadingLatestNews ? (
+                                    <div className='loading__outer'>
+                                        <LoadingScreen/>    
+                                    </div>
+                                    
+                                ):(
+                                latestNews.slice(0, 3).map((ele) => {
+                                    const {id,date,info}=ele;
+                                    var monthLis=["January","February","March","April","May","June","July","August","September","October","November","December"]
+                                    var month=date.slice(5, 7);
+                                    var day=date.slice(8,10);
+                                    var dateValue="";
+                                    if(day[1]==='2')
+                                    {
+                                        dateValue=parseInt(day).toString()+'nd'+" "+monthLis[parseInt(month)-1];
+                                    }
+                                    else if(day[1]==='3')
+                                    {
+                                        dateValue=parseInt(day).toString()+'rd'+" "+monthLis[parseInt(month)-1];
+                                    }
+                                    else
+                                    {
+                                        dateValue=parseInt(day).toString()+'st'+" "+monthLis[parseInt(month)-1];
+                                    }
+                                    console.log(dateValue)
+                                    return(
+                                        <>
+                                            <HomeCard2 id={id} date={dateValue} info={info}  />
+                                        </>
+                                    )
+                                })
                                 )
-                            })}
+                            }
                             </div>
                             <div className='home__inner__section3__display__right'>
                                 <iframe className='home__inner__section3__display__right__vid' src="https://www.youtube.com/embed/HlWISmjCfb8" title="Kanye West - Heartless (Lyrics)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

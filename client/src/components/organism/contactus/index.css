@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+
+
+
+
+
+
+
+
+
+
+.contactus__outer{
+    width:100%;
+    height:fit-content;
+}
+.contactus__inner{
+    width:100%;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+
+
+.contactus__inner__seaction2{
+    width:100%;
+    height:fit-content;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url('./../../assets/image/nav_img/nav_background_img.svg');
+}
+.contactus__inner__seaction2__heading{
+    width:100%;
+    height:5rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 20px;
+    text-transform: capitalize;
+    color: #FFFFFF;
+}
+.contactus__inner__seaction2__dispaly{
+    width:100%;
+    height:fit-content;
+    display: flex;
+    align-items:center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.contactus__inner__seaction2__dispaly__each{
+    width:500px;
+    height:fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin:1rem;
+}
+.contactus__inner__seaction2__dispaly__each__heading{
+    width:100%;
+    height:fit-content;
+    font-family: 'Montserrat';
+    font-style: normal;
+    display: flex;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-transform: capitalize;
+    color: #FFFFFF;
+}
+.contactus__inner__seaction2__dispaly__each__input{
+    width:100%;
+    height:2rem;
+    background: #FFFFFF;
+    border-radius: 30px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    padding: 5px;
+    font-size: 15px;
+    line-height: 20px;
+    border-radius: 20px;
+    border:none;
+    outline: none;
+    text-transform: capitalize;
+}
+
+.contactus__inner__seaction2__bottom__out{
+    width:100%;
+    height:5rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: capitalize;
+    color: #FFFFFF;
+}
+.contactus__inner__seaction2__button{
+    
+    width:fit-content;
+    padding: 15px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin: 1rem;
+    min-width: 7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 20px;
+    text-transform: capitalize;
+    color: #FFFFFF;
+    background-color: #0AB1EE;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+
+
+
+
+
+.contactus__inner__seaction3{
+    width:100%;
+    height:fit-content;
+    height:fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+.contactus__inner__seaction3__left{
+    width:40%;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.contactus__inner__seaction3__left__heading{
+    width:50%;
+    height:fit-content;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 20px;
+    padding: 1rem;
+    margin-top: 2rem;
+    text-align: left;
+    margin-bottom: 2rem;
+    text-transform: capitalize;
+    color: #374E91;
+}
+.contactus__inner__seaction3__left__text{
+    width:50%;
+    height:fit-content;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 28px;
+    letter-spacing: 0.05em;
+    text-transform: capitalize;
+    color: rgba(0, 0, 0, 0.77);
+}
+
+
+
+.contactus__inner__seaction3__right{
+    width:55%;
+    margin:2rem;
+    height:40rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url('./../../assets/image/map.svg');
+}
