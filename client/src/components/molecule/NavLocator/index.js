@@ -8,7 +8,7 @@ const NavLocator=(props)=>{
     const navigate = useNavigate();
     function onclickfunction(x,info)
     {
-        var link=["Aboutus","/our-profile","leadership","women leadership","/vision-value","milestone","Businesses & Brands","Sustainability","CSR",
+        var link=["/","our-profile","/leadership","/womenleadership","/visionvalue","/milestone","/businessesbrands","Sustainability","CSR",
                 "CSR At Sellebration","Bringing The Change","Our Strategy",
                 "Stories of Hope","CSR Policy","Media","Media Releases","Media Reports",
                 "Stories","Events","Downloads","Our Logo","Innovation","Investors",
@@ -24,11 +24,12 @@ const NavLocator=(props)=>{
         {
             if(info===check[i])
             {
+                props.closeNav();
                 navigate(link[i]);
                 return;
             }
-            
         }
+        
     }
     return (
     <>
@@ -47,7 +48,7 @@ const NavLocator=(props)=>{
                             <div className="navlocator__white__line__outer">
                                 <div className="navlocator__white__line"></div>
                             </div>
-                            <NavLocatorEach data={data} index={id}/>
+                            <NavLocatorEach closeNav={props.closeNav} data={data} index={id}/>
                         </div>
                         <div className='navlocator__white__line__nav'>
                         </div>
@@ -59,7 +60,7 @@ const NavLocator=(props)=>{
                     return (
                         <>
                         <div key={id} className="navlocator__each">
-                            <NavLocatorEach data={data} index={id} icon={icon}/>
+                            <NavLocatorEach closeNav={props.closeNav} data={data} index={id} icon={icon}/>
                         </div>
                         </>
                     );
@@ -72,7 +73,7 @@ const NavLocator=(props)=>{
                             <div className="navlocator__each__heading"  onClick={()=>{onclickfunction(id,heading)}}>
                                 {heading}
                             </div>
-                            <NavLocatorEach data={data} index={id}/>
+                            <NavLocatorEach closeNav={props.closeNav} data={data} index={id}/>
                         </div>
                         <div className='navlocator__white__line__nav'>
                         </div>
