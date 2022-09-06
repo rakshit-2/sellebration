@@ -16,10 +16,10 @@ import profile from './../../assets/image/profile.png';
 
 const Leadership=(props)=>{
     
-    const[director,setDirector]=useState([<></>])
-    const[head,setHead]=useState([<></>])
-    const[leader,setLeader]=useState([<></>])
-    const[vanguard,setVanguard]=useState([<></>])
+    const[director,setDirector]=useState([])
+    const[head,setHead]=useState([])
+    const[leader,setLeader]=useState([])
+    const[vanguard,setVanguard]=useState([])
 
     const[loadingLeadership,setLoadingLeadership]=useState(true);
 
@@ -33,8 +33,8 @@ const Leadership=(props)=>{
         }).then((res)=>{
         if(i==0)
         {
-            console.log(res.data)
             setDirector(res.data);
+            setLoadingLeadership(false)
         }
         else if(i===2)
         {
@@ -56,7 +56,6 @@ const Leadership=(props)=>{
         for(var i=0;i<4;i++)
         {
             getterLeadership(li[i],i);
-            setLoadingLeadership(false)
         }
     }, []);
 
