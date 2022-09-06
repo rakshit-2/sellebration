@@ -1,0 +1,17 @@
+.WomenLeadershipCard1__outer{
+    border: 1px solid black;
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.WomenLeadershipCard1__heading{
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 500;
+font-size: 48px;
+color: #2F528E;
+}
