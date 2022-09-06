@@ -23,12 +23,12 @@ import LoadingScreen from './../../atom/loadingScreen/index'
 
 const Home=(props)=>{
 
-    const[recommended,setRecommended]=useState([<></>])
-    const[csr,setCsr]=useState([<></>])
-    const[leadership,setLeadership]=useState([<></>])
-    const[sustainability,setSustainability]=useState([<></>])
+    const[recommended,setRecommended]=useState([])
+    const[csr,setCsr]=useState([])
+    const[leadership,setLeadership]=useState([])
+    const[sustainability,setSustainability]=useState([])
 
-    const[latestNews,setLatestNews]=useState([<></>])
+    const[latestNews,setLatestNews]=useState([])
 
 
 
@@ -51,6 +51,7 @@ const Home=(props)=>{
         if(i==0)
         {
             setRecommended(res.data);
+            setLoadingOurStories(false);
         }
         else if(i==2)
         {
@@ -73,7 +74,7 @@ const Home=(props)=>{
         {
         getterOurStories(li[i],i);
         }
-        setLoadingOurStories(false);
+       
     }, []);
 
 
@@ -180,21 +181,21 @@ const Home=(props)=>{
                                 </div>
                                 
                             ):(
-                            <Carousel 
-                            responsive={responsive} 
-                            draggable
-                            autoPlay
-                            autoPlaySpeed={2000}
-                            pauseOnHover
-                            infinite
-                            showDots={true}
-                            removeArrowOnDeviceType={["tablet", "mobile","desktop"]}>
-                            {li[clickedPanel].map((ele) => {
-                                const {id,heading,info}=ele;
-                                return(
-                                    <HomeCard1 id={id} heading={heading} info={info}/>
-                                )
-                            })}
+                                <Carousel 
+                                responsive={responsive} 
+                                draggable
+                                autoPlay
+                                autoPlaySpeed={2000}
+                                pauseOnHover
+                                infinite
+                                showDots={true}
+                                removeArrowOnDeviceType={["tablet", "mobile","desktop"]}>
+                                {li[clickedPanel].map((ele) => {
+                                    const {id,heading,info}=ele;
+                                    return(
+                                        <HomeCard1 id={id} heading={heading} info={info}/>
+                                    )
+                                })}
                             </Carousel>
                             )
                         }

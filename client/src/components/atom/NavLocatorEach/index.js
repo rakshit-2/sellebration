@@ -10,8 +10,8 @@ const NavLocatorEach=(props)=>{
 
     function onclickfunction(x,info)
     {
-        var link=["","/our-profile","leadership","","/vision-value","milestone","Businesses & Brands","Sustainability","CSR at sellebrations",
-                "/csr","Bringing The Change","Our Strategy",
+        var link=["/","our-profile","/leadership","/womenleadership","/visionvalue","/milestone","/businessesbrands","Sustainability","CSR",
+                "CSR At Sellebration","Bringing The Change","Our Strategy",
                 "Stories of Hope","CSR Policy","Media","Media Releases","Media Reports",
                 "Stories","Events","Downloads","Our Logo","Innovation","Investors",
                 "Careers","Contact Us"];
@@ -26,7 +26,9 @@ const NavLocatorEach=(props)=>{
         {
             if(info===check[i])
             {
+                props.closeNav();
                 navigate(link[i]);
+                
                 return;
             }
             

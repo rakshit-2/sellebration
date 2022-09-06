@@ -254,6 +254,8 @@
     
 }
 
+/* scroll bar*/
+
 /* width */
 .home__inner__section4__left__out::-webkit-scrollbar {
     width: 6px;

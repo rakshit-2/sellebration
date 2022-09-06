@@ -4,6 +4,7 @@ import navbar_icon from './../../assets/image/navbar_img/navbar_button_img.svg'
 import NavPanel from './../Nav/index';
 import nav_close from './../../assets/image/nav_img/nav_cross_img.svg';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -11,17 +12,18 @@ import { useState } from 'react';
 
 const NavBar=(props)=>{
 
-
+  const navigate = useNavigate();
   const[navOperator,setNavOperator]=useState({open:"flex",close:"none"});
   const[flag,setFlag]=useState(0)
 
   window.onscroll = function() {scrollFunction()};
 
   function scrollFunction() {
-    if(flag!=1)
+    if(flag!==1)
     {
       if (document.body.scrollTop>80 || document.documentElement.scrollTop>80) 
       {
+        document.getElementById("navbar").style.background="linear-gradient(0deg, rgba(9,9,121,0) 35%, rgba(47,49,50,1) 100%)";
         document.getElementById("navbar").style.height="5.5rem";
         document.getElementById("navbar").style.background="#2F528E";
         document.getElementById("logo").style.width="5.5rem" ;
@@ -45,10 +47,11 @@ const NavBar=(props)=>{
     setNavOperator({open:"none",close:"flex"});
     setFlag(1)
     
-    document.getElementById("navbar").style.background="linear-gradient(0deg, rgba(9,9,121,0) 35%, rgba(47,49,50,1) 100%)";
+    // document.getElementById("navbar").style.background="linear-gradient(0deg, rgba(9,9,121,0) 35%, rgba(47,49,50,1) 100%)";
+    document.getElementById("navbar").style.background="rgb(255,255,255,0)"
     document.getElementById("navbar").style.height="7rem";
     document.getElementById("logo").style.width="7rem";
-    document.getElementById("logo").style.backgroundColor="rgb(255,255,255,0)";
+    document.getElementById("logo").style.backgroundColor="white";
     props.openNav();
   }
 
@@ -63,7 +66,11 @@ const NavBar=(props)=>{
       document.getElementById("logo").style.width="5.5rem" ;
       document.getElementById("logo").style.backgroundColor="white";
     }
-    
+    else
+    {
+      document.getElementById("navbar").style.background="linear-gradient(0deg, rgba(9,9,121,0) 35%, rgba(47,49,50,1) 100%)";
+      document.getElementById("logo").style.backgroundColor="rgb(255,255,255,0)";
+    }
     props.closeNav("nav");
   }
   return (
@@ -71,7 +78,7 @@ const NavBar=(props)=>{
     <NavPanel navDisplay={props.navDisplay} closeNav={props.closeNav}/>
     <div className="navbar__outer" id="navbar">
       <div className="navbar__inner">
-        <div className="navbar__left"  id="logo" >
+        <div className="navbar__left" style={{cursor:"pointer"}} id="logo" onClick={()=>{navigate("/");}}>
           <img src={navbar_logo} className="navbar__logo"alt=""/>
         </div>
         <div className="navbar__right">
