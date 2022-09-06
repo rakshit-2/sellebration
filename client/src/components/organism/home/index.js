@@ -23,12 +23,12 @@ import LoadingScreen from './../../atom/loadingScreen/index'
 
 const Home=(props)=>{
 
-    const[recommended,setRecommended]=useState([])
-    const[csr,setCsr]=useState([])
-    const[leadership,setLeadership]=useState([])
-    const[sustainability,setSustainability]=useState([])
+    const[recommended,setRecommended]=useState([<></>])
+    const[csr,setCsr]=useState([<></>])
+    const[leadership,setLeadership]=useState([<></>])
+    const[sustainability,setSustainability]=useState([<></>])
 
-    const[latestNews,setLatestNews]=useState([])
+    const[latestNews,setLatestNews]=useState([<></>])
 
 
 
@@ -69,10 +69,10 @@ const Home=(props)=>{
         });
     }
     useEffect(() => {
-        var li=["recommended",'leadership','csr','sustainability']
+        var lis=["recommended",'leadership','csr','sustainability']
         for(var i=0;i<4;i++)
         {
-        getterOurStories(li[i],i);
+        getterOurStories(lis[i],i);
         }
        
     }, []);
@@ -104,17 +104,17 @@ const Home=(props)=>{
         desktop: {
           breakpoint: { max: 3000, min: 1024 },
           items: 3,
-          slidesToSlide: 1 // optional, default to 1.
+          slidesToSlide: 1
         },
         tablet: {
           breakpoint: { max: 1024, min: 750 },
           items: 2,
-          slidesToSlide: 1 // optional, default to 1.
+          slidesToSlide: 1
         },
         mobile: {
           breakpoint: { max: 749, min: 0 },
           items: 1,
-          slidesToSlide: 1 // optional, default to 1.
+          slidesToSlide: 1
         }
       };
 
@@ -196,7 +196,7 @@ const Home=(props)=>{
                                         <HomeCard1 id={id} heading={heading} info={info}/>
                                     )
                                 })}
-                            </Carousel>
+                                </Carousel>
                             )
                         }
                         

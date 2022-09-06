@@ -39,23 +39,27 @@ app.get('/home/our-stories/OurStories',(req,res)=>{
       res.send(result)
     })
   }
-  if(x=="leadership")
+  else if(x=="leadership")
   {
     db.query(ele2,(err,result)=>{
       res.send(result)
     })
   }
-  if(x=="csr")
+  else if(x=="csr")
   {
     db.query(ele3,(err,result)=>{
       res.send(result)
     })
   }
-  if(x=="sustainability")
+  else if(x=="sustainability")
   {
     db.query(ele4,(err,result)=>{
       res.send(result)
     })
+  }
+  else
+  {
+    res.send(["error"])
   }
 })
 
