@@ -1,12 +1,15 @@
 .WomenLeadershipCard1__outer{
     border: 1px solid black;
-    width: 20rem;
-    height: 10rem;
+    width: 90rem;
+    height: 40rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
     border:1px solid black;
+    margin-top:10rem;
+    margin-bottom: 10rem;
+    padding: 5rem 0 5rem 0;
 }
 
 .WomenLeadershipCard1__heading{
