@@ -22,6 +22,7 @@ import Womenleadership from './components/organism/womenleader/index';
 import ContactUs from './components/organism/contactus/index';
 import Career from './components/organism/career/index';
 import Investor from './components/organism/investor/index';
+import Event from './components/organism/event';
 
 
 
@@ -82,6 +83,7 @@ const App=(props)=>{
         <Route path="/contactus" element={<ContactUs  navDisplay={navDisplay} openNav={openNav} closeNav={closeNav}/>} ></Route>
         <Route path="/career" element={<Career  navDisplay={navDisplay} openNav={openNav} closeNav={closeNav}/>} ></Route>
         <Route path="/investor" element={<Investor  navDisplay={navDisplay} openNav={openNav} closeNav={closeNav}/>} ></Route>
+        <Route path="/event" element={<Event  navDisplay={navDisplay} openNav={openNav} closeNav={closeNav}/>} ></Route>
       </Routes>
     </BrowserRouter>
     </>

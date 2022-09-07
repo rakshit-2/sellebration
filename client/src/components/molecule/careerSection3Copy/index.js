@@ -13,10 +13,10 @@ return (
             </div>
             <div className='career__inner__section3__right__right'>
                 <div className='career__inner__section3__right__right__top'>
-                    {CareerData.section5.text}
+                    {CareerData.section3.text}
                 </div>
                 <div className='career__inner__section3__right__right__bottom' style={{marginTop:"3rem"}}>
-                    {CareerData.section5.name}
+                    {CareerData.section3.name}
                 </div>
                 <div className='career__inner__section3__right__right__button'>
                 View Message
