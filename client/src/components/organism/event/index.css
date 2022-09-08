@@ -81,6 +81,8 @@
     color: #000000;
     background-color: #C9C9C9;
     margin-right: 1rem;
+    display: flex;
+    align-items:center;
 }
 .event__inner__section2__left__panel__fieldinn{
     background-color: #00000000;
@@ -135,8 +137,7 @@
 }
 .event__inner__section2__left__each__left{
     width:30%;
-    min-height:13rem;
-    background-color: #D9D9D9;
+    height:13rem;
 }
 .event__inner__section2__left__each__right{
     width:60%;

@@ -39,13 +39,13 @@ app.get('/home/our-stories/OurStories',(req,res)=>{
       res.send(result)
     })
   }
-  else if(x=="leadership")
+  else if(x==="leadership")
   {
     db.query(ele2,(err,result)=>{
       res.send(result)
     })
   }
-  else if(x=="csr")
+  else if(x==="csr")
   {
     db.query(ele3,(err,result)=>{
       res.send(result)
@@ -59,7 +59,8 @@ app.get('/home/our-stories/OurStories',(req,res)=>{
   }
   else
   {
-    res.send(["error"])
+    var result={data:["err"]}
+    res.send(result)
   }
 })
 
@@ -112,9 +113,38 @@ app.get('/leadership/detail-each',(req,res)=>{
   }
   else
   {
-    res.send(["error"])
+    var result={data:["err"]}
+    res.send(result)
   }
 })
+
+
+
+
+
+
+
+
+
+// event section data get
+
+app.get('/event/all-data',(req,res)=>{
+  var e=req.query.name;
+  const ele="select * from event order by date asc;";
+  db.query(ele,(err,result)=>{
+    res.send(result)
+  })
+})
+
+
+
+
+
+
+
+
+
+
 
 
 
