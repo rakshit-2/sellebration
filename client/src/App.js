@@ -3,6 +3,7 @@ import {
   BrowserRouter,
   Routes,
   Route,
+  Navigate,
 } from "react-router-dom";
 import Axios from 'axios';
 import {useState,useEffect} from 'react';
@@ -22,7 +23,8 @@ import Womenleadership from './components/organism/womenleader/index';
 import ContactUs from './components/organism/contactus/index';
 import Career from './components/organism/career/index';
 import Investor from './components/organism/investor/index';
-
+import Event from './components/organism/event';
+import Err from './components/organism/err/index';
 
 
 const App=(props)=>{
@@ -82,6 +84,12 @@ const App=(props)=>{
         <Route path="/contactus" element={<ContactUs  navDisplay={navDisplay} openNav={openNav} closeNav={closeNav}/>} ></Route>
         <Route path="/career" element={<Career  navDisplay={navDisplay} openNav={openNav} closeNav={closeNav}/>} ></Route>
         <Route path="/investor" element={<Investor  navDisplay={navDisplay} openNav={openNav} closeNav={closeNav}/>} ></Route>
+        <Route path="/event" element={<Event  navDisplay={navDisplay} openNav={openNav} closeNav={closeNav}/>} ></Route>
+        <Route path="/err" element={<Err navDisplay={navDisplay} openNav={openNav} closeNav={closeNav}/>} ></Route>
+        <Route
+            path="*"
+            element={<Navigate to="/err" replace />}
+        />
       </Routes>
     </BrowserRouter>
     </>

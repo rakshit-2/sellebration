@@ -10,11 +10,12 @@ const NavLocatorEach=(props)=>{
 
     function onclickfunction(x,info)
     {
-        var link=["/","our-profile","/leadership","/womenleadership","/visionvalue","/milestone","/businessesbrands","Sustainability","CSR",
-                "CSR At Sellebration","Bringing The Change","Our Strategy",
-                "Stories of Hope","CSR Policy","Media","Media Releases","Media Reports",
-                "Stories","Events","Downloads","Our Logo","Innovation","Investors",
-                "Careers","Contact Us"];
+        var link=["/","our-profile","/leadership","/womenleadership","/visionvalue","/milestone",
+                "/businessesbrands","/Sustainability","/csr",
+                "/csr","/bringchange","/OurStrategy",
+                "/StoriesofHope","/csr","Media","/MediaReleases","/MediaReports",
+                "/Stories","/event","/Downloads","/OurLogo","/Innovation","/investor",
+                "/career","/contactus"];
         var check=["About Us","Our Profile","Leadership","Women Leaders","Vision&Values",
                     "Milestones","Businesses & Brands","Sustainability","CSR",
                     "CSR At Sellebration","Bringing The Change","Our Strategy",
