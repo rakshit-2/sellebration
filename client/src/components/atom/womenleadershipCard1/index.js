@@ -7,13 +7,13 @@ const WomenLeadershipCard1=(props)=>{
             <div className="WomenLeadershipCard1__heading">
                 {props.heading}
             </div>
-            <div>
+            <div className="WomenLeadershipCard1__info">
                 {props.info}
             </div>
-            <div>
+            <div className="WomenLeadershipCard1__name">
                 {props.name}
             </div>
-            <div>
+            <div className="WomenLeadershipCard1__title">
                 {props.title}
             </div>
         </div>

@@ -49,10 +49,24 @@ return (
                     </Carousel>
                 
             </div>
+            <div className='womenleader__sec2'>
+                  <div className='womenleader__sec2__head'>
+                  Expanding Horizons
+                  </div>
+                  <img className='womenleader__sec2__img' src={img}/>
+            </div>
+            <div className='womenleader__sec3'>
+                  <div className='womenleader__sec3__head'>
+                  Redefining Boundaries
+                  </div>
+                  <div className='womenleader__sec3__cards'>
+
+                  </div>
+            </div>
         </div>
     </div>
 
-    <img src={img}/>
+    
     </>
 );
 }
