@@ -11,7 +11,7 @@ const NavLocatorEach=(props)=>{
     function onclickfunction(x,info)
     {
         var link=["/","our-profile","/leadership","/womenleadership","/visionvalue","/milestone",
-                "/businessesbrands","/Sustainability","/csr",
+                "/businessesbrand","/Sustainability","/csr",
                 "/csr","/bringchange","/OurStrategy",
                 "/StoriesofHope","/csr","Media","/MediaReleases","/MediaReports",
                 "/Stories","/event","/Downloads","/OurLogo","/Innovation","/investor",
