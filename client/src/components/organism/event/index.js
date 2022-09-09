@@ -101,14 +101,16 @@ const Event=(props)=>{
         }
         else
         {
-            var fromyear=parseInt(fromDate.slice(0,4));
-            var frommonth=parseInt(fromDate.slice(5, 7));
-            var fromday=parseInt(fromDate.slice(8,10));
-
-            var toyear=parseInt(toDate.slice(0,4));
-            var tomonth=parseInt(toDate.slice(5, 7));
-            var today=parseInt(toDate.slice(8,10));
-            if(toyear<fromyear)
+            var fromyear=fromDate.slice(0,4);
+            var frommonth=fromDate.slice(5, 7);
+            var fromday=fromDate.slice(8,10);
+            var fromDateFull=parseInt(fromyear+frommonth+fromday) 
+            var toyear=toDate.slice(0,4);
+            var tomonth=toDate.slice(5, 7);
+            var today=toDate.slice(8,10);
+            var toDateFull=parseInt(toyear+tomonth+today) 
+            
+            if(toDateFull<fromDateFull)
             {
                 setErrHiding("flex")
                 setTimeout(hidingError, 3000);
@@ -116,21 +118,16 @@ const Event=(props)=>{
             var li=[]
             for(var i=0;i<all.length;i++)
             {
-                var year=parseInt(all[i].date.slice(0,4));
-                var month=parseInt(all[i].date.slice(5, 7));
-                var day=parseInt(all[i].date.slice(8,10));
+                var year=all[i].date.slice(0,4);
+                var month=all[i].date.slice(5, 7);
+                var day=all[i].date.slice(8,10);
+                var dayFull=parseInt(year+month+day)
 
-                if(fromyear<=year && toyear>=year)
+                if(dayFull>=fromDateFull && dayFull<=toDateFull)
                 {
-                    if(frommonth<=month && tomonth>=month)
+                    if(all[i].name==cname)
                     {
-                        if(fromday<=day && today>=day)                       
-                        {
-                            if(all[i].name==cname)
-                            {
-                                li.push(all[i])
-                            }
-                        }
+                        li.push(all[i])
                     }
                 }
             }

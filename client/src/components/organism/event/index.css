@@ -50,7 +50,6 @@
     display: flex;
     align-items:flex-start;
     justify-content: space-between;
-    border:1px solid red;
 }
 .event__inner__section2__left{
     width:70%;
