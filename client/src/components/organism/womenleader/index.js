@@ -1,12 +1,19 @@
 
 import './index.css';
+// import {useState} from React;
 import Navbar from './../NavBar/index';
+import Footer from './../../molecule/footer/index';
 import Carousel from "react-multi-carousel";
 import "./../../../../node_modules/react-multi-carousel/lib/styles.css";
 import img from '../../assets/image/womenleadership_img/women_leadership_img.svg';
+import icon from '../../assets/image/womenleadership_img/women_leadership_img2.svg';
 import WomenLeadershipCardData from './../../assets/store/womenleadershipcardData';
 import WomenLeadershipCard1 from '../../atom/womenleadershipCard1';
+import WomenLeadershipCard2 from '../../atom/womenleadershipCard2';
+import React from 'react';
 const WomenLeadership=(props)=>{
+
+  // const [files,setFiles]=useState();s
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
@@ -40,7 +47,7 @@ return (
                     infinite
                     showDots={true}
                     removeArrowOnDeviceType={["tablet", "mobile","desktop"]}>
-                    {WomenLeadershipCardData.map((ele)=>{
+                    {WomenLeadershipCardData.crouselData.map((ele)=>{
                       const{id,info,heading,name,title}=ele;
                       return(
                         <WomenLeadershipCard1 id={id} heading={heading} info={info} name={name} title={title}/>
@@ -60,9 +67,41 @@ return (
                   Redefining Boundaries
                   </div>
                   <div className='womenleader__sec3__cards'>
-
+                      {
+                        WomenLeadershipCardData.boundryData.map((ele)=>{
+                            const{id,title,info}=ele;
+                            return(
+                              <WomenLeadershipCard2 id={id} info={info} title={title}/>
+                            )
+                        })}
                   </div>
             </div>
+            <div className='womenleader__sec3'>
+                  <div className='womenleader__sec3__head'>
+                 Better Together
+                  </div>
+                  <div className='womenleader__sec3__cards'>
+                      {
+                        WomenLeadershipCardData.betterData.map((ele)=>{
+                            const{id,title,info}=ele;
+                            return(
+                              <WomenLeadershipCard2 id={id} info={info} title={title}/>
+                            )
+                        })}
+                  </div>
+            </div>
+
+            <div className='womenleader__sec4'>
+              <div className='womenleader__sec4__inner'>
+                      <div>
+                        <img src={icon}/>
+                      </div>
+                      <div className='womenleader__sec4__inner__info' >
+                      See more inspiring world of women stories
+                      </div>
+              </div>
+            </div>
+            <Footer/>
         </div>
     </div>
 
