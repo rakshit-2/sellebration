@@ -82,7 +82,7 @@ color: #FFFFFF;
 .innovation__sec1__bottom{
 
     width: 100%;
-    height:100vh;
+    height:fit-content;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -142,4 +142,96 @@ line-height: 20px;
 text-transform: capitalize;
 
 color: #FFFFFF;
+}
+.innovation__sec1__bottom__inner_card{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    width: 100%;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.innovation__sec2__inner__section3{
+    width:100%;
+    height:fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 10rem;
+    margin-top: 5rem;
+}
+.innovation__sec2__inner__section3__each1{
+    width:83%;
+    height:fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.innovation__sec2__inner__section3__each1__inner{
+    width:650px;
+    height:460px;
+    background-color: rgb(161, 160, 161);
+}
+
+
+.innovation__sec2__inner__section3__each2{
+    width:83%;
+    height:fit-content;
+    position: absolute;
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.innovation__sec2__inner__section3__each2__inner{
+    width:600px;
+    height:400px;
+    padding:30px;
+    
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+.innovation__sec2__inner__section3__each2__inner__up{
+    width:100%;
+    height:80%;
+}
+.innovation__sec2__inner__section3__each2__inner__down{
+    width:100%;
+    height:20%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+}
+.innovation__sec2__inner__section3__each2__inner__heading{
+    width:100%;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 36px;
+    letter-spacing: 0.05em;
+    color: #0AB1EE;
+    margin-bottom: 1rem;
+}
+.innovation__sec2__inner__section3__each2__inner__text{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 35px;
+    letter-spacing: 0.05em;
+    text-transform: capitalize;
+    color: rgba(0, 0, 0, 0.7);
+}
+.innovation__sec2__section3__img{
+    width:100%;
+    height:100%
 }
