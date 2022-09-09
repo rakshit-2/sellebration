@@ -3,10 +3,12 @@ import Navbar from './../NavBar/index';
 import { useState,useEffect } from 'react';
 import Axios from 'axios';
 import ApiLink from './../../assets/store/apiLink'
-import share_img from './../../assets/image/event/share_img.svg';
+
 import LoadingScreen from './../../atom/loadingScreen/index';
 import test from './../../assets/image/test.png';
 import calendar_img from './../../assets/image/event/calendar_img.svg';
+import EventCard1 from '../../atom/eventCard1';
+import alert from './../../assets/image/event/alert.svg'
 
 const Event=(props)=>{
 
@@ -20,18 +22,27 @@ const Event=(props)=>{
 
 
     const[all,setAll]=useState();
+    const[displayerData,setDisplayerData]=useState()
     const[company,setCompany]=useState();
+    const[cname,setCname]=useState("");
+    const[fromDate,setFromDate]=useState("");
+    const[toDate,setToDate]=useState("");
 
 
+    const[errHiding,setErrHiding]=useState("none")
 
     const monthLis=["January","February","March","April","May","June","July","August","September","October","November","December"]
     const[eventLoading,setEventLoading]=useState(true);
-
+    
+    
+    
+    
     function filterAllData(li)
     {
         var lis=[];
-        var company_name=[];
-        const checker = new Set();
+        var company_name=[{id:0,name:"Company Name"}];
+        var checker=[]
+        var k=1;
         for(var i=0;i<li.length;i++)
         {
             var year=parseInt(li[i].date.slice(0,4));
@@ -39,12 +50,27 @@ const Event=(props)=>{
             var day=parseInt(li[i].date.slice(8,10));
             if(day>=Day && month>=Month && year>=Year)
             {
-                company_name.push({id:li[i].id,name:li[i].name})
+                var flag=0;
+                for(var j=0;j<checker.length;j++)
+                {
+                    if(checker[j]==li[i].name)
+                    {
+                        flag=1;
+                        break
+                    }
+                }
+                if(flag===0)
+                {
+                    company_name.push({id:k,name:li[i].name});
+                    checker.push(li[i].name)
+                    k+=1;
+                }
                 lis.push(li[i]);
             }
         }
         setCompany(company_name);
         setAll(lis);
+        setDisplayerData(lis);
     }
     
     useEffect(() => {
@@ -61,6 +87,64 @@ const Event=(props)=>{
 
 
 
+    function hidingError()
+    {
+        setErrHiding("none")
+    }
+
+    function filterClicked()
+    {
+        if((cname==="" || cname==="Company Name") || fromDate==="" || toDate==="")
+        {
+            setErrHiding("flex")
+            setTimeout(hidingError, 3000);
+        }
+        else
+        {
+            var fromyear=parseInt(fromDate.slice(0,4));
+            var frommonth=parseInt(fromDate.slice(5, 7));
+            var fromday=parseInt(fromDate.slice(8,10));
+
+            var toyear=parseInt(toDate.slice(0,4));
+            var tomonth=parseInt(toDate.slice(5, 7));
+            var today=parseInt(toDate.slice(8,10));
+            if(toyear<fromyear)
+            {
+                setErrHiding("flex")
+                setTimeout(hidingError, 3000);
+            }
+            var li=[]
+            for(var i=0;i<all.length;i++)
+            {
+                var year=parseInt(all[i].date.slice(0,4));
+                var month=parseInt(all[i].date.slice(5, 7));
+                var day=parseInt(all[i].date.slice(8,10));
+
+                if(fromyear<=year && toyear>=year)
+                {
+                    if(frommonth<=month && tomonth>=month)
+                    {
+                        if(fromday<=day && today>=day)                       
+                        {
+                            if(all[i].name==cname)
+                            {
+                                li.push(all[i])
+                            }
+                        }
+                    }
+                }
+            }
+            if(li.length===0)
+            {
+                setDisplayerData([{id:0,name:"no data",date:"",info:"",link:"",img:""}]);
+            }
+            else
+            {
+                setDisplayerData(li);
+            }
+           
+        }
+    }
 return (
     <>
     <div className="event__outer">
@@ -83,7 +167,7 @@ return (
                     ):(
                         <div className='event__inner__section2__left'>
                             <div className='event__inner__section2__left__panel'>
-                                <select className='event__inner__section2__left__panel__field'>
+                                <select className='event__inner__section2__left__panel__field' onChange={(e)=>[setCname(e.target.value)]}>
                                     {company.map((ele)=>{
                                         const{id,name}=ele;
                                         return(
@@ -93,48 +177,30 @@ return (
                                     
                                 </select>
                                 <div className='event__inner__section2__left__panel__field'>
-                                    From {'\u00A0'}<img src={calendar_img} style={{width:"20px",height:"20px"}}/> {'\u00A0'}: {'\u00A0'} <input type="date" className='event__inner__section2__left__panel__fieldinn'/>
+                                    From {'\u00A0'}<img src={calendar_img} style={{width:"20px",height:"20px"}}/> {'\u00A0'}: {'\u00A0'} <input type="date" className='event__inner__section2__left__panel__fieldinn'  onChange={(e)=>{setFromDate(e.target.value)}}/>
                                 </div>
                                 <div className='event__inner__section2__left__panel__field'>
-                                    To {'\u00A0'}<img src={calendar_img} style={{width:"20px",height:"20px"}}/> {'\u00A0'}:  {'\u00A0'}<input type="date" className='event__inner__section2__left__panel__fieldinn'/>
+                                    To {'\u00A0'}<img src={calendar_img} style={{width:"20px",height:"20px"}}/> {'\u00A0'}:  {'\u00A0'}<input type="date" className='event__inner__section2__left__panel__fieldinn'  onChange={(e)=>{setToDate(e.target.value)}}/>
                                 </div>
-                                <div className='event__inner__section2__button'>
+                                <div className='event__inner__section2__button' onClick={()=>{filterClicked()}}>
                                     Filters
                                 </div>
                             </div>
+                            <div className='event__wronddata__modale' style={{display:errHiding}}>
+                                <div className='event__wronddata__modale__text'>
+                                    <img src={alert} className="event__wronddata__modale__text__img"></img>{'\u00A0'}{'\u00A0'}Invalid Information Entered 
+                                </div>
+                            </div>
                             <div className='event__inner__section2__left__display'>
-                                {all.map((ele)=>{
-                                    const{id,name,date,info,link,imh}=ele;
+                                {displayerData.map((ele)=>{
+                                    const{id,name,date,info,link,img}=ele;
                                     var year=date.slice(0,4);
                                     var month=parseInt(date.slice(5, 7));
                                     var day=date.slice(8,10);
                                     var date_value=day+" "+monthLis[month-1]+" "+year;
 
                                     return(
-                                        <div key={id} className='event__inner__section2__left__each'>
-                                            <div className='event__inner__section2__left__each__left'>
-                                                <img src={test} style={{width:"100%",height:"100%"}}/>
-                                            </div>
-                                            <div className='event__inner__section2__left__each__right'>
-                                                <div className='event__inner__section2__left__each__right__date'>
-                                                    {date_value}
-                                                </div>
-                                                <div className='event__inner__section2__left__each__right__name'>
-                                                    {name}
-                                                </div>
-                                                <div className='event__inner__section2__left__each__right__text'>
-                                                    {info}
-                                                </div>
-                                                <div className='event__inner__section2__left__each__right__button'>
-                                                    <div className='event__inner__section2__button'>
-                                                        Know more
-                                                    </div>
-                                                    <div className='event__inner__section2__button'>
-                                                        Share {'\u00A0'}<img src={share_img} style={{width:"15px",height:"15px"}}/>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <EventCard1 test={test} id={id} name={name} info={info} link={link} img={img} date_value={date_value}/>
                                     )
                                 })}
                             </div>
