@@ -3,18 +3,16 @@ import Navbar from './../NavBar/index';
 import { useState,useEffect } from 'react';
 import Axios from 'axios';
 import ApiLink from './../../assets/store/apiLink'
-
 import LoadingScreen from './../../atom/loadingScreen/index';
 import test from './../../assets/image/test.png';
 import calendar_img from './../../assets/image/event/calendar_img.svg';
 import EventCard1 from '../../atom/eventCard1';
 import alert from './../../assets/image/event/alert.svg';
-import facebook_panel__img from './../../assets/image/event/facebook_panel__img.svg';
-import twitter_panel__img from './../../assets/image/event/twitter_panel_img.svg';
 import arrow_left from './../../assets/image/event/left_arrow.svg';
 import arrow_right from './../../assets/image/event/right_arrow.svg';
 import Footer2 from './../../molecule/footer2/index';
 import Footer from './../../molecule/footer/index';
+import SocialFeed from '../../molecule/socialFeed';
 
 
 const Event=(props)=>{
@@ -284,81 +282,8 @@ return (
 
 
 
-                
-                <div className='event__inner__section2__right'>
-                    <div className='event__inner__section2__right__top'>
-                        Social feeds
-                    </div>
-                    <div className='event__inner__section2__right__panel'>
-                        <div className='event__inner__section2__right__panel__each' style={{backgroundColor:"#374E91"}}>
-                            <img src={facebook_panel__img} className="event__inner__section2__right__panel__each__img"/>
-                        </div>
-                        <div className='event__inner__section2__right__panel__each'  style={{backgroundColor:"white"}}>
-                            <img src={twitter_panel__img} className="event__inner__section2__right__panel__each__img"/>
-                        </div>
-                    </div>
-                    <div className='event__inner__section2__right__middle__outer'>
-                        <div className='event__inner__section2__right__middle'>
-                            
-                            <div className='event__inner__section2__right__middle__each'>
-                                <div className='event__inner__section2__right__middle__inner'>
+                <SocialFeed/>
 
-                                </div>
-                                <div className='event__inner__section2__right__middle__text'>
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text. Lorem Ipsum
-                                </div>
-                            </div>
-                            <div className='event__inner__section2__right__middle__each'>
-                                <div className='event__inner__section2__right__middle__inner'>
-
-                                </div>
-                                <div className='event__inner__section2__right__middle__text'>
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text. Lorem Ipsum
-                                </div>
-                            </div>
-                            <div className='event__inner__section2__right__middle__each'>
-                                <div className='event__inner__section2__right__middle__inner'>
-
-                                </div>
-                                <div className='event__inner__section2__right__middle__text'>
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text. Lorem Ipsum
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div className='event__inner__section2__right__middle__outer' style={{display:"none"}}>
-                        <div className='event__inner__section2__right__middle'>
-                            
-                            <div className='event__inner__section2__right__middle__each'>
-                                <div className='event__inner__section2__right__middle__inner'>
-
-                                </div>
-                                <div className='event__inner__section2__right__middle__text'>
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text. Lorem Ipsum
-                                </div>
-                            </div>
-                            <div className='event__inner__section2__right__middle__each'>
-                                <div className='event__inner__section2__right__middle__inner'>
-
-                                </div>
-                                <div className='event__inner__section2__right__middle__text'>
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text. Lorem Ipsum
-                                </div>
-                            </div>
-                            <div className='event__inner__section2__right__middle__each'>
-                                <div className='event__inner__section2__right__middle__inner'>
-
-                                </div>
-                                <div className='event__inner__section2__right__middle__text'>
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text. Lorem Ipsum
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
             </div>
 
 
