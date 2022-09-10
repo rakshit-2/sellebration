@@ -85,7 +85,7 @@ return (
                         WomenLeadershipCardData.betterData.map((ele)=>{
                             const{id,title,info}=ele;
                             return(
-                              <WomenLeadershipCard2 id={id} info={info} title={title}/>
+                              <WomenLeadershipCard2 dis={"center"} col={"#D9D9D9"} id={id} info={info} title={title}/>
                             )
                         })}
                   </div>

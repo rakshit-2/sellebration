@@ -4,7 +4,7 @@ const WomenLeaderShipCard2 =(props)=>{
     return (
         <>
         <div className='WomenLeaderShipCard2__outer'>
-            <div className='WomenLeaderShipCard2__head'>
+            <div className='WomenLeaderShipCard2__head' style={{backgroundColor:props.col,justifyContent:props.dis}}>
                 <img className='WomenLeaderShipCard2__head_img' src={img}/>
             </div>
             <div className='WomenLeaderShipCard2__bottom'>
