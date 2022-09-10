@@ -26,6 +26,7 @@ import Investor from './components/organism/investor/index';
 import Event from './components/organism/event';
 import Err from './components/organism/err/index';
 import Innovation from './components/organism/innovation';
+import MediaRelease from './components/organism/mediaRelease';
 
 const App=(props)=>{
 
@@ -85,8 +86,13 @@ const App=(props)=>{
         <Route path="/career" element={<Career  navDisplay={navDisplay} openNav={openNav} closeNav={closeNav}/>} ></Route>
         <Route path="/investor" element={<Investor  navDisplay={navDisplay} openNav={openNav} closeNav={closeNav}/>} ></Route>
         <Route path="/event" element={<Event  navDisplay={navDisplay} openNav={openNav} closeNav={closeNav}/>} ></Route>
-        <Route path="/err" element={<Err navDisplay={navDisplay} openNav={openNav} closeNav={closeNav}/>} ></Route>
         <Route path="/innovation" element={<Innovation navDisplay={navDisplay} openNav={openNav} closeNav={closeNav}/>} ></Route>
+        <Route path="/mediarelease" element={<MediaRelease navDisplay={navDisplay} openNav={openNav} closeNav={closeNav}/>} ></Route>
+        
+        
+        
+        
+        <Route path="/err" element={<Err navDisplay={navDisplay} openNav={openNav} closeNav={closeNav}/>} ></Route>
         <Route
             path="*"
             element={<Navigate to="/err" replace />}
