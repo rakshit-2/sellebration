@@ -13,13 +13,11 @@ import facebook_panel__img from './../../assets/image/event/facebook_panel__img.
 import twitter_panel__img from './../../assets/image/event/twitter_panel_img.svg';
 import arrow_left from './../../assets/image/event/left_arrow.svg';
 import arrow_right from './../../assets/image/event/right_arrow.svg';
+import Footer2 from './../../molecule/footer2/index';
+import Footer from './../../molecule/footer/index';
+
 
 const Event=(props)=>{
-
-
-
-
-
 
     const d = new Date();
     const Day=d.getDate();
@@ -287,7 +285,7 @@ return (
 
 
                 
-                <div className='event__inner__section2__right' id="myHeader">
+                <div className='event__inner__section2__right'>
                     <div className='event__inner__section2__right__top'>
                         Social feeds
                     </div>
@@ -362,6 +360,11 @@ return (
                     </div>
                 </div>
             </div>
+
+
+            <Footer2/>
+            <Footer/>
+
         </div>
     </div>
     </>

@@ -186,7 +186,7 @@
     align-items: center;
     justify-content: center;
     margin-top: 3rem;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
 }
 .event__inner__left__bottom__panel__left{
     width:40px;
@@ -266,7 +266,6 @@
     border-top-left-radius: 10px;
     align-items: center;
     justify-content: center;
-    
 }
 .event__inner__section2__right__panel__each__img{
     width:25px;
