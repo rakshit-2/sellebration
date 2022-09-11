@@ -158,7 +158,7 @@ const PressReport=(props)=>{
             }
             if(li.length===0)
             {
-                setDisplayerData([{id:0,name:"No event Available",date:"Data",info:"",link:"",img:""}]);
+                setDisplayerData([{id:0,name:"No Report Available",date:"Data",info:"",link:"",img:""}]);
                 setPageLen(1)
             }
             else
