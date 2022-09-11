@@ -205,7 +205,7 @@ return (
             <div className='event__inner__section2'>
                 {
                     eventLoading ? (
-                        <div className='loading__outer'>
+                        <div className='loading__outer' style={{width:"70%"}}>
                             <LoadingScreen/>    
                         </div>
                         
