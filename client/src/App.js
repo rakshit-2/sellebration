@@ -23,10 +23,11 @@ import Womenleadership from './components/organism/womenleader/index';
 import ContactUs from './components/organism/contactus/index';
 import Career from './components/organism/career/index';
 import Investor from './components/organism/investor/index';
-import Event from './components/organism/event';
+import Event from './components/organism/event/index';
 import Err from './components/organism/err/index';
-import Innovation from './components/organism/innovation';
-import MediaRelease from './components/organism/mediaRelease';
+import Innovation from './components/organism/innovation/index';
+import MediaRelease from './components/organism/mediaRelease/index';
+import PressReport from './components/organism/pressreport/index';
 
 const App=(props)=>{
 
@@ -87,7 +88,7 @@ const App=(props)=>{
         <Route path="/event" element={<Event  navDisplay={navDisplay} openNav={openNav} closeNav={closeNav}/>} ></Route>
         <Route path="/innovation" element={<Innovation navDisplay={navDisplay} openNav={openNav} closeNav={closeNav}/>} ></Route>
         <Route path="/mediarelease" element={<MediaRelease navDisplay={navDisplay} openNav={openNav} closeNav={closeNav}/>} ></Route>
-        
+        <Route path="/pressreoprt" element={<PressReport navDisplay={navDisplay} openNav={openNav} closeNav={closeNav}/>} ></Route>
         
         
         
