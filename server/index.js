@@ -130,7 +130,7 @@ app.get('/leadership/detail-each',(req,res)=>{
 
 app.get('/event/all-data',(req,res)=>{
   var e=req.query.name;
-  const ele="select * from event order by date asc;";
+  const ele="select * from event order by date desc;";
   db.query(ele,(err,result)=>{
     res.send(result)
   })
@@ -138,6 +138,17 @@ app.get('/event/all-data',(req,res)=>{
 
 
 
+
+
+// mediarelease section data get
+
+app.get('/media-release/all-data',(req,res)=>{
+  var e=req.query.name;
+  const ele="select * from mediarelease order by date asc;";
+  db.query(ele,(err,result)=>{
+    res.send(result)
+  })
+})
 
 
 
