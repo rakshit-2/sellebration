@@ -1,19 +1,20 @@
 import './index.css';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate ,useLocation} from 'react-router-dom';
 
 
 
 const NavLocatorEach=(props)=>{
 
     const navigate = useNavigate();
-
+    const location = useLocation();
+    var RouteValue=location.pathname;
 
     function onclickfunction(x,info)
     {
         var link=["/","our-profile","/leadership","/womenleadership","/visionvalue","/milestone",
                 "/bussinessbrand","/Sustainability","/csr",
                 "/csr","/bringchange","/OurStrategy",
-                "/StoriesofHope","/csr","Media","/mediarelease","/MediaReports",
+                "/StoriesofHope","/csr","/Media","/mediarelease","/MediaReports",
                 "/Stories","/event","/Downloads","/OurLogo","/Innovation","/investor",
                 "/career","/contactus"];
         var check=["About Us","Our Profile","Leadership","Women Leaders","Vision&Values",
@@ -27,9 +28,12 @@ const NavLocatorEach=(props)=>{
         {
             if(info===check[i])
             {
+                if(link[i]===RouteValue)
+                {
+                    return;
+                }
                 props.closeNav();
                 navigate(link[i]);
-                
                 return;
             }
             

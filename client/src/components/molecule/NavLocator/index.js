@@ -1,17 +1,19 @@
 import './index.css';
 import items from './../../assets/store/NavData'
 import NavLocatorEach from './../../atom/NavLocatorEach/index'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate,useLocation } from 'react-router-dom';
 
 
 const NavLocator=(props)=>{
     const navigate = useNavigate();
+    const location = useLocation();
+    var RouteValue=location.pathname;
     function onclickfunction(x,info)
     {
         var link=["/","our-profile","/leadership","/womenleadership","/visionvalue","/milestone",
                 "/bussinessbrand","/Sustainability","/csr",
                 "/csr","/bringchange","/OurStrategy",
-                "/StoriesofHope","/csr","Media","/mediarelease","/MediaReports",
+                "/StoriesofHope","/csr","/Media","/mediarelease","/MediaReports",
                 "/Stories","/event","/Downloads","/OurLogo","/Innovation","/investor",
                 "/career","/contactus"];
         var check=["About Us","Our Profile","Leadership","Women Leaders","Vision&Values",
@@ -25,6 +27,10 @@ const NavLocator=(props)=>{
         {
             if(info===check[i])
             {
+                if(link[i]===RouteValue)
+                {
+                    return;
+                }
                 props.closeNav();
                 navigate(link[i]);
                 return;
@@ -43,7 +49,7 @@ const NavLocator=(props)=>{
                     return (
                         <>
                         <div key={id} className="navlocator__each">
-                            <div className="navlocator__each__heading" onClick={()=>{onclickfunction(id,heading)}}>
+                            <div className="navlocator__each__heading" style={{cursor:"default"}}>
                                 {heading}
                             </div>
                             <div className="navlocator__white__line__outer">
@@ -71,7 +77,7 @@ const NavLocator=(props)=>{
                     return (
                         <>
                         <div key={id} className="navlocator__each">
-                            <div className="navlocator__each__heading"  onClick={()=>{onclickfunction(id,heading)}}>
+                            <div className="navlocator__each__heading" style={{cursor:"default"}}>
                                 {heading}
                             </div>
                             <NavLocatorEach closeNav={props.closeNav} data={data} index={id}/>

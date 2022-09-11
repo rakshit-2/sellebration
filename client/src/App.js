@@ -51,7 +51,6 @@ const App=(props)=>{
   }
 
 
-  console.log(navDisplay.nav)
   
 
 
