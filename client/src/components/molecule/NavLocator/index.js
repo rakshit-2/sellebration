@@ -1,13 +1,11 @@
 import './index.css';
 import items from './../../assets/store/NavData'
 import NavLocatorEach from './../../atom/NavLocatorEach/index'
-import { useNavigate,useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 
 const NavLocator=(props)=>{
     const navigate = useNavigate();
-    const location = useLocation();
-    var RouteValue=location.pathname;
     function onclickfunction(x,info)
     {
         var link=["/","our-profile","/leadership","/womenleadership","/visionvalue","/milestone",
@@ -27,11 +25,7 @@ const NavLocator=(props)=>{
         {
             if(info===check[i])
             {
-                if(link[i]===RouteValue)
-                {
-                    return;
-                }
-                props.closeNav();
+                props.closeNavClicked();
                 navigate(link[i]);
                 return;
             }
@@ -55,7 +49,7 @@ const NavLocator=(props)=>{
                             <div className="navlocator__white__line__outer">
                                 <div className="navlocator__white__line"></div>
                             </div>
-                            <NavLocatorEach closeNav={props.closeNav} data={data} index={id}/>
+                            <NavLocatorEach closeNav={props.closeNav} data={data} index={id} closeNavClicked={props.closeNavClicked}/>
                         </div>
                         <div className='navlocator__white__line__nav'>
                         </div>
@@ -67,7 +61,7 @@ const NavLocator=(props)=>{
                     return (
                         <>
                         <div key={id} className="navlocator__each">
-                            <NavLocatorEach closeNav={props.closeNav} data={data} index={id} icon={icon}/>
+                            <NavLocatorEach closeNav={props.closeNav} data={data} index={id} icon={icon} closeNavClicked={props.closeNavClicked}/>
                         </div>
                         </>
                     );
@@ -80,7 +74,7 @@ const NavLocator=(props)=>{
                             <div className="navlocator__each__heading" style={{cursor:"default"}}>
                                 {heading}
                             </div>
-                            <NavLocatorEach closeNav={props.closeNav} data={data} index={id}/>
+                            <NavLocatorEach closeNav={props.closeNav} data={data} index={id} closeNavClicked={props.closeNavClicked}/>
                         </div>
                         <div className='navlocator__white__line__nav'>
                         </div>

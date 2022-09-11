@@ -1,13 +1,11 @@
 import './index.css';
-import { useNavigate ,useLocation} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 
 
 const NavLocatorEach=(props)=>{
 
     const navigate = useNavigate();
-    const location = useLocation();
-    var RouteValue=location.pathname;
 
     function onclickfunction(x,info)
     {
@@ -28,10 +26,7 @@ const NavLocatorEach=(props)=>{
         {
             if(info===check[i])
             {
-                if(link[i]===RouteValue)
-                {
-                    return;
-                }
+                props.closeNavClicked();
                 props.closeNav();
                 navigate(link[i]);
                 return;

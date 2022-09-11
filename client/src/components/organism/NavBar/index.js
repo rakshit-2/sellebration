@@ -73,12 +73,19 @@ const NavBar=(props)=>{
     }
     props.closeNav("nav");
   }
+
+
+  function HomeRoute()
+  {
+    closeNavClicked();
+    navigate("/");
+  }
   return (
     <>
-    <NavPanel navDisplay={props.navDisplay} closeNav={props.closeNav}/>
+    <NavPanel navDisplay={props.navDisplay} closeNav={props.closeNav} closeNavClicked={closeNavClicked}/>
     <div className="navbar__outer" id="navbar">
       <div className="navbar__inner">
-        <div className="navbar__left" style={{cursor:"pointer"}} id="logo" onClick={()=>{navigate("/");}}>
+        <div className="navbar__left" style={{cursor:"pointer"}} id="logo" onClick={()=>{HomeRoute()}}>
           <img src={navbar_logo} className="navbar__logo"alt=""/>
         </div>
         <div className="navbar__right">
