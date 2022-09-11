@@ -1,11 +1,21 @@
 import './index.css';
 import Carousel from "react-multi-carousel";
+import { useEffect } from 'react';
 import "./../../../../node_modules/react-multi-carousel/lib/styles.css";
 import InvestorData from './../../assets/store/investorData';
 import Navbar from './../NavBar/index';
 import Footer from './../../molecule/footer/index';
 
 const Investor=(props)=>{
+
+
+  // scroll to top
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+
 
 
     const responsive = {

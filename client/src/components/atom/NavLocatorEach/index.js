@@ -7,13 +7,12 @@ const NavLocatorEach=(props)=>{
 
     const navigate = useNavigate();
 
-
     function onclickfunction(x,info)
     {
         var link=["/","our-profile","/leadership","/womenleadership","/visionvalue","/milestone",
                 "/bussinessbrand","/Sustainability","/csr",
                 "/csr","/bringchange","/OurStrategy",
-                "/StoriesofHope","/csr","Media","/mediarelease","/MediaReports",
+                "/StoriesofHope","/csr","/Media","/mediarelease","/pressreoprt",
                 "/Stories","/event","/Downloads","/OurLogo","/Innovation","/investor",
                 "/career","/contactus"];
         var check=["About Us","Our Profile","Leadership","Women Leaders","Vision&Values",
@@ -27,9 +26,9 @@ const NavLocatorEach=(props)=>{
         {
             if(info===check[i])
             {
+                props.closeNavClicked();
                 props.closeNav();
                 navigate(link[i]);
-                
                 return;
             }
             

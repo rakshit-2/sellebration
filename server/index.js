@@ -153,7 +153,15 @@ app.get('/media-release/all-data',(req,res)=>{
 
 
 
+// pressreport section data get
 
+app.get('/press-report/all-data',(req,res)=>{
+  var e=req.query.name;
+  const ele="select * from pressreport order by date asc;";
+  db.query(ele,(err,result)=>{
+    res.send(result)
+  })
+})
 
 
 

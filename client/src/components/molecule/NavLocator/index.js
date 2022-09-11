@@ -11,7 +11,7 @@ const NavLocator=(props)=>{
         var link=["/","our-profile","/leadership","/womenleadership","/visionvalue","/milestone",
                 "/bussinessbrand","/Sustainability","/csr",
                 "/csr","/bringchange","/OurStrategy",
-                "/StoriesofHope","/csr","Media","/mediarelease","/MediaReports",
+                "/StoriesofHope","/csr","/Media","/mediarelease","/pressreoprt",
                 "/Stories","/event","/Downloads","/OurLogo","/Innovation","/investor",
                 "/career","/contactus"];
         var check=["About Us","Our Profile","Leadership","Women Leaders","Vision&Values",
@@ -25,7 +25,7 @@ const NavLocator=(props)=>{
         {
             if(info===check[i])
             {
-                props.closeNav();
+                props.closeNavClicked();
                 navigate(link[i]);
                 return;
             }
@@ -43,13 +43,13 @@ const NavLocator=(props)=>{
                     return (
                         <>
                         <div key={id} className="navlocator__each">
-                            <div className="navlocator__each__heading" onClick={()=>{onclickfunction(id,heading)}}>
+                            <div className="navlocator__each__heading" style={{cursor:"default"}}>
                                 {heading}
                             </div>
                             <div className="navlocator__white__line__outer">
                                 <div className="navlocator__white__line"></div>
                             </div>
-                            <NavLocatorEach closeNav={props.closeNav} data={data} index={id}/>
+                            <NavLocatorEach closeNav={props.closeNav} data={data} index={id} closeNavClicked={props.closeNavClicked}/>
                         </div>
                         <div className='navlocator__white__line__nav'>
                         </div>
@@ -61,7 +61,7 @@ const NavLocator=(props)=>{
                     return (
                         <>
                         <div key={id} className="navlocator__each">
-                            <NavLocatorEach closeNav={props.closeNav} data={data} index={id} icon={icon}/>
+                            <NavLocatorEach closeNav={props.closeNav} data={data} index={id} icon={icon} closeNavClicked={props.closeNavClicked}/>
                         </div>
                         </>
                     );
@@ -71,10 +71,10 @@ const NavLocator=(props)=>{
                     return (
                         <>
                         <div key={id} className="navlocator__each">
-                            <div className="navlocator__each__heading"  onClick={()=>{onclickfunction(id,heading)}}>
+                            <div className="navlocator__each__heading" style={{cursor:"default"}}>
                                 {heading}
                             </div>
-                            <NavLocatorEach closeNav={props.closeNav} data={data} index={id}/>
+                            <NavLocatorEach closeNav={props.closeNav} data={data} index={id} closeNavClicked={props.closeNavClicked}/>
                         </div>
                         <div className='navlocator__white__line__nav'>
                         </div>

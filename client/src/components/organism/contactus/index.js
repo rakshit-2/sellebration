@@ -5,11 +5,22 @@ import Footer from './../../molecule/footer/index';
 import ContactUsSection1 from '../../molecule/contactusSection1';
 import ContactUsData from '../../assets/store/contactusData';
 import ReCAPTCHA from "react-google-recaptcha";
+import { useEffect } from 'react';
 
 const ContactUs=(props)=>{
+
+
+  // scroll to top
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+
+
     function onChange(value) {
         console.log("Captcha value:", value);
-      }
+    }
 return (
     <>
     <div className="contactus__outer">

@@ -1,10 +1,23 @@
 
 import './index.css';
+import { useEffect } from 'react';
 import Navbar from './../NavBar/index';
 import Footer from './../../molecule/footer/index';
 import milestoneData from './../../assets/store/milestoneData';
 
 const Milestone=(props)=>{
+
+
+  // scroll to top
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+
+
+
+
 return (
     <>
     <div className='milestone__outer'>

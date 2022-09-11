@@ -13,7 +13,7 @@ import Footer2 from './../../molecule/footer2/index';
 import Footer from './../../molecule/footer/index';
 import SocialFeed from '../../molecule/socialFeed';
 
-const MediaRelease=(props)=>{
+const PressReport=(props)=>{
 
 
 
@@ -50,7 +50,7 @@ const MediaRelease=(props)=>{
     const[errHiding,setErrHiding]=useState("none")
 
     const monthLis=["January","February","March","April","May","June","July","August","September","October","November","December"]
-    const[mediaReleaseLoading,setMediaReleaseLoading]=useState(true);
+    const[presseRportLoading,setPressReportLoading]=useState(true);
     
     
     
@@ -58,6 +58,9 @@ const MediaRelease=(props)=>{
     function filterAllData(li)
     {
         console.log(li)
+        var company_name=[{id:0,name:"Company Name"}];
+        var checker=[]
+        var k=1;
         var lis=[];
         for(var i=0;i<li.length;i++)
         {
@@ -67,25 +70,41 @@ const MediaRelease=(props)=>{
             var allDateData=parseInt(year+month+day);
 
             if(allDateData>=default_date)
-            {
+            {   
+                var flag=0;
+                for(var j=0;j<checker.length;j++)
+                {
+                    if(checker[j]==li[i].name)
+                    {
+                        flag=1;
+                        break
+                    }
+                }
+                if(flag===0)
+                {
+                    company_name.push({id:k,name:li[i].name});
+                    checker.push(li[i].name)
+                    k+=1;
+                }
                 lis.push(li[i]);
             }
         }
         lis.reverse();
+        setCompany(company_name);
         setAll(lis);
         setDisplayerData(lis);
         setPageLen(Math.ceil(lis.length/5))
     }
     
     useEffect(() => {
-        Axios.get(ApiLink+'/media-release/all-data',
+        Axios.get(ApiLink+'/press-report/all-data',
         {
         params:{
             name:"all",
         }
         }).then((res)=>{
             filterAllData(res.data);
-            setMediaReleaseLoading(false);
+            setPressReportLoading(false);
         })
     }, []);
 
@@ -98,7 +117,7 @@ const MediaRelease=(props)=>{
 
     function filterClicked()
     {
-        if(fromDate==="" || toDate==="")
+        if((cname==="" || cname==="Company Name") || fromDate==="" || toDate==="")
         {
             setErrHiding("flex")
             setTimeout(hidingError, 3000);
@@ -131,12 +150,15 @@ const MediaRelease=(props)=>{
 
                 if(dayFull>=fromDateFull && dayFull<=toDateFull)
                 {
-                    li.push(all[i])
+                    if(all[i].name==cname)
+                    {
+                        li.push(all[i])
+                    }
                 }
             }
             if(li.length===0)
             {
-                setDisplayerData([{id:0,name:"No Release Available",date:"Data",info:"",link:"",img:""}]);
+                setDisplayerData([{id:0,name:"No Report Available",date:"Data",info:"",link:"",img:""}]);
                 setPageLen(1)
             }
             else
@@ -183,80 +205,88 @@ const MediaRelease=(props)=>{
 
 return (
     <>
-    <div className="mediarelease__outer">
-        <div className="mediarelease__inner">
+    <div className="pressreport__outer">
+        <div className="pressreport__inner">
             <Navbar navDisplay={props.navDisplay} openNav={props.openNav}  closeNav={props.closeNav}/>
-            <div className="mediarelease__inner__section1">
-                <div className="mediarelease__inner__section1__inner">
-                    <div className="mediarelease__inner__section1__inner__top">
+            <div className="pressreport__inner__section1">
+                <div className="pressreport__inner__section1__inner">
+                    <div className="pressreport__inner__section1__inner__top">
                         Home / media
                     </div>
-                    <div className="mediarelease__inner__section1__inner__bottom">
-                        Media releases
+                    <div className="pressreport__inner__section1__inner__bottom">
+                        Press Report
                     </div>
                 </div>
             </div>
 
 
-            <div className='mediarelease__inner__section2'>
+            <div className='pressreport__inner__section2'>
                 {
-                    mediaReleaseLoading ? (
+                    presseRportLoading ? (
                         <div className='loading__outer' style={{width:"70%"}}>
                             <LoadingScreen/>    
                         </div>
                         
                     ):(
                         <>
-                        <div className='mediarelease__inner__section2__left'>
-                            <div className='mediarelease__inner__section2__left__panel'>
-                                <div className='mediarelease__inner__section2__left__panel__field'>
-                                    From {'\u00A0'}<img src={calendar_img} style={{width:"20px",height:"20px"}}/> {'\u00A0'}: {'\u00A0'} <input type="date" className='mediarelease__inner__section2__left__panel__fieldinn'  onChange={(e)=>{setFromDate(e.target.value)}}/>
+                        <div className='pressreport__inner__section2__left'>
+                            <div className='pressreport__inner__section2__left__panel'>
+                                <select className='pressreport__inner__section2__left__panel__field' onChange={(e)=>[setCname(e.target.value)]}>
+                                    {company.map((ele)=>{
+                                        const{id,name}=ele;
+                                        return(
+                                            <option key={id} value={name}>{name}</option>
+                                        )
+                                    })}
+                                </select>
+                                <div className='pressreport__inner__section2__left__panel__field'>
+                                    From {'\u00A0'}<img src={calendar_img} style={{width:"20px",height:"20px"}}/> {'\u00A0'}: {'\u00A0'} <input type="date" className='pressreport__inner__section2__left__panel__fieldinn'  onChange={(e)=>{setFromDate(e.target.value)}}/>
                                 </div>
-                                <div className='mediarelease__inner__section2__left__panel__field'>
-                                    To {'\u00A0'}<img src={calendar_img} style={{width:"20px",height:"20px"}}/> {'\u00A0'}:  {'\u00A0'}<input type="date" className='mediarelease__inner__section2__left__panel__fieldinn'  onChange={(e)=>{setToDate(e.target.value)}}/>
+                                <div className='pressreport__inner__section2__left__panel__field'>
+                                    To {'\u00A0'}<img src={calendar_img} style={{width:"20px",height:"20px"}}/> {'\u00A0'}:  {'\u00A0'}<input type="date" className='pressreport__inner__section2__left__panel__fieldinn'  onChange={(e)=>{setToDate(e.target.value)}}/>
                                 </div>
-                                <div className='mediarelease__inner__section2__button' onClick={()=>{filterClicked()}}>
+                                <div className='pressreport__inner__section2__button' onClick={()=>{filterClicked()}}>
                                     Filters
                                 </div>
                             </div>
-                            <div className='mediarelease__wronddata__modale' style={{display:errHiding}}>
-                                <div className='mediarelease__wronddata__modale__text'>
-                                    <img src={alert} className="mediarelease__wronddata__modale__text__img"></img>{'\u00A0'}{'\u00A0'}Invalid Information Entered 
+                            <div className='pressreport__wronddata__modale' style={{display:errHiding}}>
+                                <div className='pressreport__wronddata__modale__text'>
+                                    <img src={alert} className="pressreport__wronddata__modale__text__img"></img>{'\u00A0'}{'\u00A0'}Invalid Information Entered 
                                 </div>
                             </div>
-                            <div className='mediarelease__inner__section2__left__display'>
+                            <div className='pressreport__inner__section2__left__display'>
                                 {displayerData.slice(splicing.start, splicing.end).map((ele)=>{
-                                    const{id,date,info,link}=ele;
+                                    const{id,name,date,info,link}=ele;
                                     var year=date.slice(0,4);
                                     var month=parseInt(date.slice(5, 7));
                                     var day=date.slice(8,10);
                                     var date_value=day+" "+monthLis[month-1]+" "+year;
 
                                     return(
-                                        <MediaReleaseCard1 id={id} date={date_value} info={info} link={link} nameDisplay={"none"} buttonDisplay={"flex"}/>
+                                        <MediaReleaseCard1 id={id} name={name} date={date_value} info={info} link={link} nameDisplay={"flex"} buttonDisplay={"none"}/>
                                      )
                                 })} 
                             </div>
-                            <div className='mediarelease__inner__left__bottom__panel'>
-                                <div className='mediarelease__inner__left__bottom__panel__left' onClick={()=>{pageChange("dec")}}>
+                            <div className='pressreport__inner__left__bottom__panel'>
+                                <div className='pressreport__inner__left__bottom__panel__left' onClick={()=>{pageChange("dec")}}>
                                     <img src={arrow_left} style={{width:"80%",height:"80%"}}/>
                                 </div>
-                                <div className='mediarelease__inner__left__bottom__panel__line'>
+                                <div className='pressreport__inner__left__bottom__panel__line'>
                                     
                                 </div>
-                                <div className='mediarelease__inner__left__bottom__panel__page'>
-                                    <div className='mediarelease__inner__left__bottom__panel__page__each' style={{width:"50px",height:"50px",backgroundColor:"#0AB1EE"}}>
+                                <div className='pressreport__inner__left__bottom__panel__page'>
+                                    <div className='pressreport__inner__left__bottom__panel__page__each' style={{width:"50px",height:"50px",backgroundColor:"#0AB1EE"}}>
                                         {pageCount}
                                     </div>
                                     {'\u00A0'} of {'\u00A0'}
-                                    <div className='mediarelease__inner__left__bottom__panel__page__each' style={{width:"30px",height:"30px"}}>
+                                    <div className='pressreport__inner__left__bottom__panel__page__each' style={{width:"30px",height:"30px"}}>
                                         {pageLen}
                                     </div>
                                 </div>
-                                <div className='mediarelease__inner__left__bottom__panel__line'>
+                                <div className='pressreport__inner__left__bottom__panel__line'>
                                     
                                 </div>
-                                <div className='mediarelease__inner__left__bottom__panel__left' onClick={()=>{pageChange("inc")}}>
+                                <div className='pressreport__inner__left__bottom__panel__left' onClick={()=>{pageChange("inc")}}>
                                     <img src={arrow_right} style={{width:"80%",height:"80%"}}/>
                                 </div>
                             </div> 
@@ -275,4 +305,4 @@ return (
 );
 }
 
-export default MediaRelease;
+export default PressReport;

@@ -12,7 +12,11 @@ import {useState,useEffect} from 'react';
 
 const BringChange=(props)=>{
 
+  // scroll to top
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
 return (
     <>
