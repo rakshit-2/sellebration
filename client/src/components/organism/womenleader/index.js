@@ -1,6 +1,6 @@
 
 import './index.css';
-// import {useState} from React;
+import { useEffect } from 'react';
 import Navbar from './../NavBar/index';
 import Footer from './../../molecule/footer/index';
 import Carousel from "react-multi-carousel";
@@ -12,6 +12,22 @@ import WomenLeadershipCard1 from '../../atom/womenleadershipCard1';
 import WomenLeadershipCard2 from '../../atom/womenleadershipCard2';
 import React from 'react';
 const WomenLeadership=(props)=>{
+
+
+  // scroll to top
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+
+
+
+
+
+
+
+
 
   // const [files,setFiles]=useState();s
   const responsive = {

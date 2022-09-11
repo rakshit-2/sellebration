@@ -9,8 +9,21 @@ import CsrSection4 from '../../molecule/csrSection4';
 import CsrInitiativeData from '../../assets/store/csrinitiativeData';
 import CsrCard2 from '../../atom/csrCard2';
 import csr_pdf_img from './../../assets/image/csr_img/csr_policy_img.svg';
+import { useEffect } from 'react';
 
 const Csr=(props)=>{
+
+
+    // scroll to top
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
+
+
+
+
 return (
     <>
     <div className="csr__outer">

@@ -16,6 +16,15 @@ import SocialFeed from '../../molecule/socialFeed';
 const MediaRelease=(props)=>{
 
 
+
+    // scroll to top
+    
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
+
+
     const d = new Date();
     const Day=d.getDate();
     const Month=d.getMonth();

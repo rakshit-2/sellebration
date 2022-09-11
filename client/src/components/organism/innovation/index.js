@@ -5,7 +5,28 @@ import Footer from './../../molecule/footer/index';
 import image from '../../assets/image/innovation_img/innovation_img.svg';
 import Innovationdata from '../../assets/store/innovationData';
 import InnovationCard1 from '../../atom/innovationCard1';
+import { useEffect } from 'react';
+
+
+
+
+
 const Innovation=(props)=>{
+
+
+
+
+  // scroll to top
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+
+
+
+
+
 return (
     <>
     <div className='innovation_outer'>

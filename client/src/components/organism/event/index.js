@@ -17,6 +17,16 @@ import SocialFeed from '../../molecule/socialFeed';
 
 const Event=(props)=>{
 
+
+  // scroll to top
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+
+
+
     const d = new Date();
     const Day=d.getDate();
     const Month=d.getMonth();

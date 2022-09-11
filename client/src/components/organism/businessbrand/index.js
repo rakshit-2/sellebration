@@ -5,9 +5,18 @@ import Footer from './../../molecule/footer/index';
 import BusinessBrandData from '../../assets/store/businessbrandData';
 import BusinessbBandCard1 from '../../atom/businessbrandCard1';
 import test from './../../assets/image/test.png'
-import { useState } from 'react';
+import { useState,useEffect} from 'react';
 
 const BusinessBrand=(props)=>{
+
+
+  // scroll to top
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+
 
 
     const[readMore,setReadMore]=useState({

@@ -15,6 +15,18 @@ import profile from './../../assets/image/profile.png';
 
 
 const Leadership=(props)=>{
+
+
+
+  // scroll to top
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+
+
+
     
     const[director,setDirector]=useState([])
     const[head,setHead]=useState([])

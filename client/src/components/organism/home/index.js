@@ -23,6 +23,18 @@ import LoadingScreen from './../../atom/loadingScreen/index'
 
 const Home=(props)=>{
 
+
+
+  // scroll to top
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+
+
+
+
     const[recommended,setRecommended]=useState([<></>])
     const[csr,setCsr]=useState([<></>])
     const[leadership,setLeadership]=useState([<></>])
