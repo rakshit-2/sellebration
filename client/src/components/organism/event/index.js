@@ -112,6 +112,7 @@ const Event=(props)=>{
         {
             setErrHiding("flex")
             setTimeout(hidingError, 3000);
+            return;
         }
         else
         {
@@ -128,6 +129,7 @@ const Event=(props)=>{
             {
                 setErrHiding("flex")
                 setTimeout(hidingError, 3000);
+                return;
             }
             var li=[]
             for(var i=0;i<all.length;i++)

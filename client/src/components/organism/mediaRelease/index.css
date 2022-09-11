@@ -7,6 +7,10 @@
 .mediarelease__inner{
     width:100%;
     height:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 .mediarelease__inner__section1{
@@ -56,6 +60,7 @@
     align-items:flex-start;
     justify-content: space-between;
     margin-bottom: 4rem;
+    padding-top: 3rem;
 }
 
 
@@ -75,6 +80,7 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    margin-bottom: 3rem;
 }
 .mediarelease__inner__section2__left__panel__field{
     min-width:13rem;
@@ -194,7 +200,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 3rem;
     margin-bottom: 1rem;
 }
 .mediarelease__inner__left__bottom__panel__left{
