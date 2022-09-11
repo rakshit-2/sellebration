@@ -13,7 +13,7 @@ const NavLocatorEach=(props)=>{
         var link=["/","our-profile","/leadership","/womenleadership","/visionvalue","/milestone",
                 "/bussinessbrand","/Sustainability","/csr",
                 "/csr","/bringchange","/OurStrategy",
-                "/StoriesofHope","/csr","Media","/MediaReleases","/MediaReports",
+                "/StoriesofHope","/csr","Media","/mediarelease","/MediaReports",
                 "/Stories","/event","/Downloads","/OurLogo","/Innovation","/investor",
                 "/career","/contactus"];
         var check=["About Us","Our Profile","Leadership","Women Leaders","Vision&Values",

@@ -3,12 +3,17 @@ import Navbar from './../NavBar/index';
 import { useState,useEffect } from 'react';
 import Axios from 'axios';
 import ApiLink from './../../assets/store/apiLink'
-
 import LoadingScreen from './../../atom/loadingScreen/index';
 import test from './../../assets/image/test.png';
 import calendar_img from './../../assets/image/event/calendar_img.svg';
 import EventCard1 from '../../atom/eventCard1';
-import alert from './../../assets/image/event/alert.svg'
+import alert from './../../assets/image/event/alert.svg';
+import arrow_left from './../../assets/image/event/left_arrow.svg';
+import arrow_right from './../../assets/image/event/right_arrow.svg';
+import Footer2 from './../../molecule/footer2/index';
+import Footer from './../../molecule/footer/index';
+import SocialFeed from '../../molecule/socialFeed';
+
 
 const Event=(props)=>{
 
@@ -16,7 +21,7 @@ const Event=(props)=>{
     const Day=d.getDate();
     const Month=d.getMonth();
     const Year=d.getFullYear();
-    const default_date=Year+"-"+Month+"-"+Year;
+    const default_date=parseInt(Year+Month+Year);
 
 
 
@@ -27,7 +32,12 @@ const Event=(props)=>{
     const[cname,setCname]=useState("");
     const[fromDate,setFromDate]=useState("");
     const[toDate,setToDate]=useState("");
-
+    const[splicing,setSplicing]=useState({
+                                            start:0,
+                                            end:5,
+    })
+    const[pageCount,setPageCount]=useState(1);
+    const[pageLen,setPageLen]=useState();
 
     const[errHiding,setErrHiding]=useState("none")
 
@@ -39,16 +49,19 @@ const Event=(props)=>{
     
     function filterAllData(li)
     {
+        console.log(li)
         var lis=[];
         var company_name=[{id:0,name:"Company Name"}];
         var checker=[]
         var k=1;
         for(var i=0;i<li.length;i++)
         {
-            var year=parseInt(li[i].date.slice(0,4));
-            var month=parseInt(li[i].date.slice(5, 7));
-            var day=parseInt(li[i].date.slice(8,10));
-            if(day>=Day && month>=Month && year>=Year)
+            var year=li[i].date.slice(0,4);
+            var month=li[i].date.slice(5, 7);
+            var day=li[i].date.slice(8,10);
+            var allDateData=parseInt(year+month+day);
+
+            if(allDateData>=default_date)
             {
                 var flag=0;
                 for(var j=0;j<checker.length;j++)
@@ -71,6 +84,7 @@ const Event=(props)=>{
         setCompany(company_name);
         setAll(lis);
         setDisplayerData(lis);
+        setPageLen(Math.ceil(lis.length/5))
     }
     
     useEffect(() => {
@@ -133,13 +147,47 @@ const Event=(props)=>{
             }
             if(li.length===0)
             {
-                setDisplayerData([{id:0,name:"no data",date:"",info:"",link:"",img:""}]);
+                setDisplayerData([{id:0,name:"No event Available",date:"-",info:"",link:"",img:""}]);
+                setPageLen(1)
             }
             else
             {
                 setDisplayerData(li);
+                setPageLen(Math.ceil(li.length/5))
             }
            
+        }
+    }
+
+
+
+
+
+
+    
+    function pageChange(x)
+    {
+        if(x==="inc")
+        {
+            
+            if(pageCount!=pageLen)
+            {
+                var startele=splicing.start+5
+                var endele=splicing.end+5
+                setPageCount(pageCount+1)
+                setSplicing({start:startele,end:endele})
+            }
+        }
+        else if(x==="dec")
+        {
+            if(splicing.start!=0)
+            {
+                var startele=splicing.start-5
+                var endele=splicing.end-5
+                setPageCount(pageCount-1)
+                setSplicing({start:startele,end:endele})
+            }
+            
         }
     }
 return (
@@ -162,6 +210,7 @@ return (
                         </div>
                         
                     ):(
+                        <>
                         <div className='event__inner__section2__left'>
                             <div className='event__inner__section2__left__panel'>
                                 <select className='event__inner__section2__left__panel__field' onChange={(e)=>[setCname(e.target.value)]}>
@@ -189,7 +238,7 @@ return (
                                 </div>
                             </div>
                             <div className='event__inner__section2__left__display'>
-                                {displayerData.map((ele)=>{
+                                {displayerData.slice(splicing.start, splicing.end).map((ele)=>{
                                     const{id,name,date,info,link,img}=ele;
                                     var year=date.slice(0,4);
                                     var month=parseInt(date.slice(5, 7));
@@ -201,13 +250,46 @@ return (
                                     )
                                 })}
                             </div>
-                        </div>          
+                            <div className='event__inner__left__bottom__panel'>
+                                <div className='event__inner__left__bottom__panel__left' onClick={()=>{pageChange("dec")}}>
+                                    <img src={arrow_left} style={{width:"80%",height:"80%"}}/>
+                                </div>
+                                <div className='event__inner__left__bottom__panel__line'>
+                                    
+                                </div>
+                                <div className='event__inner__left__bottom__panel__page'>
+                                    <div className='event__inner__left__bottom__panel__page__each' style={{width:"50px",height:"50px",backgroundColor:"#0AB1EE"}}>
+                                        {pageCount}
+                                    </div>
+                                    {'\u00A0'} of {'\u00A0'}
+                                    <div className='event__inner__left__bottom__panel__page__each' style={{width:"30px",height:"30px"}}>
+                                        {pageLen}
+                                    </div>
+                                </div>
+                                <div className='event__inner__left__bottom__panel__line'>
+                                    
+                                </div>
+                                <div className='event__inner__left__bottom__panel__left' onClick={()=>{pageChange("inc")}}>
+                                    <img src={arrow_right} style={{width:"80%",height:"80%"}}/>
+                                </div>
+                            </div> 
+                        </div>
+                        
+                        </>         
                         )
                     }
-                <div className='event__inner__section2__right'>
-                    
-                </div>
+
+
+
+
+                <SocialFeed/>
+
             </div>
+
+
+            <Footer2/>
+            <Footer/>
+
         </div>
     </div>
     </>
