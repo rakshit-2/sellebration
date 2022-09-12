@@ -5,7 +5,8 @@ import Axios from 'axios';
 import ApiLink from '../../assets/store/apiLink';
 import calendar_img from './../../assets/image/event/calendar_img.svg';
 import LoadingScreen from '../../atom/loadingScreen';
-import share_img from './../../assets/image/event/share_img.svg';
+import StoriesCard1 from './../../atom/storiesCard1/index';
+import test from './../../assets/image/test.png'
 
 
 const Stories=(props)=>{
@@ -125,115 +126,47 @@ const Stories=(props)=>{
                         </div>
                         
                     ):(
-                    <div className='stories__inner__section2__display'>
-                        <div className='stories__inner__section2__col'>
-                            {displayerData.slice(splitting[0],splitting[1]).map((ele)=>{
-                                const{id,name,date,info,topic,link}=ele;
-                                var year=date.slice(0,4);
-                                var month=parseInt(date.slice(5, 7));
-                                var day=date.slice(8,10);
-                                var date_value=day+" "+monthLis[month-1]+" "+year;
-                                return(
-                                <div key={id} className='stories__inner__section2__col__each'>
-                                    <div className='stories__inner__section2__col__each__img'>
-
-                                    </div>
-                                    <div className='stories__inner__section2__col__each__text'>
-                                        <div className='stories__inner__section2__col__each__text__topic'>
-                                            {topic}
-                                        </div>
-                                        <div className='stories__inner__section2__col__each__text__date'>
-                                            {date_value}
-                                        </div>
-                                        <div className='stories__inner__section2__col__each__text__heading'>
-                                            {name}
-                                        </div>
-                                        <div className='stories__inner__section2__col__each__text__info'>
-                                            {info}
-                                        </div>
-                                        <div className='stories__inner__section2__button'>
-                                            Share {'\u00A0'}<img src={share_img} style={{width:"15px",height:"15px"}}/>
-                                        </div>
-                                    </div>
-                                </div>   
-                                 )
-                                
-                            })}
+                        <div className='stories__inner__section2__display'>
+                            <div className='stories__inner__section2__col'>
+                                {displayerData.slice(splitting[0],splitting[1]).map((ele)=>{
+                                    const{id,name,date,info,topic,link}=ele;
+                                    var year=date.slice(0,4);
+                                    var month=parseInt(date.slice(5, 7));
+                                    var day=date.slice(8,10);
+                                    var date_value=day+" "+monthLis[month-1]+" "+year;
+                                    return(
+                                        <StoriesCard1 id={id} name={name} date={date_value} info={info} topic={topic} link={link} img={test}/> 
+                                    )
+                                })}
+                            </div>
+                            <div className='stories__inner__section2__col'>
+                                {displayerData.slice(splitting[2],splitting[3]).map((ele)=>{
+                                    const{id,name,date,info,topic,link}=ele;
+                                    var year=date.slice(0,4);
+                                    var month=parseInt(date.slice(5, 7));
+                                    var day=date.slice(8,10);
+                                    var date_value=day+" "+monthLis[month-1]+" "+year;
+                                    return(
+                                        <StoriesCard1 id={id} name={name} date={date_value} info={info} topic={topic} link={link} img={test}/>
+                                    )
+                                })}
+                            </div>
+                            <div className='stories__inner__section2__col'>
+                                {displayerData.slice(splitting[4],splitting[5]).map((ele)=>{
+                                    const{id,name,date,info,topic,link}=ele;
+                                    var year=date.slice(0,4);
+                                    var month=parseInt(date.slice(5, 7));
+                                    var day=date.slice(8,10);
+                                    var date_value=day+" "+monthLis[month-1]+" "+year;
+                                    return(
+                                        <StoriesCard1 id={id} name={name} date={date_value} info={info} topic={topic} link={link} img={test}/>
+                                    )
+                                })}
+                            </div>
                         </div>
-                        <div className='stories__inner__section2__col'>
-                            {displayerData.slice(splitting[2],splitting[3]).map((ele)=>{
-                                const{id,name,date,info,topic,link}=ele;
-                                var year=date.slice(0,4);
-                                var month=parseInt(date.slice(5, 7));
-                                var day=date.slice(8,10);
-                                var date_value=day+" "+monthLis[month-1]+" "+year;
-                                return(
-                                <div  key={id} className='stories__inner__section2__col__each'>
-                                    <div className='stories__inner__section2__col__each__img'>
-
-                                    </div>
-                                    <div className='stories__inner__section2__col__each__text'>
-                                        <div className='stories__inner__section2__col__each__text__topic'>
-                                            {topic}
-                                        </div>
-                                        <div className='stories__inner__section2__col__each__text__date'>
-                                            {date_value}
-                                        </div>
-                                        <div className='stories__inner__section2__col__each__text__heading'>
-                                            {name}
-                                        </div>
-                                        <div className='stories__inner__section2__col__each__text__info'>
-                                            {info}
-                                        </div>
-                                        <div className='stories__inner__section2__button'>
-                                            Share {'\u00A0'}<img src={share_img} style={{width:"15px",height:"15px"}}/>
-                                        </div>
-                                    </div>
-                                </div> 
-                                 )
-                                
-                            })}
-                        </div>
-                        <div className='stories__inner__section2__col'>
-                            {displayerData.slice(splitting[4],splitting[5]).map((ele)=>{
-                                const{id,name,date,info,topic,link}=ele;
-                                var year=date.slice(0,4);
-                                var month=parseInt(date.slice(5, 7));
-                                var day=date.slice(8,10);
-                                var date_value=day+" "+monthLis[month-1]+" "+year;
-                                return(
-                                    <div  key={id} className='stories__inner__section2__col__each'>
-                                        <div className='stories__inner__section2__col__each__img'>
-    
-                                        </div>
-                                        <div className='stories__inner__section2__col__each__text'>
-                                            <div className='stories__inner__section2__col__each__text__topic'>
-                                                {topic}
-                                            </div>
-                                            <div className='stories__inner__section2__col__each__text__date'>
-                                                {date_value}
-                                            </div>
-                                            <div className='stories__inner__section2__col__each__text__heading'>
-                                                {name}
-                                            </div>
-                                            <div className='stories__inner__section2__col__each__text__info'>
-                                                {info}
-                                            </div>
-                                            <div className='stories__inner__section2__button'>
-                                                Share {'\u00A0'}<img src={share_img} style={{width:"15px",height:"15px"}}/>
-                                            </div>
-                                        </div>
-                                    </div>  
-                                )
-                            })}
-                        </div>
-                    </div>
                     )
                 }
-                
-                
             </div>
-
         </div>
     </div>
     </>
