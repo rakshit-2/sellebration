@@ -164,9 +164,18 @@ app.get('/press-report/all-data',(req,res)=>{
 })
 
 
+// Stories section data get
+
+app.get('/stories/all-data',(req,res)=>{
+  var e=req.query.name;
+  const ele="select * from stories order by date asc;";
+  db.query(ele,(err,result)=>{
+    res.send(result)
+  })
+})
 
 
 
 app.listen(port, () => {
-  console.log(`Listning at ${port}`)
+  console.log(`Listening at ${port}`)
 })
