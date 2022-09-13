@@ -6,6 +6,7 @@ import logo from '../../assets/image/navbar_img/navbar_logo_img.svg';
 import image from '../../assets/image/innovation_img/innovation_img.svg';
 import DownloadsData from '../../assets/store/downloadsData';
 import down from '../../assets/image/downoads_img/download_icon.svg';
+import Footer2 from '../../molecule/footer2';
 const Downloads=(props)=>{
     const responsive = {
         desktop: {
@@ -112,6 +113,48 @@ const Downloads=(props)=>{
                     })}
                     </Carousel>
                 </div>
+                <div className='downloads__sec3'>
+                    <div className='downloads__sec3__head'>
+                    Company logos
+                    </div>
+                    <div className='downloads__sec3__card'>
+                    <Carousel 
+                        responsive={responsive} 
+                        draggable
+                        autoPlay
+                        autoPlaySpeed={2000}
+                        infinite
+                        showDots={true}
+                        removeArrowOnDeviceType={["tablet", "mobile","desktop"]}>
+                        {DownloadsData.card2Data.map((ele)=>{
+                        const{id,size,data,img}=ele;
+                        return(
+                            <>
+                            <div className='downloads__card2__outer'>
+                                <div className='downloads__card2__img__outer'>
+                                    <img className='downloads__card2__img' src={img}/>  
+                                </div>
+                                
+                                <div className='downloads__card2__button__outer'>
+                                    <div className='downloads__card2__button__inner'>
+                                    Download
+                                    </div>
+                                </div>
+                                <div className='downloads__card2__size'>
+                                    ZIP {size}
+                                </div>
+
+                            </div>
+                            </>
+                        )
+                        })}
+                        </Carousel>
+                    </div>
+
+
+                </div>
+                <Footer2/>
+                <Footer/>
             </div>
         </div>
     
