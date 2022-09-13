@@ -130,7 +130,7 @@ app.get('/leadership/detail-each',(req,res)=>{
 
 app.get('/event/all-data',(req,res)=>{
   var e=req.query.name;
-  const ele="select * from event order by date asc;";
+  const ele="select * from event order by date desc;";
   db.query(ele,(err,result)=>{
     res.send(result)
   })
@@ -140,14 +140,42 @@ app.get('/event/all-data',(req,res)=>{
 
 
 
+// mediarelease section data get
+
+app.get('/media-release/all-data',(req,res)=>{
+  var e=req.query.name;
+  const ele="select * from mediarelease order by date asc;";
+  db.query(ele,(err,result)=>{
+    res.send(result)
+  })
+})
 
 
 
 
+// pressreport section data get
 
+app.get('/press-report/all-data',(req,res)=>{
+  var e=req.query.name;
+  const ele="select * from pressreport order by date asc;";
+  db.query(ele,(err,result)=>{
+    res.send(result)
+  })
+})
+
+
+// Stories section data get
+
+app.get('/stories/all-data',(req,res)=>{
+  var e=req.query.name;
+  const ele="select * from stories order by date asc;";
+  db.query(ele,(err,result)=>{
+    res.send(result)
+  })
+})
 
 
 
 app.listen(port, () => {
-  console.log(`Listning at ${port}`)
+  console.log(`Listening at ${port}`)
 })

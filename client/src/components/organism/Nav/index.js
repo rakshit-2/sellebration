@@ -7,7 +7,7 @@ const Nav=(props)=>{
     <div className='nav__outer' style={{display:props.navDisplay.nav}}>
       <div className="nav__inner">
         <div className='nav__inner__inner'>
-          <NavLocator closeNav={props.closeNav}/>
+          <NavLocator closeNav={props.closeNav} closeNavClicked={props.closeNavClicked}/>
         </div>
       </div>
     </div>

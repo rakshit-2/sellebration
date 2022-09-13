@@ -4,7 +4,7 @@ import Navbar from './../NavBar/index';
 import Footer from './../../molecule/footer/index';
 
 import section8_img from './../../assets/image/career/section8_background.svg';
-
+import { useEffect } from 'react';
 
 import Section1 from './../../molecule/careerSection1/index';
 import Section3 from './../../molecule/careerSection3/index';
@@ -14,6 +14,17 @@ import Section5 from './../../molecule/careerSection5/index';
 import Section6 from './../../molecule/careerSection6/index';
 
 const Career=(props)=>{
+
+
+    // scroll to top
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
+
+
+    
 return (
     <>
     <div className="career__outer">

@@ -23,10 +23,18 @@ import Womenleadership from './components/organism/womenleader/index';
 import ContactUs from './components/organism/contactus/index';
 import Career from './components/organism/career/index';
 import Investor from './components/organism/investor/index';
-import Event from './components/organism/event';
+import Event from './components/organism/event/index';
 import Err from './components/organism/err/index';
+<<<<<<< HEAD
 import Innovation from './components/organism/innovation';
 import Downloads from './components/organism/downloads';
+=======
+import Innovation from './components/organism/innovation/index';
+import MediaRelease from './components/organism/mediaRelease/index';
+import PressReport from './components/organism/pressreport/index';
+import Stories from './components/organism/stories/index';
+
+>>>>>>> 40157701efc6e367cdd170187194bebe659be24a
 const App=(props)=>{
 
 
@@ -50,7 +58,6 @@ const App=(props)=>{
   }
 
 
-  console.log(navDisplay.nav)
   
 
 
@@ -85,9 +92,18 @@ const App=(props)=>{
         <Route path="/career" element={<Career  navDisplay={navDisplay} openNav={openNav} closeNav={closeNav}/>} ></Route>
         <Route path="/investor" element={<Investor  navDisplay={navDisplay} openNav={openNav} closeNav={closeNav}/>} ></Route>
         <Route path="/event" element={<Event  navDisplay={navDisplay} openNav={openNav} closeNav={closeNav}/>} ></Route>
-        <Route path="/err" element={<Err navDisplay={navDisplay} openNav={openNav} closeNav={closeNav}/>} ></Route>
         <Route path="/innovation" element={<Innovation navDisplay={navDisplay} openNav={openNav} closeNav={closeNav}/>} ></Route>
+<<<<<<< HEAD
         <Route path="/downloads" element={<Downloads navDisplay={navDisplay} openNav={openNav} closeNav={closeNav}/>} ></Route>
+=======
+        <Route path="/mediarelease" element={<MediaRelease navDisplay={navDisplay} openNav={openNav} closeNav={closeNav}/>} ></Route>
+        <Route path="/pressreoprt" element={<PressReport navDisplay={navDisplay} openNav={openNav} closeNav={closeNav}/>} ></Route>
+        <Route path="/stories" element={<Stories navDisplay={navDisplay} openNav={openNav} closeNav={closeNav}/>} ></Route>
+        
+        
+        
+        <Route path="/err" element={<Err navDisplay={navDisplay} openNav={openNav} closeNav={closeNav}/>} ></Route>
+>>>>>>> 40157701efc6e367cdd170187194bebe659be24a
         <Route
             path="*"
             element={<Navigate to="/err" replace />}

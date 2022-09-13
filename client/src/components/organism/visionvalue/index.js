@@ -1,5 +1,6 @@
 
 import './index.css';
+import { useEffect } from 'react';
 import Navbar from './../NavBar/index';
 import Footer from './../../molecule/footer/index';
 import VisionValueSection1 from '../../molecule/visionvalueSection1';
@@ -7,6 +8,14 @@ import VisionValueSection2 from '../../molecule/visionvalueSection2';
 import quote_img from './../../assets/image/vision&values_img/quote_img.svg'
 
 const VisionValue=(props)=>{
+
+  // scroll to top
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+
 return (
     <>
     <div className="vision__outer">

@@ -23,6 +23,18 @@ import LoadingScreen from './../../atom/loadingScreen/index'
 
 const Home=(props)=>{
 
+
+
+  // scroll to top
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+
+
+
+
     const[recommended,setRecommended]=useState([<></>])
     const[csr,setCsr]=useState([<></>])
     const[leadership,setLeadership]=useState([<></>])
@@ -132,7 +144,9 @@ const Home=(props)=>{
                 <Navbar navDisplay={props.navDisplay} openNav={props.openNav}  closeNav={props.closeNav}/>
                 <div className="home__inner__inner">
                     <div className="home__inner__section1">
-                        <img src={map} className="home__inner__section1__img"/>
+                        <div className="home__inner__section1__img__outer">
+                            <img src={map} className="home__inner__section1__img"/>
+                        </div>
                     </div>
                     <div className="home__inner__section2">
                         <div className="home__inner__section2__heading">
