@@ -1,0 +1,305 @@
+.downloads__outer{
+    height: 100%;
+    width: 100%;
+}
+
+.downloads__inner{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+.downloads__sec1{
+    padding-top: 4.5rem;
+    height: 100vh;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    
+}
+.downloads__sec1__head{
+    
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: 'Montserrat';
+font-style: normal;
+font-weight: 500;
+font-size: 20px;
+line-height: 24px;
+text-transform: capitalize;
+
+color: #000000;
+}
+
+.downloads__sec1__head__right__inner{
+    height: fit-content;
+    width: fit-content;
+    background-color: #0AB1EE;
+    border-radius: 20px;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
+}
+.downloads__sec1__head__right{
+    height: fit-content;
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    
+}
+.downloads__sec1__bottom{
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.downloads__sec1__bottom__left{
+    height: fit-content;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: flex-start;
+}
+
+.downloads__sec1__bottom__left__1{
+    margin:1rem 0rem 1rem 0rem;
+    height:fit-content;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 49px;
+    text-transform: capitalize;
+    
+    color: #374E91;
+}
+
+.downloads__sec1__bottom__left__2{
+    
+    margin:1rem 0rem 1rem 0rem;
+    height:fit-content;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 28px;
+    /* or 117% */
+
+    text-transform: capitalize;
+
+    color: #374E91;
+}
+.downloads_head_logo{
+    width: 380px;
+height: 324px;
+background-color: white;
+}
+
+.downloads__sec1__bottom__right{
+   
+    height: fit-content;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+
+}
+
+.downloads__sec1__bottom__right__inner{
+margin-top: 4rem;
+height: fit-content;
+width: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+
+
+}
+.downloads__sec1__bottom__right__inner__left{
+height: fit-content;
+width: 45%;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items:flex-start;
+
+
+}
+.downloads__sec1__bottom__right__inner__right{
+    height: fit-content;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:flex-end;
+
+    
+}
+
+.downloads__sec1__bottom__right__inner__each1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.2rem 2rem 0.2 2rem;
+    height: 1.5rem;
+    width: 80%;
+    background: #0AB1EE;
+    border-radius: 30px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    text-transform: capitalize;
+
+    color: #FFFFFF;
+
+}
+
+.downloads__sec1__bottom__right__inner__each2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 1.5rem;
+    width: 80%;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    text-transform: capitalize;
+
+    color: #000000;
+}
+
+.downloads__sec2{
+    height: fit-content;
+    width: 100%;
+    background-color:#375992;
+    padding-top: 2rem;
+    padding-bottom:2rem ;
+}
+
+.downloads__card1__outer{
+    /* margin: 2rem 2rem; */
+    height: fit-content;
+    width: 20rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+    margin: auto;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+.downloads__card1__img{
+    width: 320px;
+    height: 213px;
+    
+}
+.downloads__card1__img__outer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    width: 100%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+}
+
+.downloads__card1__data{
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 315px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+    text-transform: capitalize;
+
+    color: #FFFFFF;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.downloads__card1__button__outer{
+height: fit-content;
+width: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.downloads__card1__button__inner{
+    width: 80%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:0.5rem 0.5rem 0.5rem 0.5rem;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 20px;
+    background-color: #0AB1EE;
+    text-transform: capitalize;
+    border-radius: 20px;
+    color: #FFFFFF;
+}
+
+.downloads__card1__size{
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+
+    text-transform: capitalize;
+
+    color: #FFFFFF;
+    margin-top: 0.5rem;
+    margin-bottom: 2rem;
+}
