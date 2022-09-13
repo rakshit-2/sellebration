@@ -59,7 +59,6 @@ const Event=(props)=>{
     
     function filterAllData(li)
     {
-        console.log(li)
         var lis=[];
         var company_name=[{id:0,name:"Company Name"}];
         var checker=[]
