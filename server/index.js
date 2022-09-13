@@ -198,6 +198,34 @@ app.get('/investor/company-data',(req,res)=>{
 })
 
 
+
+
+
+// innovation_insight section data get
+
+app.get('/innovation/insight-data',(req,res)=>{
+  var e=req.query.name;
+  const ele="select * from Innovation_Insight order by id asc;";
+  db.query(ele,(err,result)=>{
+    res.send(result)
+  })
+})
+
+app.get('/innovation/card-data',(req,res)=>{
+  var e=req.query.name;
+  const ele="select * from Innovation_Card order by id asc;";
+  db.query(ele,(err,result)=>{
+    res.send(result)
+  })
+})
+
+
+
+
+
+
+
+
 app.listen(port, () => {
   console.log(`Listening at ${port}`)
 })

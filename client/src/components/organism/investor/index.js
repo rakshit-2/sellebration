@@ -106,7 +106,7 @@ return (
                 </div>
                 {
                     updateLoading ? (
-                        <div className='loading__outer' style={{width:"70%"}}>
+                        <div className='loading__outer' >
                             <LoadingScreen/>    
                         </div>
                         
