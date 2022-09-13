@@ -129,6 +129,14 @@
     text-transform: capitalize;
     color: #374E91;
 }
+.investor__inner__section3__displayouter{
+    width:100%;
+    height:fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
 .investor__inner__section3__display{
     width:100%;
     height:fit-content;
@@ -212,4 +220,5 @@
     text-transform: capitalize;
     color: #FFFFFF;
     margin: 1rem;
+    cursor: pointer;
 }
