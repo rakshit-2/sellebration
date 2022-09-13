@@ -26,7 +26,7 @@ import Investor from './components/organism/investor/index';
 import Event from './components/organism/event';
 import Err from './components/organism/err/index';
 import Innovation from './components/organism/innovation';
-
+import Downloads from './components/organism/downloads';
 const App=(props)=>{
 
 
@@ -87,6 +87,7 @@ const App=(props)=>{
         <Route path="/event" element={<Event  navDisplay={navDisplay} openNav={openNav} closeNav={closeNav}/>} ></Route>
         <Route path="/err" element={<Err navDisplay={navDisplay} openNav={openNav} closeNav={closeNav}/>} ></Route>
         <Route path="/innovation" element={<Innovation navDisplay={navDisplay} openNav={openNav} closeNav={closeNav}/>} ></Route>
+        <Route path="/downloads" element={<Downloads navDisplay={navDisplay} openNav={openNav} closeNav={closeNav}/>} ></Route>
         <Route
             path="*"
             element={<Navigate to="/err" replace />}
