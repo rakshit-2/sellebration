@@ -176,6 +176,28 @@ app.get('/stories/all-data',(req,res)=>{
 
 
 
+
+// investor_update section data get
+
+app.get('/investor/update-data',(req,res)=>{
+  var e=req.query.name;
+  const ele="select * from investor_update order by id asc;";
+  db.query(ele,(err,result)=>{
+    res.send(result)
+  })
+})
+
+// investor_company section data get
+
+app.get('/investor/company-data',(req,res)=>{
+  var e=req.query.name;
+  const ele="select id,name,info from investor_Company order by id asc;";
+  db.query(ele,(err,result)=>{
+    res.send(result)
+  })
+})
+
+
 app.listen(port, () => {
   console.log(`Listening at ${port}`)
 })
