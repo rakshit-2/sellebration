@@ -7,6 +7,8 @@ import ContactUsData from '../../assets/store/contactusData';
 import ReCAPTCHA from "react-google-recaptcha";
 import { useEffect, useState } from 'react';
 import alert from './../../assets/image/event/alert.svg';
+import Axios from 'axios';
+import ApiLink from './../../assets/store/apiLink';
 
 const ContactUs=(props)=>{
 
@@ -18,19 +20,21 @@ const ContactUs=(props)=>{
         window.scrollTo(0, 0);
     }, []);
 
-    const ariaLabel = { 'aria-label': 'description' };
+
     const[name,setName]=useState("");
     const[email,setEmail]=useState("");
     const[organisation,setOrganisation]=useState("");
     const[contactNumber,setContactNumber]=useState("");
     const[queryIsFor,setQueryIsFor]=useState("Select Company");
-    const[quaryType,setQuaryType]=useState("Select Query");
+    const[queryType,setQueryType]=useState("Select Query");
     const[yourQuery,setYourQuery]=useState("");
     const[errorMessage,setErrorMessage]=useState("fill all * marked fields")
     const[errHiding,setErrHiding]=useState("none");
-
-
-
+    const[confirmMessage,setConfirmMessage]=useState("none");
+    const[submitClickedChange,setSubmitClickedChange]=useState({
+                                                                
+    });
+    
   
 
 
@@ -67,7 +71,7 @@ const ContactUs=(props)=>{
 
     function checkerSelect2(e,name)
     {
-        setQuaryType(name);
+        setQueryType(name);
     }
 
 
@@ -81,7 +85,6 @@ const ContactUs=(props)=>{
 
     function ContactUsSubmit()
     {
-        // var li=[name,email,organisation,contactNumber,queryIsFor,quaryType,yourQuery];
         if(name==="")
         {
             setErrHiding("flex");
@@ -91,7 +94,7 @@ const ContactUs=(props)=>{
         }
         else
         {
-            let flagname=/^[A-Za-z]+$/;
+            let flagname=/^[A-Z a-z]+$/;
             if(flagname.test(name)===false)
             {
                 setErrHiding("flex");
@@ -129,7 +132,7 @@ const ContactUs=(props)=>{
         }
         
         
-        if(quaryType==="Select Query")
+        if(queryType==="Select Query")
         {
             setErrHiding("flex");
             setErrorMessage("Select Quary Type");
@@ -145,6 +148,21 @@ const ContactUs=(props)=>{
             setTimeout(hidingError, 3000);
             return;
         }
+
+
+        Axios.post(ApiLink+'/contact-us/full-data',
+        {
+            name:name,
+            email:email,
+            org:organisation,
+            contact:contactNumber,
+            qfor:queryIsFor,
+            qtype:queryType,
+            yourQ:yourQuery,
+
+        }).then((res)=>{
+            setConfirmMessage("")
+        })
 
 
     }
@@ -231,6 +249,12 @@ const ContactUs=(props)=>{
                 <div className='contactus__inner__seaction2__bottom__out'>
                     <div className='contactus__inner__seaction2__button' onClick={()=>{ContactUsSubmit()}}>
                         Submit
+                    </div>
+                    <div className='contactus__inner__seaction2__button'>
+                        Sending...
+                    </div>
+                    <div className='contactus__inner__seaction2__button'>
+                        Success
                     </div>
                 </div>
                 
