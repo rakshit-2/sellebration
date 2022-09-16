@@ -14,7 +14,7 @@ return (
                 {CsrStoriesData.intro.button}
             </div>
         </div>
-        <div className='csr__inner__section4__display'>
+        <div className='csr__inner__section4__display' data-aos="fade-up">
             {CsrStoriesData.display.map((ele)=>{
                 const{id,heading,img,text}=ele;
                 return(
