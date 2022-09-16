@@ -21,10 +21,11 @@
     flex-direction: column;
     align-items:center;
     justify-content: center;
+    overflow-x: hidden;
 }
 .home__inner__section1{
     width:100%;
-    height:96vh;
+    height:100vh;
     display: flex;
     align-items: center;
     justify-content: center;

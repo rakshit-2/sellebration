@@ -248,7 +248,7 @@ return (
                                     <img src={alert} className="event__wronddata__modale__text__img"></img>{'\u00A0'}{'\u00A0'}Invalid Information Entered 
                                 </div>
                             </div>
-                            <div className='event__inner__section2__left__display'>
+                            <div className='event__inner__section2__left__display'  data-aos="fade-right">
                                 {displayerData.slice(splicing.start, splicing.end).map((ele)=>{
                                     const{id,name,date,info,link,img}=ele;
                                     var year=date.slice(0,4);
@@ -257,7 +257,7 @@ return (
                                     var date_value=day+" "+monthLis[month-1]+" "+year;
 
                                     return(
-                                        <EventCard1 test={test} id={id} name={name} info={info} link={link} img={img} date_value={date_value}/>
+                                        <EventCard1 test={test} id={id} name={name} info={info} link={link} img={img} date_value={date_value} />
                                     )
                                 })}
                             </div>
@@ -293,7 +293,7 @@ return (
 
 
 
-                <SocialFeed/>
+                <SocialFeed />
 
             </div>
 

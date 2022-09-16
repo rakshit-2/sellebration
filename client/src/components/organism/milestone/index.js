@@ -38,7 +38,7 @@ return (
             </div>
             <div className="milestone__display__inner">
                 <div className="milestone__display__inner__middle"></div>
-                {milestoneData.map((ele) => {
+                {milestoneData.reverse().map((ele) => {
                     const {id,year,data}=ele;
                     return(
                         <>

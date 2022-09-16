@@ -87,7 +87,7 @@ const Innovation=(props)=>{
                     <div className='innovation__sec1__bottom'>
                         <div className='innovation__sec1__bottom__image'>
                         </div>
-                        <div className='innovation__sec1__bottom__inner'>
+                        <div className='innovation__sec1__bottom__inner' data-aos="fade-up">
                             <div className='innovation__sec1__bottom__inner_head'>
                             Innovation insights
                             </div>
@@ -102,7 +102,7 @@ const Innovation=(props)=>{
                                 </div>
                                     
                                 ):(
-                                <div className='innovation__sec1__bottom__inner_card'>
+                                <div className='innovation__sec1__bottom__inner_card' >
                                     {insight.map((ele)=>{
                                         const{id,info}=ele;
                                         return(
