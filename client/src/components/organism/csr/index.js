@@ -4,8 +4,6 @@ import Navbar from './../NavBar/index';
 
 
 
-import AOS from 'aos';
-import 'aos/dist/aos.css'
 
 
 import Footer from './../../molecule/footer/index';
@@ -29,12 +27,7 @@ const Csr=(props)=>{
 
 
 
-    AOS.init({
-        offset: 200,
-        duration: 600,
-        easing: 'ease-in-sine',
-        delay: 100,
-    });
+    
 
 
 return (
@@ -134,8 +127,8 @@ return (
             </div>
 
             <div className='csr__inner__section6'>
-                <div className='csr__inner__section6__inner' data-aos="fade-up">
-                    <div className='csr__inner__section6__inner__each'>
+                <div className='csr__inner__section6__inner'>
+                    <div className='csr__inner__section6__inner__each'  data-aos="fade-left">
                         <div className='csr__inner__section6__inner__each__left'>
                             Businesses:
                         </div>
@@ -144,7 +137,7 @@ return (
                         </div>
                     </div>
 
-                    <div className='csr__inner__section6__inner__each'>
+                    <div className='csr__inner__section6__inner__each'  data-aos="fade-right">
                         <div className='csr__inner__section6__inner__each__left'>
                             Sellebration:
                         </div>

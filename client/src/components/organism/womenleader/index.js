@@ -2,9 +2,6 @@
 import './index.css';
 import { useEffect } from 'react';
 
-import AOS from 'aos';
-import 'aos/dist/aos.css'
-
 
 import Navbar from './../NavBar/index';
 import Footer from './../../molecule/footer/index';
@@ -25,14 +22,6 @@ const WomenLeadership=(props)=>{
       window.scrollTo(0, 0);
     }, []);
 
-
-
-    AOS.init({
-      offset: 200,
-      duration: 600,
-      easing: 'ease-in-sine',
-      delay: 100,
-  });
 
 
 

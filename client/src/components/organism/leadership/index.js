@@ -6,8 +6,6 @@ import ApiLink from '../../assets/store/apiLink';
 import {useState,useEffect} from 'react';
 
 
-import AOS from 'aos';
-import 'aos/dist/aos.css'
 
 
 import LeadershipPanelData from './../../assets/store/leadershippanelData';
@@ -28,12 +26,6 @@ const Leadership=(props)=>{
         window.scrollTo(0, 0);
     }, []);
 
-    AOS.init({
-        offset: 200,
-        duration: 600,
-        easing: 'ease-in-sine',
-        delay: 100,
-    });
 
 
     
