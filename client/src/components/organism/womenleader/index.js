@@ -1,6 +1,8 @@
 
 import './index.css';
 import { useEffect } from 'react';
+
+
 import Navbar from './../NavBar/index';
 import Footer from './../../molecule/footer/index';
 import Carousel from "react-multi-carousel";
@@ -14,14 +16,11 @@ import React from 'react';
 const WomenLeadership=(props)=>{
 
 
-  // scroll to top
+    // scroll to top
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
-
-
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
 
 
 
@@ -72,7 +71,7 @@ return (
                     </Carousel>
                 
             </div>
-            <div className='womenleader__sec2'>
+            <div className='womenleader__sec2' data-aos="fade-up">
                   <div className='womenleader__sec2__head'>
                   Expanding Horizons
                   </div>
@@ -82,7 +81,7 @@ return (
                   <div className='womenleader__sec3__head'>
                   Redefining Boundaries
                   </div>
-                  <div className='womenleader__sec3__cards'>
+                  <div className='womenleader__sec3__cards' data-aos="fade-up">
                       {
                         WomenLeadershipCardData.boundryData.map((ele)=>{
                             const{id,title,info}=ele;
@@ -96,7 +95,7 @@ return (
                   <div className='womenleader__sec3__head'>
                  Better Together
                   </div>
-                  <div className='womenleader__sec3__cards'>
+                  <div className='womenleader__sec3__cards' data-aos="fade-up">
                       {
                         WomenLeadershipCardData.betterData.map((ele)=>{
                             const{id,title,info}=ele;

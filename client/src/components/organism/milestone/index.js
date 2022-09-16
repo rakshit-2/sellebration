@@ -7,11 +7,6 @@ import milestoneData from './../../assets/store/milestoneData';
 
 
 
-import AOS from 'aos';
-import 'aos/dist/aos.css'
-
-
-
 const Milestone=(props)=>{
 
 
@@ -20,13 +15,6 @@ const Milestone=(props)=>{
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
-
-    AOS.init({
-        offset: 200,
-        duration: 600,
-        easing: 'ease-in-sine',
-        delay: 100,
-    });
 
 
 
