@@ -1,6 +1,12 @@
 
 import './index.css';
 import { useEffect } from 'react';
+
+
+import AOS from 'aos';
+import 'aos/dist/aos.css'
+
+
 import Navbar from './../NavBar/index';
 import Footer from './../../molecule/footer/index';
 import VisionValueSection1 from '../../molecule/visionvalueSection1';
@@ -9,12 +15,18 @@ import quote_img from './../../assets/image/vision&values_img/quote_img.svg'
 
 const VisionValue=(props)=>{
 
-  // scroll to top
+    // scroll to top
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
+    AOS.init({
+        offset: 200,
+        duration: 600,
+        easing: 'ease-in-sine',
+        delay: 100,
+    });
 
 return (
     <>
@@ -30,7 +42,7 @@ return (
                 <div className="vision__bottom__head">
                     Why Do We Follow This?
                 </div>
-                <div  className="vision__bottom__content">
+                <div  className="vision__bottom__content"  data-aos="fade-up">
                     <div className="vision__bottom__content__left">
                         <div className="vision__bottom__content1">
                         Lorem Ipsum is simply dummy text 
