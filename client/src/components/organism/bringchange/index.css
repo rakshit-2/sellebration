@@ -74,9 +74,10 @@ color: rgba(0, 0, 0, 0.7);
 .bringchange__sec2__buttons{
     width: 100%;
     height: fit-content;
+    margin-top: 2rem;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
 
 }
@@ -90,7 +91,13 @@ color: rgba(0, 0, 0, 0.7);
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
     
+}
+
+.bringchange__sec2__button1__images{
+    width: 1273px;
+height: 562px;
 }
 
 .bringchange__sec2__button1_img{
@@ -99,6 +106,7 @@ color: rgba(0, 0, 0, 0.7);
     position: absolute;
     margin-top: 1.9rem;
     display: none;
+    
 }
 
 .bringchange__sec2__button1__head{
@@ -111,7 +119,7 @@ color: rgba(0, 0, 0, 0.7);
     display: flex;
     align-items: center;
     border-radius: 30px;
-    background-color:#2F528E;
+    background-color:#0AB1EE;
 }
 
 .bringchange__sec3{
