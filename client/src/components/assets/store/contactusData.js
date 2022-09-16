@@ -39,17 +39,19 @@ const ContactUsData={
     ]
     ,
     selectCompany:[
-        {id:0,name:"company1"},
-        {id:1,name:"company2"},
-        {id:2,name:"company3"},
-        {id:3,name:"company4"}
+        {id:0,name:"Select Company"},
+        {id:1,name:"company1"},
+        {id:2,name:"company2"},
+        {id:3,name:"company3"},
+        {id:4,name:"company4"}
 
     ],
     selectQuery:[
-        {id:0,name:"query1"},
-        {id:1,name:"query2"},
-        {id:2,name:"query3"},
-        {id:3,name:"query4"}
+        {id:0,name:"Select Query"},
+        {id:1,name:"query1"},
+        {id:2,name:"query2"},
+        {id:3,name:"query3"},
+        {id:4,name:"query4"}
 
     ]
     ,

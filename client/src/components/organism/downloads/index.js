@@ -7,7 +7,18 @@ import image from '../../assets/image/innovation_img/innovation_img.svg';
 import DownloadsData from '../../assets/store/downloadsData';
 import down from '../../assets/image/downoads_img/download_icon.svg';
 import Footer2 from '../../molecule/footer2';
+import { useEffect } from 'react';
+
+
 const Downloads=(props)=>{
+
+
+    // scroll to top
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     const responsive = {
         desktop: {
           breakpoint: { max: 3000, min: 1024 },
