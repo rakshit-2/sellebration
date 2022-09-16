@@ -5,16 +5,28 @@ import Navbar from './../NavBar/index';
 import Footer from './../../molecule/footer/index';
 import milestoneData from './../../assets/store/milestoneData';
 
+
+
+import AOS from 'aos';
+import 'aos/dist/aos.css'
+
+
+
 const Milestone=(props)=>{
 
 
-  // scroll to top
+    // scroll to top
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
-
+    AOS.init({
+        offset: 200,
+        duration: 600,
+        easing: 'ease-in-sine',
+        delay: 120,
+    });
 
 
 
@@ -52,12 +64,12 @@ return (
                         {
                             return(
                             <>
-                            <div key={id} className="milestone__display__inner__inner1">
+                            <div key={id} className="milestone__display__inner__inner1" data-aos="fade-right">
                                 <div className="milestone__display__inner__inner__right">
-                                <div className="milestone__display__inner__inner__ele"></div>
-                                <div className="milestone__display__inner__inner__info">
-                                {info}
-                                </div>
+                                    <div className="milestone__display__inner__inner__ele"></div>
+                                    <div className="milestone__display__inner__inner__info">
+                                    {info}
+                                    </div>
                                 </div>
                             </div>
                             </>
@@ -66,13 +78,13 @@ return (
                         else
                         {
                             return(
-                            <div key={id} className="milestone__display__inner__inner2">
-                            <div className="milestone__display__inner__inner__left">
-                                <div className="milestone__display__inner__inner__info">
-                                {info}
+                            <div key={id} className="milestone__display__inner__inner2"  data-aos="fade-left">
+                                <div className="milestone__display__inner__inner__left">
+                                    <div className="milestone__display__inner__inner__info">
+                                    {info}
+                                    </div>
+                                    <div className="milestone__display__inner__inner__ele"></div>
                                 </div>
-                                <div className="milestone__display__inner__inner__ele"></div>
-                            </div>
                             </div>
                             )
                         }
