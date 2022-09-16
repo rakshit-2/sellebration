@@ -28,17 +28,18 @@
 .contactus__inner__seaction2{
     width:100%;
     height:fit-content;
+    min-height: 100vh;
     background-size: cover;
     background-repeat: no-repeat;
     background-image: url('./../../assets/image/nav_img/nav_background_img.svg');
 }
 .contactus__inner__seaction2__heading{
     width:100%;
-    height:5rem;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    height:3rem;
+    padding-top: 3rem;
+    padding-bottom: 1rem;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
     font-family: 'Montserrat';
     font-style: normal;
@@ -46,7 +47,7 @@
     font-size: 40px;
     line-height: 20px;
     text-transform: capitalize;
-    color: #FFFFFF;
+    color: white;
 }
 .contactus__inner__seaction2__dispaly{
     width:100%;
@@ -58,13 +59,15 @@
 }
 
 .contactus__inner__seaction2__dispaly__each{
-    width:500px;
+    width:450px;
     height:fit-content;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     margin:1rem;
+    margin-right: 2rem;
+    margin-left: 2rem;
 }
 .contactus__inner__seaction2__dispaly__each__heading{
     width:100%;
@@ -83,7 +86,7 @@
 .contactus__inner__seaction2__dispaly__each__input{
     width:100%;
     height:2rem;
-    background: #FFFFFF;
+    background: white;
     border-radius: 30px;
     font-family: 'Montserrat';
     font-style: normal;
@@ -94,14 +97,12 @@
     border-radius: 20px;
     border:none;
     outline: none;
-    text-transform: capitalize;
 }
 
 .contactus__inner__seaction2__bottom__out{
     width:100%;
     height:5rem;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding-top: 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -128,6 +129,7 @@
     text-transform: capitalize;
     color: #FFFFFF;
     background-color: #0AB1EE;
+    cursor: pointer;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
@@ -139,6 +141,7 @@
 .contactus__inner__seaction3{
     width:100%;
     height:fit-content;
+    min-height: 100vh;
     height:fit-content;
     display: flex;
     align-items: center;
@@ -186,8 +189,49 @@
 .contactus__inner__seaction3__right{
     width:55%;
     margin:2rem;
-    height:40rem;
+    height:35rem;
     background-size: cover;
     background-repeat: no-repeat;
     background-image: url('./../../assets/image/map.svg');
+}
+
+@keyframes errDisplayOutContactUs {
+    0%{
+        opacity: 1;
+        height:2rem;
+    }
+    100%{
+        opacity: 0;
+        height:0px;
+    }
+}
+.conatctus__error__display{
+    width:100%;
+    height:fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+    
+}
+.conatctus__error__display__inner{
+    width:fit-content;
+    height: 2rem;
+    animation-duration: 0.5s;
+    animation-delay: 2.5s;
+    animation-name: errDisplayOutContactUs;
+    transform: 1s;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 28px;
+    letter-spacing: 0.05em;
+    color: rgba(0, 0, 0, 0.77);
+    background-color: white;
+    border-radius: 10px;
 }

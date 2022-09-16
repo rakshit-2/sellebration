@@ -1,4 +1,4 @@
-import logo from './../../assets/image/innovation_img/innovation_img1.svg';
+import logo from './../../assets/image/test.png';
 import image from './../image/test.png';
 const Innovationdata={
     cardData:[
