@@ -3,6 +3,9 @@ import './index.css';
 import Axios from 'axios';
 import {useState,useEffect} from 'react';
 
+import AOS from 'aos';
+import 'aos/dist/aos.css'
+
 
 import ApiLink from './../../assets/store/apiLink';
 import Carousel from "react-multi-carousel";
@@ -32,7 +35,12 @@ const Home=(props)=>{
   }, []);
 
 
-
+    AOS.init({
+        offset: 200,
+        duration: 600,
+        easing: 'ease-in-sine',
+        delay: 120,
+    });
 
 
     const[recommended,setRecommended]=useState([<></>])
@@ -148,7 +156,7 @@ const Home=(props)=>{
                             <img src={map} className="home__inner__section1__img"/>
                         </div>
                     </div>
-                    <div className="home__inner__section2">
+                    <div className="home__inner__section2" data-aos="fade-up"> 
                         <div className="home__inner__section2__heading">
                             Our Stories
                         </div>
@@ -217,11 +225,11 @@ const Home=(props)=>{
                         </div>
                     </div>
                     <div className="home__inner__section3">
-                        <div className="home__inner__section3__heading">
+                        <div className="home__inner__section3__heading" data-aos="fade-up">
                             Latest news
                         </div>
-                        <div className='home__inner__section3__display'>
-                            <div className='home__inner__section3__display__left'>
+                        <div className='home__inner__section3__display' >
+                            <div className='home__inner__section3__display__left' data-aos="fade-right">
                             {
                                 loadingLatestNews ? (
                                     <div className='loading__outer'>
@@ -257,7 +265,7 @@ const Home=(props)=>{
                                 )
                             }
                             </div>
-                            <div className='home__inner__section3__display__right'>
+                            <div className='home__inner__section3__display__right' data-aos="fade-left">
                                 <iframe className='home__inner__section3__display__right__vid' src="https://www.youtube.com/embed/HlWISmjCfb8" title="Kanye West - Heartless (Lyrics)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                 <div className='home__inner__section3__display__right__vidbottom'>
                                     <div className='home__inner__section3__display__right__vidbottom__button'>
@@ -274,7 +282,7 @@ const Home=(props)=>{
                     </div>
                     {/* section 4 */}
                     <div className='home__inner__section4'>
-                        <div className='home__inner__section4__left'>
+                        <div className='home__inner__section4__left' data-aos="fade-right">
                             <img src={twitter} className="home__inner__section4__img"/>
                             <div className='home__inner__section4__left__out'>
                                 {HomeNewsData.map((ele) => {
@@ -287,7 +295,7 @@ const Home=(props)=>{
                                 })}
                             </div>
                         </div>
-                        <div className='home__inner__section4__left'>
+                        <div className='home__inner__section4__left' data-aos="fade-left">
                             <img src={facebook} className="home__inner__section4__img"/>
                             <div className='home__inner__section4__left__out'>
                                 {HomeNewsData.map((ele) => {
