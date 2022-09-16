@@ -30,9 +30,11 @@ const ContactUs=(props)=>{
     const[yourQuery,setYourQuery]=useState("");
     const[errorMessage,setErrorMessage]=useState("fill all * marked fields")
     const[errHiding,setErrHiding]=useState("none");
-    const[confirmMessage,setConfirmMessage]=useState("none");
+    // const[confirmMessage,setConfirmMessage]=useState("none");
     const[submitClickedChange,setSubmitClickedChange]=useState({
-                                                                
+                                                                submit:"flex",
+                                                                loading:"none",
+                                                                success:"none",        
     });
     
   
@@ -64,22 +66,23 @@ const ContactUs=(props)=>{
     }
 
 
-    function checkerSelect1(e,name)
-    {
-        setQueryIsFor(name);
-    }
-
-    function checkerSelect2(e,name)
-    {
-        setQueryType(name);
-    }
 
 
 
 
     function hidingError()
     {
-        setErrHiding("none")
+        setErrHiding("none");
+    }
+
+    function changeSubmit()
+    {
+        setSubmitClickedChange({submit:"flex",loading:"none",success:"none"});
+    }
+
+    function changeSubmit()
+    {
+        setSubmitClickedChange({submit:"flex",loading:"none",success:"none"});
     }
 
 
@@ -122,7 +125,20 @@ const ContactUs=(props)=>{
                 return;
             }
         }
-        
+        // organization captcha left
+
+        if(contactNumber!=="")
+        {
+            if(contactNumber.length<10 && contactNumber>15)
+            {
+                setErrHiding("flex");
+                setErrorMessage("Fill Contact Number 15<num>10");
+                setTimeout(hidingError, 3000);
+                return;
+            }
+        }
+
+
         if(queryIsFor==="Select Company")
         {
             setErrHiding("flex");
@@ -149,7 +165,7 @@ const ContactUs=(props)=>{
             return;
         }
 
-
+        setSubmitClickedChange({submit:"none",loading:"flex",success:"none"})
         Axios.post(ApiLink+'/contact-us/full-data',
         {
             name:name,
@@ -161,7 +177,8 @@ const ContactUs=(props)=>{
             yourQ:yourQuery,
 
         }).then((res)=>{
-            setConfirmMessage("")
+            setSubmitClickedChange({submit:"none",loading:"none",success:"flex"});
+            setTimeout(changeSubmit, 3000);
         })
 
 
@@ -202,7 +219,7 @@ const ContactUs=(props)=>{
                         <div className='contactus__inner__seaction2__dispaly__each__heading'>
                             Query is for<span style={{color:"red"}}>*</span>
                         </div>
-                        <select className='contactus__inner__seaction2__dispaly__each__input' onChange={(e)=>{checkerSelect1(e.target.value,name)}}>
+                        <select className='contactus__inner__seaction2__dispaly__each__input' onChange={(e)=>{setQueryIsFor(e.target.value)}}>
                             {ContactUsData.selectCompany.map((ele)=>{
                                 const{id,name}=ele;
                                 return(
@@ -215,7 +232,7 @@ const ContactUs=(props)=>{
                         <div className='contactus__inner__seaction2__dispaly__each__heading'>
                             Query type<span style={{color:"red"}}>*</span>
                         </div>
-                        <select className='contactus__inner__seaction2__dispaly__each__input'  onChange={(e)=>{checkerSelect2(e.target.value,name)}}>
+                        <select className='contactus__inner__seaction2__dispaly__each__input'  onChange={(e)=>{setQueryType(e.target.value)}}>
                             {ContactUsData.selectQuery.map((ele)=>{
                                 const{id,name}=ele;
                                 return(
@@ -247,13 +264,13 @@ const ContactUs=(props)=>{
                     </div>
                 </div>
                 <div className='contactus__inner__seaction2__bottom__out'>
-                    <div className='contactus__inner__seaction2__button' onClick={()=>{ContactUsSubmit()}}>
+                    <div className='contactus__inner__seaction2__button' onClick={()=>{ContactUsSubmit()}} style={{display:submitClickedChange.submit}}>
                         Submit
                     </div>
-                    <div className='contactus__inner__seaction2__button'>
+                    <div className='contactus__inner__seaction2__button'  style={{display:submitClickedChange.loading,background: "linear-gradient(to right, #00f260, #0575e6)"}}>
                         Sending...
                     </div>
-                    <div className='contactus__inner__seaction2__button'>
+                    <div className='contactus__inner__seaction2__button' style={{display:submitClickedChange.success,backgroundColor: "#00f260"}}>
                         Success
                     </div>
                 </div>
