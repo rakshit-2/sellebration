@@ -6,6 +6,10 @@ import ApiLink from '../../assets/store/apiLink';
 import {useState,useEffect} from 'react';
 
 
+import AOS from 'aos';
+import 'aos/dist/aos.css'
+
+
 import LeadershipPanelData from './../../assets/store/leadershippanelData';
 import LeadershipCard1 from '../../atom/leadershipCard1';
 import LeaderShipData from './../../assets/store/LeadershipData';
@@ -18,13 +22,18 @@ const Leadership=(props)=>{
 
 
 
-  // scroll to top
+    // scroll to top
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
-
+    AOS.init({
+        offset: 200,
+        duration: 600,
+        easing: 'ease-in-sine',
+        delay: 100,
+    });
 
 
     
@@ -110,7 +119,7 @@ return (
                 <div className="leadership__inner__seaction3__innerheading">
                     Bussiness Directors
                 </div>
-                <div className="leadership__inner__seaction3__innerdisplay">
+                <div className="leadership__inner__seaction3__innerdisplay" data-aos="fade-up">
                     {
                         loadingLeadership ? (
                             <div className='loading__outer'>
@@ -131,7 +140,7 @@ return (
                 <div className="leadership__inner__seaction3__innerheading">
                     Business Heads
                 </div>
-                <div className="leadership__inner__seaction3__innerdisplay">
+                <div className="leadership__inner__seaction3__innerdisplay" data-aos="fade-up"> 
                     {
                         loadingLeadership ? (
                             <div className='loading__outer'>
@@ -153,7 +162,7 @@ return (
                 <div className="leadership__inner__seaction3__innerheading" >
                     Senior Leaders
                 </div>
-                <div className="leadership__inner__seaction3__innerdisplay">
+                <div className="leadership__inner__seaction3__innerdisplay" data-aos="fade-up">
                     {
                         loadingLeadership ? (
                             <div className='loading__outer'>
@@ -174,7 +183,7 @@ return (
                 <div className="leadership__inner__seaction3__innerheading">
                     The Vanguard
                 </div>
-                <div className="leadership__inner__seaction3__innerdisplayv">
+                <div className="leadership__inner__seaction3__innerdisplayv" data-aos="fade-up">
                     <div className='leadership__inner__seaction3__innerdisplay__text'>
                         {LeaderShipData.TheVanguardText.text}
                     </div>
