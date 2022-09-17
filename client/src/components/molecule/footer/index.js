@@ -21,7 +21,7 @@ return (
                 {FooterData.top.right.map((item) => {
                     const {id,img}=item;
                     return(
-                        <div key={id} className='footer__inner__top__left__each'>
+                        <div key={id} className='footer__inner__top__left__each2'>
                             <img src={img} className="footer__img"/>
                         </div>
                     )
@@ -35,7 +35,7 @@ return (
                 {FooterData.bottom.map((item) => {
                     const {id,data}=item;
                     return(
-                        <div key={id} className='footer__inner__top__left__each'>                           
+                        <div key={id} className='footer__inner__top__left__each3'>                           
                         {data}
                         </div>
                     )
