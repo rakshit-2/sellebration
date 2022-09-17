@@ -122,12 +122,12 @@ const Home=(props)=>{
 
     const responsive = {
         desktop: {
-          breakpoint: { max: 3000, min: 1024 },
+          breakpoint: { max: 3000, min: 1181 },
           items: 3,
           slidesToSlide: 1
         },
         tablet: {
-          breakpoint: { max: 1024, min: 750 },
+          breakpoint: { max: 1181, min: 750 },
           items: 2,
           slidesToSlide: 1
         },
@@ -150,12 +150,13 @@ const Home=(props)=>{
         <div className="home__outer">
             <div className="home__inner">
             <Navbar navDisplay={props.navDisplay} openNav={props.openNav}  closeNav={props.closeNav}/>
+            <div className="home__inner__section1">
+                <div className="home__inner__section1__img__outer">
+                    {/* <img src={map} className="home__inner__section1__img"/> */}
+                </div>
+            </div>
                 <div className="home__inner__inner">
-                    <div className="home__inner__section1">
-                        <div className="home__inner__section1__img__outer">
-                            <img src={map} className="home__inner__section1__img"/>
-                        </div>
-                    </div>
+                    
                     <div className="home__inner__section2" data-aos="fade-up"> 
                         <div className="home__inner__section2__heading">
                             Our Stories
@@ -264,6 +265,11 @@ const Home=(props)=>{
                                 })
                                 )
                             }
+                            <div className='home__inner__section3__viewmore'>
+                                <div className='home__inner__section3__viewmorebutton'>
+                                    View All
+                                </div>
+                            </div>
                             </div>
                             <div className='home__inner__section3__display__right' data-aos="fade-left">
                                 <iframe className='home__inner__section3__display__right__vid' src="https://www.youtube.com/embed/HlWISmjCfb8" title="Kanye West - Heartless (Lyrics)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -275,11 +281,7 @@ const Home=(props)=>{
                             </div>
                         </div>
                     </div>
-                    <div className='home__inner__section3__viewmore'>
-                        <div className='home__inner__section3__viewmorebutton'>
-                            View All
-                        </div>
-                    </div>
+                    
                     {/* section 4 */}
                     <div className='home__inner__section4'>
                         <div className='home__inner__section4__left' data-aos="fade-right">
@@ -309,8 +311,9 @@ const Home=(props)=>{
                             </div>
                         </div>
                     </div>
-                    <Footer/>
+
                 </div>
+                <Footer/>
             </div>
         </div>
         </>
