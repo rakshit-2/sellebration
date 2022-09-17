@@ -79,6 +79,8 @@ app.get('/home/latest-news',(req,res)=>{
 
 
 
+
+
 //Leadership -- connection 4 table
 
 app.get('/leadership/detail-each',(req,res)=>{
@@ -219,7 +221,21 @@ app.get('/innovation/card-data',(req,res)=>{
   })
 })
 
+//downloads sec1 log data
 
+app.get('/download/log-data',(req,res)=>{
+  const ele="select * from Download_Log ;";
+  db.query(ele,(err,result)=>{
+    res.send(result)
+  })
+})
+
+app.get('/download/company-data',(req,res)=>{
+  const ele="select * from Download_Company ;";
+  db.query(ele,(err,result)=>{
+    res.send(result)
+  })
+})
 
 
 
@@ -229,6 +245,9 @@ app.get('/innovation/card-data',(req,res)=>{
 
 //contact us data update
 // ContactUs
+
+
+
 
 
 app.post('/contact-us/full-data',(req,res)=>{

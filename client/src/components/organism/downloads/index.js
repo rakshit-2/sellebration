@@ -7,17 +7,61 @@ import image from '../../assets/image/innovation_img/innovation_img.svg';
 import DownloadsData from '../../assets/store/downloadsData';
 import down from '../../assets/image/downoads_img/download_icon.svg';
 import Footer2 from '../../molecule/footer2';
-import { useEffect } from 'react';
-
+import { useEffect,useState } from 'react';
+import ApiLink from '../../assets/store/apiLink';
+import LoadingScreen from '../../atom/loadingScreen';
+import Axios from 'axios';
+import img from "../../assets/image/test.png";
 
 const Downloads=(props)=>{
 
+    const[logData,setLogData]=useState();
+    const[logLoading,setLogLoading]=useState(true);
 
+
+    const[companyData,setCompanyData]=useState();
+    const[companyLoading,setCompanyLoading]=useState(true);
     // scroll to top
 
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
+
+    function requestGetter(x)
+    {
+        if(x==="log")
+        {
+            Axios.get(ApiLink+'/download/log-data',
+            {
+            params:{
+                name:"log",
+            }
+            }).then((res)=>{
+                setLogData(res.data);
+                setLogLoading(false);
+            })
+        }
+        else if(x==="company")
+        {
+            Axios.get(ApiLink+'/download/company-data',
+            {
+            params:{
+                name:"company",
+            }
+            }).then((res)=>{
+                setCompanyData(res.data);
+                setCompanyLoading(false);
+            })
+        }
+    }
+
+    useEffect(() => {
+        requestGetter("log");
+        requestGetter("company");
+    }, []);
+
+
+
 
     const responsive = {
         desktop: {
@@ -90,76 +134,96 @@ const Downloads=(props)=>{
                     </div>
                 </div>
                 <div className='downloads__sec2' data-aos="fade-up">
-                    <Carousel 
-                    responsive={responsive} 
-                    draggable
-                    autoPlay
-                    autoPlaySpeed={2000}
-                    infinite
-                    showDots={true}
-                    removeArrowOnDeviceType={["tablet", "mobile","desktop"]}>
-                    {DownloadsData.card1Data.map((ele)=>{
-                      const{id,size,data,img}=ele;
-                      return(
-                        <>
-                        <div className='downloads__card1__outer'>
-                            <div className='downloads__card1__img__outer'>
-                                <img className='downloads__card1__img' src={img}/>  
-                            </div>
-                            <div className='downloads__card1__data'>
-                                {data}
-                            </div>
-                            <div className='downloads__card1__button__outer'>
-                                <div className='downloads__card1__button__inner'>
-                                Download
-                                </div>
-                            </div>
-                            <div className='downloads__card1__size'>
-                                ZIP {size}
-                            </div>
+                {
+                                logLoading ? (
 
-                        </div>
-                        </>
-                      )
-                    })}
-                    </Carousel>
+                                <div className='loading__outer'>
+                                    <LoadingScreen/>    
+                                </div>
+                                    
+                                ):(
+                                <Carousel
+
+                                responsive={responsive} 
+                                draggable
+                                autoPlay
+                                autoPlaySpeed={2000}
+                                infinite
+                                showDots={true}
+                                removeArrowOnDeviceType={["tablet", "mobile","desktop"]}>
+                                {logData.map((ele)=>{
+                                const{id,size,name,zip}=ele;
+                                return(
+                                    <>
+                                    <div className='downloads__card1__outer'>
+                                        <div className='downloads__card1__img__outer'>
+                                            <img className='downloads__card1__img' src={img}/>  
+                                        </div>
+                                        <div className='downloads__card1__data'>
+                                            {name}
+                                        </div>
+                                        <div className='downloads__card1__button__outer'>
+                                            <div className='downloads__card1__button__inner'>
+                                            Download
+                                            </div>
+                                        </div>
+                                        <div className='downloads__card1__size'>
+                                            {size}
+                                        </div>
+
+                                    </div>
+                                    </>
+                                )
+                                })}
+                                </Carousel>
+                    )}
                 </div>
                 <div className='downloads__sec3'>
                     <div className='downloads__sec3__head'>
                     Company logos
                     </div>
                     <div className='downloads__sec3__card' data-aos="fade-up">
-                    <Carousel 
-                        responsive={responsive} 
-                        draggable
-                        autoPlay
-                        autoPlaySpeed={2000}
-                        infinite
-                        showDots={true}
-                        removeArrowOnDeviceType={["tablet", "mobile","desktop"]}>
-                        {DownloadsData.card2Data.map((ele)=>{
-                        const{id,size,data,img}=ele;
-                        return(
-                            <>
-                            <div className='downloads__card2__outer'>
-                                <div className='downloads__card2__img__outer'>
-                                    <img className='downloads__card2__img' src={img}/>  
-                                </div>
-                                
-                                <div className='downloads__card2__button__outer'>
-                                    <div className='downloads__card2__button__inner'>
-                                    Download
-                                    </div>
-                                </div>
-                                <div className='downloads__card2__size'>
-                                    ZIP {size}
-                                </div>
 
-                            </div>
-                            </>
-                        )
-                        })}
-                        </Carousel>
+                    {
+                                companyLoading ? (
+
+                                <div className='loading__outer'>
+                                    <LoadingScreen/>    
+                                </div>
+                                    
+                                ):(
+                            <Carousel 
+                                responsive={responsive} 
+                                draggable
+                                autoPlay
+                                autoPlaySpeed={2000}
+                                infinite
+                                showDots={true}
+                                removeArrowOnDeviceType={["tablet", "mobile","desktop"]}>
+                                {companyData.map((ele)=>{
+                                const{id,size}=ele;
+                                return(
+                                    <>
+                                    <div className='downloads__card2__outer'>
+                                        <div className='downloads__card2__img__outer'>
+                                            <img className='downloads__card2__img' src={img}/>  
+                                        </div>
+                                        
+                                        <div className='downloads__card2__button__outer'>
+                                            <div className='downloads__card2__button__inner'>
+                                            Download
+                                            </div>
+                                        </div>
+                                        <div className='downloads__card2__size'>
+                                            {size}
+                                        </div>
+
+                                    </div>
+                                    </>
+                                )
+                                })}
+                                </Carousel>
+                                )}
                     </div>
 
 

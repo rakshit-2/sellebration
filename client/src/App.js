@@ -32,6 +32,7 @@ import MediaRelease from './components/organism/mediaRelease/index';
 import PressReport from './components/organism/pressreport/index';
 import Stories from './components/organism/stories/index';
 import Downloads from './components/organism/downloads';
+import Logo from './components/organism/logo';
 const App=(props)=>{
 
 
@@ -99,6 +100,7 @@ const App=(props)=>{
         <Route path="/mediarelease" element={<MediaRelease navDisplay={navDisplay} openNav={openNav} closeNav={closeNav}/>} ></Route>
         <Route path="/pressreoprt" element={<PressReport navDisplay={navDisplay} openNav={openNav} closeNav={closeNav}/>} ></Route>
         <Route path="/stories" element={<Stories navDisplay={navDisplay} openNav={openNav} closeNav={closeNav}/>} ></Route>
+        <Route path="/logo" element={<Logo navDisplay={navDisplay} openNav={openNav} closeNav={closeNav}/>} ></Route>
         
         
         

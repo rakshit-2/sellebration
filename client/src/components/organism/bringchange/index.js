@@ -18,6 +18,11 @@ const BringChange=(props)=>{
     window.scrollTo(0, 0);
   }, []);
 
+  const [idb,setId]=useState(0);
+   function checker(id){
+    setId(id)
+   }
+
 return (
     <>
     <div className="bringchange__outer">
@@ -41,16 +46,37 @@ return (
                 </div>
                 <div className="bringchange__sec2__buttons">
                 {BringChangeData.buttonData.map((ele)=>{
-                    const {id,title}=ele;
-                    return(
-                    <div className="bringchange__sec2__button1" >
-                        <div className="bringchange__sec2__button1__head">
-                           {title}
+                    const {id,pic,title}=ele;
+                    if(id===idb)
+                    {
+                        console.log(id)
+                        return(
+                        <>
+                        <div  className="bringchange__sec2__button1" >
+                            <div  style={{backgroundColor:"#2F528E"}} key={id} className="bringchange__sec2__button1__head">
+                                {title}
+                            </div>
+                            <img style={{display:"flex"}} className="bringchange__sec2__button1_img" src={button_image}/>
                         </div>
-                        <img className="bringchange__sec2__button1_img" src={button_image}/>
-                    </div>
-                    )
+                        <div>
+                            <img className='bringchange__sec2__button1__images' src={pic}/>
+                        </div>
+                        </>
+                        )
+                    }
+                    else{
+                        return(
+                            <div  className="bringchange__sec2__button1" onClick={()=>{checker(id)}}>
+                                <div   key={id} className="bringchange__sec2__button1__head">
+                                   {title}
+                                </div>
+                            </div>
+                            )
+                    }
+                    
+                    
                 })}
+                
                 </div>
 
             </div>

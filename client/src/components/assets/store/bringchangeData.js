@@ -2,11 +2,11 @@ import ic from './../../assets/image/bringchange_img/bringchange_img2.svg';
 import image from './../../assets/image/bringchange_img/bringchange_img4.svg';
 const BringChangeData ={
     buttonData:[
-        {id:0,title:"lorem"},
-        {id:1,title:"ipsum"},
-        {id:2,title:"hello"},
-        {id:3,title:"world"},
-        {id:4,title:"nope"},
+        {id:0,title:"lorem",pic:'../image/test.png'},
+        {id:1,title:"ipsum",pic:'../image/test1.png'},
+        {id:2,title:"hello",pic:'../image/test.png'},
+        {id:3,title:"world",pic:'../image/test1.png'},
+        {id:4,title:"nope",pic:'../image/test.png'},
         ],
     iconData:[
         {icon:ic,data:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Contrary to popular belief, Lorem"},
