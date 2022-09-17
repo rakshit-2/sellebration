@@ -89,7 +89,7 @@ const Downloads=(props)=>{
                         </div>
                     </div>
                 </div>
-                <div className='downloads__sec2'>
+                <div className='downloads__sec2' data-aos="fade-up">
                     <Carousel 
                     responsive={responsive} 
                     draggable
@@ -128,7 +128,7 @@ const Downloads=(props)=>{
                     <div className='downloads__sec3__head'>
                     Company logos
                     </div>
-                    <div className='downloads__sec3__card'>
+                    <div className='downloads__sec3__card' data-aos="fade-up">
                     <Carousel 
                         responsive={responsive} 
                         draggable

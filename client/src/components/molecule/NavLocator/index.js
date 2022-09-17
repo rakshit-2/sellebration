@@ -9,7 +9,7 @@ const NavLocator=(props)=>{
     function onclickfunction(x,info)
     {
         var link=["/","our-profile","/leadership","/womenleadership","/visionvalue","/milestone",
-                "/bussinessbrand","/Sustainability","/csr",
+                "/bussinessbrand","/bussinessbrand","/csr",
                 "/csr","/bringchange","/OurStrategy",
                 "/StoriesofHope","/csr","/Media","/mediarelease","/pressreoprt",
                 "/Stories","/event","/Downloads","/OurLogo","/Innovation","/investor",

@@ -8,6 +8,8 @@ import {
 import Axios from 'axios';
 import {useState,useEffect} from 'react';
 
+import AOS from 'aos';
+import 'aos/dist/aos.css'
 
 
 
@@ -34,7 +36,12 @@ import Logo from './components/organism/logo';
 const App=(props)=>{
 
 
-  
+  AOS.init({
+    offset: 200,
+    duration: 400,
+    easing: 'ease-in-sine',
+    // delay: 100,
+});
 
   
 

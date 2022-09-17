@@ -1,5 +1,5 @@
 .homecard1__each{
-    width:330px;
+    width:310px;
     height:fit-content;
     border-radius: 10px;
     margin-top: 2rem;
@@ -21,7 +21,7 @@
 .homecard1__each__heading{
     width:85%;
     height:fit-content;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 600;
     margin-top: 2rem;
     margin-bottom: 1rem;
@@ -30,7 +30,7 @@
 .homecard1__each__para{
     width:85%;
     height:fit-content;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 500;
     margin-top: 1rem;
     margin-bottom: 1rem;
