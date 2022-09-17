@@ -13,6 +13,7 @@
     animation-duration: 0.8s;
     background-position:center;
     z-index: 100;
+    background-color: #2F528E;
     background-image: url('./../../assets/image/nav_img/nav_background_img.svg');
 }
 .nav__inner::-webkit-scrollbar { 

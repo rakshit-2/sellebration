@@ -74,21 +74,12 @@
 @media screen and (max-width:1248px)
 {
     .navlocator__outer{
-        height:85vh;
+        height:70vh;
     }
     .navlocator__each{
         width:30%;
         margin-top: 2rem;
-    }
-    .navlocator__white__line__nav{
-        height:25rem;
-        margin-top: 2rem;
-    }
-}
-@media screen and (max-width:1035px)
-{
-    .navlocator__each{
-        width:40%;
+        margin-bottom: 2rem;
         border:1px solid white;
         border-radius: 10px;
     }
@@ -96,11 +87,17 @@
         display: none;
     }
 }
+@media screen and (max-width:1035px)
+{
+    .navlocator__each{
+        width:40%;
+        border-radius: 10px;
+    }
+    
+}
 @media screen and (max-width:820px)
 {
     .navlocator__each{
-        border:1px solid white;
-        border-radius: 10px;
         width:50%;
     }
     

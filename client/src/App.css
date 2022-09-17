@@ -8,7 +8,7 @@
   }
   /* Track */
   ::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0); 
+    background: rgba(188, 186, 186, 0.515)
   }
   /* Handle */
   ::-webkit-scrollbar-thumb {
