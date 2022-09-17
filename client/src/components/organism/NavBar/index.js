@@ -85,9 +85,13 @@ const NavBar=(props)=>{
     <NavPanel navDisplay={props.navDisplay} closeNav={props.closeNav} closeNavClicked={closeNavClicked}/>
     <div className="navbar__outer" id="navbar">
       <div className="navbar__inner">
+
+        
         <div className="navbar__left" style={{cursor:"pointer"}} id="logo" onClick={()=>{HomeRoute()}}>
           <img src={navbar_logo} className="navbar__logo"alt=""/>
         </div>
+
+
         <div className="navbar__right">
           <div className="navbar__right__icon" style={{display:navOperator.open}}>
             <img src={navbar_icon} className="navbar__icon" alt="" onClick={()=>{openNavClicked()}}/>

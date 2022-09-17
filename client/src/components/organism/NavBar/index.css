@@ -108,22 +108,29 @@
 
 
 
-/* @media screen and (min-width:1810px)
+
+@media screen and (max-width:1024px)
 {
-    .navbar__outer{
-        width:90%;
+    .navbar__right{
+        margin-right: 1rem;
     }
 }
-@media screen and (min-width:2000px)
+
+@media screen and (max-width:730px)
 {
-    .navbar__outer{
-        width:60%;
+    .navbar__right__search{
+        display: none;
+    }
+    .navbar__right__select{
+        display: none;
+    }
+    .navbar__right__icon{
+        margin-right: 1rem;
+    }
+    .navbar__left{
+        width:5rem;
+        height:60%;
+        margin-left: 2rem;
+        transition: 0.4s;
     }
 }
-@media screen and (min-width:2400px)
-{
-    .navbar__outer{
-        width:51%;
-        
-    }
-} */
