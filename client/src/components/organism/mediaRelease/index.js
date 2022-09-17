@@ -224,7 +224,7 @@ return (
                                     <img src={alert} className="mediarelease__wronddata__modale__text__img"></img>{'\u00A0'}{'\u00A0'}Invalid Information Entered 
                                 </div>
                             </div>
-                            <div className='mediarelease__inner__section2__left__display'>
+                            <div className='mediarelease__inner__section2__left__display'  data-aos="fade-right">
                                 {displayerData.slice(splicing.start, splicing.end).map((ele)=>{
                                     const{id,date,info,link}=ele;
                                     var year=date.slice(0,4);
