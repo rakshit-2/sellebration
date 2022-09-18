@@ -1,4 +1,6 @@
 .homecard1__each{
+    margin-left: auto;
+    margin-right: auto;
     width:310px;
     height:fit-content;
     border-radius: 10px;

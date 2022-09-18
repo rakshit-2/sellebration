@@ -3,8 +3,6 @@ import './index.css';
 import Axios from 'axios';
 import {useState,useEffect} from 'react';
 
-import AOS from 'aos';
-import 'aos/dist/aos.css'
 
 
 import ApiLink from './../../assets/store/apiLink';
@@ -34,13 +32,6 @@ const Home=(props)=>{
     window.scrollTo(0, 0);
   }, []);
 
-
-    AOS.init({
-        offset: 200,
-        duration: 600,
-        easing: 'ease-in-sine',
-        delay: 100,
-    });
 
 
     const[recommended,setRecommended]=useState([<></>])
