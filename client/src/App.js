@@ -40,7 +40,6 @@ const App=(props)=>{
     offset: 200,
     duration: 400,
     easing: 'ease-in-sine',
-    // delay: 100,
 });
 
   
