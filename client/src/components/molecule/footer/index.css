@@ -187,16 +187,21 @@
 
 @media screen and (max-width:513px)
 {
+    .footer__inner__top__left{
+        width:90%;
+        justify-content: flex-start;
+    }
     .footer__inner__top__left__each{
-        width:70%;
-        font-size: 25px;
-        padding: 1rem;
-        border: 2px solid white;
-        border-radius: 10px;
+        width:fit-content;
+        font-size: 15px;
+        font-weight: 700;
     }
     .footer__inner__top{
-        margin-top:2rem;
-        margin-bottom: 2rem;
+        margin-top:0.2rem;
+        margin-bottom: 0.2rem;
+    }
+    .footer__inner__bottom{
+        width:100%;
     }
 }
 
@@ -206,8 +211,8 @@
         width:100%;
     }
     .footer__inner__top__left__each3{
-        width:90%;
-        margin: 10px;
+        width:fit-content;
+        font-size: 15px;
     }
     .footer__inner__mid{
         width:90%;
