@@ -10,7 +10,7 @@ return (
             {CsrStoriesData.intro.hading}
         </div>
         <div className='csr__inner__section4__heading2'>
-            <div className='csr__button'>
+            <div className='csr__button__molecule'>
                 {CsrStoriesData.intro.button}
             </div>
         </div>
