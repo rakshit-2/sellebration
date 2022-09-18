@@ -24,9 +24,9 @@ const NavBar=(props)=>{
       if (document.body.scrollTop>80 || document.documentElement.scrollTop>80) 
       {
         document.getElementById("navbar").style.background="linear-gradient(0deg, rgba(9,9,121,0) 35%, rgba(47,49,50,1) 100%)";
-        document.getElementById("navbar").style.height="5.5rem";
+        document.getElementById("navbar").style.height="5rem";
         document.getElementById("navbar").style.background="#2F528E";
-        document.getElementById("logo").style.width="5.5rem" ;
+        document.getElementById("logo").style.width="5rem" ;
         document.getElementById("logo").style.backgroundColor="white";
       }
       else 
@@ -61,9 +61,9 @@ const NavBar=(props)=>{
     setFlag(0)
     if (document.body.scrollTop>80 || document.documentElement.scrollTop>80)
     {
-      document.getElementById("navbar").style.height="5.5rem";
+      document.getElementById("navbar").style.height="5rem";
       document.getElementById("navbar").style.background="#2F528E";
-      document.getElementById("logo").style.width="5.5rem" ;
+      document.getElementById("logo").style.width="5rem" ;
       document.getElementById("logo").style.backgroundColor="white";
     }
     else
