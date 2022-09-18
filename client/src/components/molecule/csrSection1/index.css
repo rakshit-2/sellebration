@@ -28,6 +28,12 @@
     margin-top: 2rem;
     margin-bottom: 2rem;
     width:600px;
+    height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    word-wrap: break-word;
+    align-items: center;
+    justify-content: flex-start;
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 500;
@@ -66,3 +72,31 @@
     text-transform: capitalize;
     color: rgba(0, 0, 0, 0.5);
 }
+
+
+
+
+
+
+
+
+
+@media screen and (max-width:630px)
+{
+    .csr__inner__section1__inner__bottom{
+        width:450px;
+    }
+}
+@media screen and (max-width:484px)
+{
+    .csr__inner__section1__inner__bottom{
+        width:99%;
+        font-size: 16px;
+    }
+    .csr__inner__section1__inner__top{
+        font-weight: 800;
+        font-size: 28px;
+    }
+}
+
+
