@@ -239,6 +239,22 @@ app.get('/download/company-data',(req,res)=>{
 
 
 
+//women leadership log data
+
+app.get('/women-leadership/redefining-data',(req,res)=>{
+  const ele="select * from Women_Leadership_Redefining_Boundaries;";
+  db.query(ele,(err,result)=>{
+    res.send(result)
+  })
+})
+
+app.get('/women-leadership/better-data',(req,res)=>{
+  const ele="select * from Women_Leadership_Better_Together order by id asc;";
+  db.query(ele,(err,result)=>{
+    res.send(result)
+  })
+})
+
 
 // post request
 

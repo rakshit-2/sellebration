@@ -1,6 +1,6 @@
 
 import './index.css';
-import { useEffect } from 'react';
+import { useEffect ,useState} from 'react';
 
 
 import Navbar from './../NavBar/index';
@@ -13,8 +13,20 @@ import WomenLeadershipCardData from './../../assets/store/womenleadershipcardDat
 import WomenLeadershipCard1 from '../../atom/womenleadershipCard1';
 import WomenLeadershipCard2 from '../../atom/womenleadershipCard2';
 import React from 'react';
+import ApiLink from '../../assets/store/apiLink';
+import LoadingScreen from '../../atom/loadingScreen';
+import Axios from 'axios';
+
+
 const WomenLeadership=(props)=>{
 
+
+  const[redefiningData,setRedefiningData]=useState();
+  const[redefiningLoading,setRedefiningLoading]=useState(true);
+
+
+  const[betterData,setBetterData]=useState();
+  const[betterLoading,setBetterLoading]=useState(true);
 
     // scroll to top
 
@@ -23,7 +35,38 @@ const WomenLeadership=(props)=>{
     }, []);
 
 
+    function requestGetter(x)
+    {
+        if(x==="Redefining_Boundaries")
+        {
+            Axios.get(ApiLink+'/women-leadership/redefining-data',
+            {
+            params:{
+                name:"Redefining_Boundaries",
+            }
+            }).then((res)=>{
+                setRedefiningData(res.data);
+                setRedefiningLoading(false);
+            })
+        }
+        else if(x==="Better_Together")
+        {
+            Axios.get(ApiLink+'/women-leadership/better-data',
+            {
+            params:{
+                name:"Better_Together",
+            }
+            }).then((res)=>{
+                setBetterData(res.data);
+                setBetterLoading(false);
+            })
+        }
+    }
 
+    useEffect(() => {
+        requestGetter("Redefining_Boundaries");
+        requestGetter("Better_Together");
+    }, []);
 
 
 
@@ -77,33 +120,50 @@ return (
                   </div>
                   <img className='womenleader__sec2__img' src={img}/>
             </div>
-            <div className='womenleader__sec3'>
+            <div className='womenleader__sec3' data-aos="fade-up">
                   <div className='womenleader__sec3__head'>
                   Redefining Boundaries
                   </div>
-                  <div className='womenleader__sec3__cards' data-aos="fade-up">
-                      {
-                        WomenLeadershipCardData.boundryData.map((ele)=>{
-                            const{id,title,info}=ele;
-                            return(
-                              <WomenLeadershipCard2 id={id} info={info} title={title}/>
-                            )
-                        })}
-                  </div>
+                  {
+                    redefiningLoading ? (
+                      <div className='loading__outer'>
+                          <LoadingScreen/>    
+                      </div>
+                    ):(
+                      <div className='womenleader__sec3__cards' >
+                          {
+                            redefiningData.map((ele)=>{
+                                const{id,name,info}=ele;
+                                return(
+                                  <WomenLeadershipCard2 id={id} info={info} title={name}/>
+                                )
+                            })}
+                      </div>
+                    )
+                  }
             </div>
-            <div className='womenleader__sec3'>
+            <div className='womenleader__sec3' data-aos="fade-up">
                   <div className='womenleader__sec3__head'>
-                 Better Together
+                  Better Together
                   </div>
-                  <div className='womenleader__sec3__cards' data-aos="fade-up">
+                  {
+                    betterLoading ? (
+                      <div className='loading__outer'>
+                          <LoadingScreen/>    
+                      </div>
+                    ):(
+                      <div className='womenleader__sec3__cards' >
                       {
-                        WomenLeadershipCardData.betterData.map((ele)=>{
-                            const{id,title,info}=ele;
+                        betterData.map((ele)=>{
+                            const{id,name,info}=ele;
                             return(
-                              <WomenLeadershipCard2 dis={"center"} col={"#D9D9D9"} id={id} info={info} title={title}/>
+                              <WomenLeadershipCard2 dis={"center"} col={"#D9D9D9"} id={id} info={info} title={name}/>
                             )
                         })}
-                  </div>
+                      </div>
+                    )
+                  }
+                  
             </div>
 
             <div className='womenleader__sec4'>
