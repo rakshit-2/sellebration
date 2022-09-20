@@ -1,13 +1,12 @@
 .WomenLeaderShipCard2__outer{
     height: fit-content;
-    width: 25rem;
+    width: 23rem;
     display:flex;
     flex-direction: column;
     justify-content: center;
     align-items:center;
     border-radius: 20px;
     background-color: #D9D9D9;
-
 }
 
 .WomenLeaderShipCard2__head{
@@ -48,22 +47,22 @@
 }
 
 .WomenLeaderShipCard2__bottom__title{
-    
-padding-bottom: 0.5rem;
-height: fit-content;
-width: 80%;
-margin-bottom: 1rem;
+        
+    padding-bottom: 0.5rem;
+    height: fit-content;
+    width: 80%;
+    margin-bottom: 1rem;
 
-font-family: 'Montserrat';
-font-style: normal;
-font-weight: 600;
-font-size: 30px;
-line-height: 36px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 25px;
 
 
-letter-spacing: 0.05em;
+    letter-spacing: 0.05em;
 
-color: rgba(0, 0, 0, 0.77);
+    color: rgba(0, 0, 0, 0.77);
 }
 
 .WomenLeaderShipCard2__bottom__info{
@@ -73,12 +72,81 @@ color: rgba(0, 0, 0, 0.77);
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 500;
-    font-size: 20px;
-    line-height: 30px;
+    font-size: 18px;
+    line-height: 25px;
     /* or 150% */
     
     letter-spacing: 0.05em;
     text-transform: capitalize;
     
     color: rgba(0, 0, 0, 0.7);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width:1254px)
+{
+    .WomenLeaderShipCard2__outer{
+        width:320px;
+    }
+    .WomenLeaderShipCard2__bottom__title{
+        font-weight: 800;
+        font-size: 25px;
+    }
+    .WomenLeaderShipCard2__bottom__info{
+        font-weight: 500;
+        font-size: 18px;
+    }
+}
+
+
+@media screen and (max-width:1023px)
+{
+    .WomenLeaderShipCard2__outer{
+        width: 22rem;
+        margin:2rem;
+    }
+}
+@media screen and (max-width:841px)
+{
+    .WomenLeaderShipCard2__outer{
+        width: 70%;
+    }
+    
+}
+@media screen and (max-width:606px)
+{
+    .WomenLeaderShipCard2__outer{
+        width: 100%;
+    }
+    
+}
+@media screen and (max-width:425px)
+{
+    .WomenLeaderShipCard2__outer{
+        width:320px;
+    }
+    .WomenLeaderShipCard2__bottom__title{
+        font-weight: 800;
+        font-size: 20px;
+    }
+    .WomenLeaderShipCard2__bottom__info{
+        font-weight: 500;
+        font-size: 14px;
+    }
+    .WomenLeaderShipCard2__head{
+        height: 5rem;
+    }
+     
 }
