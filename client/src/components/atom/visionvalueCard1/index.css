@@ -54,3 +54,56 @@
     text-transform: capitalize;
     color: rgba(255, 255, 255, 0.7);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width:1142px)
+{
+    .vision__mid__card__head{
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 10px;
+    }
+    .vision__mid__card__content{
+        padding-bottom: 1rem;
+        font-weight: 600;
+        font-size: 13px;
+        line-height: 28px;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+}
+
+@media screen and (max-width:1024px)
+{
+    .vision__mid__card{
+        width:230px;
+        border: 2px solid aqua;
+        border-radius: 1rem;
+        padding-bottom: 0.5rem;
+    }
+    .vision__mid__card__head{
+        font-size: 18px;
+    }
+    .vision__mid__card__content{
+        font-size: 12px;
+        line-height: 20px;
+        padding-bottom: 0.5rem;
+    }
+}
