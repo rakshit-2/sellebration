@@ -37,7 +37,7 @@ const App=(props)=>{
 
 
   AOS.init({
-    offset: 200,
+    offset: 100,
     duration: 400,
     easing: 'ease-in-sine',
 });

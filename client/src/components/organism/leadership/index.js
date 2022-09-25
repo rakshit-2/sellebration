@@ -6,8 +6,8 @@ import ApiLink from '../../assets/store/apiLink';
 import {useState,useEffect} from 'react';
 
 
-
-
+import img from './../../assets/image/test.png';
+import Carousel from "react-multi-carousel";
 import LeadershipPanelData from './../../assets/store/leadershippanelData';
 import LeadershipCard1 from '../../atom/leadershipCard1';
 import LeaderShipData from './../../assets/store/LeadershipData';
@@ -80,13 +80,42 @@ const Leadership=(props)=>{
         setVal(ss);
     }
 
-
+    const responsive = {
+        desktop: {
+        breakpoint: { max: 3000, min: 1024 },
+        items: 3,
+        slidesToSlide: 1
+        },
+        tablet: {
+        breakpoint: { max: 1024, min: 750 },
+        items: 1,
+        slidesToSlide: 1
+        },
+        mobile: {
+        breakpoint: { max: 749, min: 0 },
+        items: 1,
+        slidesToSlide: 1
+        }
+    };
+    const responsive2 = {
+        tablet: {
+        breakpoint: { max: 1024, min: 750 },
+        items: 2,
+        slidesToSlide: 1
+        },
+        mobile: {
+        breakpoint: { max: 749, min: 0 },
+        items: 2,
+        slidesToSlide: 1
+        }
+    };
 return (
     <>
     <div className='leadership__outer'>
         <div className='leadership__inner'>
             <Nabvbar navDisplay={props.navDisplay} openNav={props.openNav}  closeNav={props.closeNav}/>
-            <div className='leadership__inner__seaction1'>
+            <div className='leadership__inner__seaction1' >
+                <img src={img} className="leadership__top__image"/>
                 <div className='leadership__inner__seaction1__inner'>
                     <div className='leadership__inner__seaction1__button'>
                         View Profile
@@ -96,6 +125,7 @@ return (
                     </div>
                 </div>
             </div>
+            
             <div className='leadership__inner__seaction2'>
                 {LeadershipPanelData.map((ele)=>{
                     const{id,name}=ele;
@@ -106,98 +136,210 @@ return (
                     )
                 })}
             </div>
-            <div className='leadership__inner__seaction3'>
-                <p id="0"></p>
-                <div className="leadership__inner__seaction3__innerheading">
-                    Bussiness Directors
-                </div>
-                <div className="leadership__inner__seaction3__innerdisplay" data-aos="fade-up">
-                    {
-                        loadingLeadership ? (
-                            <div className='loading__outer'>
-                                <LoadingScreen/>    
-                            </div>
-                            
-                        ):(
-                        director.map((ele)=>{
-                            const{id,jobtitle,name}=ele;
-                            return(
-                                <><LeadershipCard1 name={name} img={profile} job={jobtitle} /></>
-                            )
-                        })
-                        )
-                    }
-                </div>
-                <p id="1"></p><br></br><br></br>
-                <div className="leadership__inner__seaction3__innerheading">
-                    Business Heads
-                </div>
-                <div className="leadership__inner__seaction3__innerdisplay" data-aos="fade-up"> 
-                    {
-                        loadingLeadership ? (
-                            <div className='loading__outer'>
-                                <LoadingScreen/>    
-                            </div>
-                            
-                        ):(
-                        head.map((ele)=>{
-                            const{id,jobTitle,name}=ele;
-                            return(
-                                <><LeadershipCard1 name={name} img={profile} job={jobTitle} /></>
-                            )
-                        })
-                        )
-                    }
-                </div>
-
-                <p id="2"></p><br></br><br></br>
-                <div className="leadership__inner__seaction3__innerheading" >
-                    Senior Leaders
-                </div>
-                <div className="leadership__inner__seaction3__innerdisplay" data-aos="fade-up">
-                    {
-                        loadingLeadership ? (
-                            <div className='loading__outer'>
-                                <LoadingScreen/>    
-                            </div>
-                            
-                        ):(
-                            leader.map((ele)=>{
-                            const{id,jobTitle,name}=ele;
-                            return(
-                                <><LeadershipCard1 name={name} img={profile} job={jobTitle} /></>
-                            )
-                        })
-                        )
-                    }
-                </div>
-                <p id="3"></p><br></br><br></br>
-                <div className="leadership__inner__seaction3__innerheading">
-                    The Vanguard
-                </div>
-                <div className="leadership__inner__seaction3__innerdisplayv" data-aos="fade-up">
-                    <div className='leadership__inner__seaction3__innerdisplay__text'>
-                        {LeaderShipData.TheVanguardText.text}
+            <div className='leadership__inner__inner'>
+                <div className='leadership__inner__seaction3'>
+                    <p id="0"></p>
+                    <div className="leadership__inner__seaction3__innerheading">
+                        Bussiness Directors
                     </div>
-                    <div className='leadership__inner__seaction3__innerdisplay__dis'>
-                    {
-                        loadingLeadership ? (
-                            <div className='loading__outer'>
-                                <LoadingScreen/>    
-                            </div>
-                        ):(
-                            vanguard.map((ele)=>{
-                            const{id,name}=ele;
-                            return(
-                                <>
-                                <div key={id} className='leadership__inner__seaction3__innerdisplay__dis__each'>
-                                    {name}
+                    <div className="leadership__inner__seaction3__innerdisplay" data-aos="fade-up">
+                        {
+                            loadingLeadership ? (
+                                <div className='loading__outer'>
+                                    <LoadingScreen/>    
                                 </div>
-                                </>
+                                
+                            ):(
+                            director.map((ele)=>{
+                                const{id,jobtitle,name}=ele;
+                                return(
+                                    <><LeadershipCard1 flag={0} name={name} img={profile} job={jobtitle} /></>
                                 )
                             })
-                        )
-                    }
+                            )
+                        }
+                    </div>
+                    <div className="leadership__inner__seaction3__innerdisplay2" data-aos="fade-up">
+                        {
+                            loadingLeadership ? (
+                                <div className='loading__outer'>
+                                    <LoadingScreen/>    
+                                </div>
+                                
+                            ):(
+                                <Carousel 
+                                responsive={responsive} 
+                                draggable
+                                autoPlay
+                                autoPlaySpeed={2000}
+                                pauseOnHover
+                                infinite
+                                showDots={true}
+                                removeArrowOnDeviceType={["tablet", "mobile","desktop"]}>
+                                    {director.map((ele)=>{
+                                        const{id,jobtitle,name}=ele;
+                                        return(
+                                            <><LeadershipCard1 flag={1} name={name} img={profile} job={jobtitle} /></>
+                                        )
+                                    })}
+                                </Carousel>
+                            )
+                        }
+                    </div>
+                    <p id="1"></p><br></br><br></br>
+                    <div className="leadership__inner__seaction3__innerheading">
+                        Business Heads
+                    </div>
+                    <div className="leadership__inner__seaction3__innerdisplay" data-aos="fade-up"> 
+                        {
+                            loadingLeadership ? (
+                                <div className='loading__outer'>
+                                    <LoadingScreen/>    
+                                </div>
+                                
+                            ):(
+                            head.map((ele)=>{
+                                const{id,jobTitle,name}=ele;
+                                return(
+                                    <><LeadershipCard1 flag={0} name={name} img={profile} job={jobTitle} /></>
+                                )
+                            })
+                            )
+                        }
+                    </div>
+                    <div className="leadership__inner__seaction3__innerdisplay2" data-aos="fade-up">
+                        {
+                            loadingLeadership ? (
+                                <div className='loading__outer'>
+                                    <LoadingScreen/>    
+                                </div>
+                                
+                            ):(
+                                <Carousel 
+                                responsive={responsive} 
+                                draggable
+                                autoPlay
+                                autoPlaySpeed={2000}
+                                pauseOnHover
+                                infinite
+                                showDots={true}
+                                removeArrowOnDeviceType={["tablet", "mobile","desktop"]}>
+                                    {head.map((ele)=>{
+                                        const{id,jobTitle,name}=ele;
+                                        return(
+                                            <><LeadershipCard1  flag={1} name={name} img={profile} job={jobTitle} /></>
+                                        )
+                                    })}
+                                </Carousel>
+                            )
+                        }
+                    </div>
+                    <p id="2"></p><br></br><br></br>
+                    <div className="leadership__inner__seaction3__innerheading" >
+                        Senior Leaders
+                    </div>
+                    <div className="leadership__inner__seaction3__innerdisplay" data-aos="fade-up">
+                        {
+                            loadingLeadership ? (
+                                <div className='loading__outer'>
+                                    <LoadingScreen/>    
+                                </div>
+                                
+                            ):(
+                                leader.map((ele)=>{
+                                const{id,jobTitle,name}=ele;
+                                return(
+                                    <><LeadershipCard1 name={name} img={profile} job={jobTitle} /></>
+                                )
+                            })
+                            )
+                        }
+                    </div>
+                    <div className="leadership__inner__seaction3__innerdisplay2" data-aos="fade-up">
+                        {
+                            loadingLeadership ? (
+                                <div className='loading__outer'>
+                                    <LoadingScreen/>    
+                                </div>
+                                
+                            ):(
+                                <Carousel 
+                                responsive={responsive} 
+                                draggable
+                                autoPlay
+                                autoPlaySpeed={2000}
+                                pauseOnHover
+                                infinite
+                                showDots={true}
+                                removeArrowOnDeviceType={["tablet", "mobile","desktop"]}>
+                                    {leader.map((ele)=>{
+                                        const{id,jobTitle,name}=ele;
+                                        return(
+                                            <><LeadershipCard1  flag={1} name={name} img={profile} job={jobTitle} /></>
+                                        )
+                                    })}
+                                </Carousel>
+                            )
+                        }
+                    </div>
+                    <p id="3"></p><br></br><br></br>
+                    <div className="leadership__inner__seaction3__innerheading">
+                        The Vanguard
+                    </div>
+                    <div className="leadership__inner__seaction3__innerdisplayv" data-aos="fade-up">
+                        <div className='leadership__inner__seaction3__innerdisplay__text'>
+                            {LeaderShipData.TheVanguardText.text}
+                        </div>
+                        <div className='leadership__inner__seaction3__innerdisplay__dis'>
+                        {
+                            loadingLeadership ? (
+                                <div className='loading__outer'>
+                                    <LoadingScreen/>    
+                                </div>
+                            ):(
+                                vanguard.map((ele)=>{
+                                const{id,name}=ele;
+                                return(
+                                    <>
+                                    <div key={id} className='leadership__inner__seaction3__innerdisplay__dis__each'>
+                                        {name}
+                                    </div>
+                                    </>
+                                    )
+                                })
+                            )
+                        }
+                        </div>
+                        <div className='leadership__inner__seaction3__innerdisplay__dis2'>
+                        {
+                            loadingLeadership ? (
+                                <div className='loading__outer'>
+                                    <LoadingScreen/>    
+                                </div>
+                            ):(
+                                <Carousel 
+                                responsive={responsive2} 
+                                draggable
+                                autoPlay
+                                autoPlaySpeed={2000}
+                                pauseOnHover
+                                infinite
+                                showDots={true}
+                                removeArrowOnDeviceType={["tablet", "mobile","desktop"]}>
+                                    {vanguard.map((ele)=>{
+                                        const{id,name}=ele;
+                                        return(
+                                            <>
+                                            <div key={id} style={{margin:"auto",marginTop:"2rem",marginBottom:"4rem"}} className='leadership__inner__seaction3__innerdisplay__dis__each'>
+                                                {name}
+                                            </div>
+                                            </>
+                                        )
+                                    })}
+                                </Carousel>
+                            )
+                        }
+                        </div>
                     </div>
                 </div>
             </div>
