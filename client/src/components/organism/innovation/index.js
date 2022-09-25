@@ -1,7 +1,9 @@
 
 import './index.css';
 import Navbar from './../NavBar/index';
+import Carousel from "react-multi-carousel";
 import Footer from './../../molecule/footer/index';
+import cover_back from './../../assets/image/innovation_img/innovation_img1.png';
 import image from '../../assets/image/innovation_img/innovation_img.svg';
 import Innovationdata from '../../assets/store/innovationData';
 import InnovationCard1 from '../../atom/innovationCard1';
@@ -64,7 +66,18 @@ const Innovation=(props)=>{
         requestGetter("card");
     }, []);
 
-
+    const responsive = {
+        tablet: {
+        breakpoint: { max: 1024, min: 750 },
+        items: 2,
+        slidesToSlide: 1
+        },
+        mobile: {
+        breakpoint: { max: 749, min: 0 },
+        items: 1,
+        slidesToSlide: 1
+        }
+    };
     return (
     <>
     <div className='innovation_outer'>
@@ -88,14 +101,15 @@ const Innovation=(props)=>{
                         </div>
                     </div>
                     <div className='innovation__sec1__bottom'>
-                        <div className='innovation__sec1__bottom__image'>
-                        </div>
+                    <img src={cover_back} className="innovation__sec1__bottom__image"/>
                         <div className='innovation__sec1__bottom__inner' data-aos="fade-up">
                             <div className='innovation__sec1__bottom__inner_head'>
-                            Innovation insights
+                                Innovation insights
                             </div>
                             <div className='innovation__sec1__bottom__inner_title'>
-                            More stories
+                                <div className='innovation__sec1__bottom__inner_title__inner'>
+                                    More stories
+                                </div>
                             </div>
                             {
                                 insightLoading ? (
@@ -105,19 +119,45 @@ const Innovation=(props)=>{
                                 </div>
                                     
                                 ):(
-                                <div className='innovation__sec1__bottom__inner_card' >
-                                    {insight.map((ele)=>{
-                                        const{id,info}=ele;
-                                        return(
-                                            <>
-                                            <InnovationCard1 id={id} img={img} title={info}/>
-                                            </>
-                                        )
-                                    })}
-                                </div>
+                                <>
+                                    <div className='innovation__sec1__bottom__inner_card' >
+                                        {insight.map((ele)=>{
+                                            const{id,info}=ele;
+                                            return(
+                                                <>
+                                                    <InnovationCard1 flag={0} id={id} img={img} title={info}/>
+                                                </>
+                                            )
+                                        })}
+                                    </div>
+                                    <div className='innovation__sec1__bottom__inner_card2' >
+                                    <Carousel 
+                                    responsive={responsive} 
+                                    draggable
+                                    autoPlay
+                                    autoPlaySpeed={2000}
+                                    pauseOnHover
+                                    infinite
+                                    showDots={true}
+                                    removeArrowOnDeviceType={["tablet", "mobile","desktop"]}>
+                                        {insight.map((ele)=>{
+                                            const{id,info}=ele;
+                                            return(
+                                                <>
+                                                    <InnovationCard1 flag={1} id={id} img={img} title={info}/>
+                                                </>
+                                            )
+                                        })}
+                                    </Carousel>
+                                    </div>
+                                </>
                                 )
                             }
-                            
+                            <div className='innovation__sec1__bottom__inner_title2'>
+                                <div className='innovation__sec1__bottom__inner_title__inner2'>
+                                    More stories
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
