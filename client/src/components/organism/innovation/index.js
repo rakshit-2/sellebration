@@ -5,11 +5,13 @@ import Footer from './../../molecule/footer/index';
 import image from '../../assets/image/innovation_img/innovation_img.svg';
 import Innovationdata from '../../assets/store/innovationData';
 import InnovationCard1 from '../../atom/innovationCard1';
+import InnovationCard2 from '../../atom/innovationCard2';
 import { useEffect,useState } from 'react';
 import Axios from 'axios';
 import ApiLink from '../../assets/store/apiLink';
 import LoadingScreen from '../../atom/loadingScreen';
 import img from './../../assets/image/test.png';
+import innovation_back from './../../assets/image/innovation_img/innovation_back.png';
 
 
 
@@ -72,6 +74,7 @@ const Innovation=(props)=>{
                 <Navbar  navDisplay={props.navDisplay} openNav={props.openNav}  closeNav={props.closeNav}/>
                 <div className='innovation__sec1'>
                     <div className='innovation__sec1__top'>
+                        <img src={innovation_back} style={{width:"100%",height:"100%",position:"absolute"}}/>
                         <div className='innovation__sec1__top__inner'>
                             <div className='innovation__sec1__top__left'>
                                 Innovation
@@ -133,50 +136,13 @@ const Innovation=(props)=>{
                             if(id%2===0)
                             {
                                 return(
-                                    <div className='innovation__sec2__inner__section3'>
-                                        <div className='innovation__sec2__inner__section3__each1'>
-                                            <div className='innovation__sec2__inner__section3__each1__inner'>
-                                                <img src={img} className="innovation__sec2__section3__img"/>
-                                            </div>
-                                        </div>
-                                        <div className='innovation__sec2__inner__section3__each2'>
-                                            <div className='innovation__sec2__inner__section3__each2__inner'>
-                                                <div className='innovation__sec2__inner__section3__each2__inner__up'>
-                                                    <div className='innovation__sec2__inner__section3__each2__inner__heading'>
-                                                        {name}
-                                                    </div>
-                                                    <div className='innovation__sec2__inner__section3__each2__inner__text'>
-                                                        {info}
-                                                    </div>
-                                                </div>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <InnovationCard2 flag={0} id={id} name={name} info={info} img={img} />
                                 )
                             }
                             else
                             {
                                 return (
-                                    <div className='innovation__sec2__inner__section3'>
-                                        <div className='innovation__sec2__inner__section3__each1' style={{justifyContent:"flex-end"}}>
-                                            <div className='innovation__sec2__inner__section3__each1__inner'>
-                                                <img src={img} className="innovation__sec2__section3__img"/>
-                                            </div>
-                                        </div>
-                                        <div className='innovation__sec2__inner__section3__each2' style={{justifyContent:"flex-start"}}>
-                                            <div className='innovation__sec2__inner__section3__each2__inner'>
-                                                <div className='innovation__sec2__inner__section3__each2__inner__up'>
-                                                    <div className='innovation__sec2__inner__section3__each2__inner__heading'>
-                                                        {name}
-                                                    </div>
-                                                    <div className='innovation__sec2__inner__section3__each2__inner__text'>
-                                                        {info}
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <InnovationCard2 flag={1} id={id} name={name} info={info} img={img} />
                                 )
                             }
                         })}
