@@ -3,7 +3,6 @@ const express = require('express')
 const app = express()
 const bodyParser=require('body-parser');
 const cors=require('cors');
-const port = process.env.PORT || 3001
 
 
 app.use(cors());
@@ -23,7 +22,9 @@ app.get('/test', (req, res) => {
 })
 
 
-
+app.get('/', (req, res) => {
+  res.send("hello")
+})
 
 //Home -- connection 4 table our stories 1 table latest news
 
@@ -282,6 +283,7 @@ app.post('/contact-us/full-data',(req,res)=>{
   })
 })
 
-app.listen(port, () => {
-  console.log(`Listening at ${port}`)
-})
+const port=process.env.PORT || 3001;
+app.listen(port,()=>{
+    console.log(`listning on port ${port}`);
+});
