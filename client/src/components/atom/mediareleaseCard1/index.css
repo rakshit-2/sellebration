@@ -74,3 +74,49 @@
     cursor: pointer;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
+.mediareleasecard1__share__icon{
+    width:15px;
+    height:15px;
+}
+
+
+
+
+
+
+
+@media screen and (max-width:1124px)
+{
+    .mediareleasecard1__outer__date__left{
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 18px;
+    }
+    .mediareleasecard1__outer__text{
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 24px;
+    }
+    .mediareleasecard1__outer__button{
+        padding: 10px;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 10px
+    }
+    .mediareleasecard1__share__icon{
+        width:10px;
+        height:10px;
+    }
+}
+
+
+
+
+
+
+
+
+
+

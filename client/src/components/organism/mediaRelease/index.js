@@ -12,6 +12,7 @@ import arrow_right from './../../assets/image/event/right_arrow.svg';
 import Footer2 from './../../molecule/footer2/index';
 import Footer from './../../molecule/footer/index';
 import SocialFeed from '../../molecule/socialFeed';
+import back_img from './../../assets/image/media_release/background_img.svg';
 
 const MediaRelease=(props)=>{
 
@@ -187,6 +188,9 @@ return (
         <div className="mediarelease__inner">
             <Navbar navDisplay={props.navDisplay} openNav={props.openNav}  closeNav={props.closeNav}/>
             <div className="mediarelease__inner__section1">
+                <div className='mediarelease__back__img'>
+
+                </div>
                 <div className="mediarelease__inner__section1__inner">
                     <div className="mediarelease__inner__section1__inner__top">
                         Home / media
@@ -197,75 +201,76 @@ return (
                 </div>
             </div>
 
-
-            <div className='mediarelease__inner__section2'>
-                {
-                    mediaReleaseLoading ? (
-                        <div className='loading__outer' style={{width:"70%"}}>
-                            <LoadingScreen/>    
-                        </div>
-                        
-                    ):(
-                        <>
-                        <div className='mediarelease__inner__section2__left'>
-                            <div className='mediarelease__inner__section2__left__panel'>
-                                <div className='mediarelease__inner__section2__left__panel__field'>
-                                    From {'\u00A0'}<img src={calendar_img} style={{width:"20px",height:"20px"}}/> {'\u00A0'}: {'\u00A0'} <input type="date" className='mediarelease__inner__section2__left__panel__fieldinn'  onChange={(e)=>{setFromDate(e.target.value)}}/>
-                                </div>
-                                <div className='mediarelease__inner__section2__left__panel__field'>
-                                    To {'\u00A0'}<img src={calendar_img} style={{width:"20px",height:"20px"}}/> {'\u00A0'}:  {'\u00A0'}<input type="date" className='mediarelease__inner__section2__left__panel__fieldinn'  onChange={(e)=>{setToDate(e.target.value)}}/>
-                                </div>
-                                <div className='mediarelease__inner__section2__button' onClick={()=>{filterClicked()}}>
-                                    Filters
-                                </div>
+            <div className="mediarelease__inner__inner">
+                <div className='mediarelease__inner__section2'>
+                    {
+                        mediaReleaseLoading ? (
+                            <div className='loading__outer' style={{width:"70%"}}>
+                                <LoadingScreen/>    
                             </div>
-                            <div className='mediarelease__wronddata__modale' style={{display:errHiding}}>
-                                <div className='mediarelease__wronddata__modale__text'>
-                                    <img src={alert} className="mediarelease__wronddata__modale__text__img"></img>{'\u00A0'}{'\u00A0'}Invalid Information Entered 
-                                </div>
-                            </div>
-                            <div className='mediarelease__inner__section2__left__display'  data-aos="fade-right">
-                                {displayerData.slice(splicing.start, splicing.end).map((ele)=>{
-                                    const{id,date,info,link}=ele;
-                                    var year=date.slice(0,4);
-                                    var month=parseInt(date.slice(5, 7));
-                                    var day=date.slice(8,10);
-                                    var date_value=day+" "+monthLis[month-1]+" "+year;
-
-                                    return(
-                                        <MediaReleaseCard1 id={id} date={date_value} info={info} link={link} nameDisplay={"none"} buttonDisplay={"flex"}/>
-                                     )
-                                })} 
-                            </div>
-                            <div className='mediarelease__inner__left__bottom__panel'>
-                                <div className='mediarelease__inner__left__bottom__panel__left' onClick={()=>{pageChange("dec")}}>
-                                    <img src={arrow_left} style={{width:"80%",height:"80%"}}/>
-                                </div>
-                                <div className='mediarelease__inner__left__bottom__panel__line'>
-                                    
-                                </div>
-                                <div className='mediarelease__inner__left__bottom__panel__page'>
-                                    <div className='mediarelease__inner__left__bottom__panel__page__each' style={{width:"50px",height:"50px",backgroundColor:"#0AB1EE"}}>
-                                        {pageCount}
+                            
+                        ):(
+                            <>
+                            <div className='mediarelease__inner__section2__left'>
+                                <div className='mediarelease__inner__section2__left__panel'>
+                                    <div className='mediarelease__inner__section2__left__panel__field'>
+                                        From {'\u00A0'}<img src={calendar_img} style={{width:"20px",height:"20px"}}/> {'\u00A0'}: {'\u00A0'} <input type="date" className='mediarelease__inner__section2__left__panel__fieldinn'  onChange={(e)=>{setFromDate(e.target.value)}}/>
                                     </div>
-                                    {'\u00A0'} of {'\u00A0'}
-                                    <div className='mediarelease__inner__left__bottom__panel__page__each' style={{width:"30px",height:"30px"}}>
-                                        {pageLen}
+                                    <div className='mediarelease__inner__section2__left__panel__field'>
+                                        To {'\u00A0'}<img src={calendar_img} style={{width:"20px",height:"20px"}}/> {'\u00A0'}:  {'\u00A0'}<input type="date" className='mediarelease__inner__section2__left__panel__fieldinn'  onChange={(e)=>{setToDate(e.target.value)}}/>
+                                    </div>
+                                    <div className='mediarelease__inner__section2__button' onClick={()=>{filterClicked()}}>
+                                        Filters
                                     </div>
                                 </div>
-                                <div className='mediarelease__inner__left__bottom__panel__line'>
-                                    
+                                <div className='mediarelease__wronddata__modale' style={{display:errHiding}}>
+                                    <div className='mediarelease__wronddata__modale__text'>
+                                        <img src={alert} className="mediarelease__wronddata__modale__text__img"></img>{'\u00A0'}{'\u00A0'}Invalid Information Entered 
+                                    </div>
                                 </div>
-                                <div className='mediarelease__inner__left__bottom__panel__left' onClick={()=>{pageChange("inc")}}>
-                                    <img src={arrow_right} style={{width:"80%",height:"80%"}}/>
+                                <div className='mediarelease__inner__section2__left__display' >
+                                    {displayerData.slice(splicing.start, splicing.end).map((ele)=>{
+                                        const{id,date,info,link}=ele;
+                                        var year=date.slice(0,4);
+                                        var month=parseInt(date.slice(5, 7));
+                                        var day=date.slice(8,10);
+                                        var date_value=day+" "+monthLis[month-1]+" "+year;
+
+                                        return(
+                                            <MediaReleaseCard1 id={id} date={date_value} info={info} link={link} nameDisplay={"none"} buttonDisplay={"flex"}/>
+                                        )
+                                    })} 
                                 </div>
-                            </div> 
-                        </div>
-                        
-                        </>
-                    )
-                }
-                <SocialFeed/>
+                                <div className='mediarelease__inner__left__bottom__panel'>
+                                    <div className='mediarelease__inner__left__bottom__panel__left' onClick={()=>{pageChange("dec")}}>
+                                        <img src={arrow_left} style={{width:"80%",height:"80%"}}/>
+                                    </div>
+                                    <div className='mediarelease__inner__left__bottom__panel__line'>
+                                        
+                                    </div>
+                                    <div className='mediarelease__inner__left__bottom__panel__page'>
+                                        <div className='mediarelease__inner__left__bottom__panel__page__each' style={{width:"50px",height:"50px",backgroundColor:"#0AB1EE"}}>
+                                            {pageCount}
+                                        </div>
+                                        {'\u00A0'} of {'\u00A0'}
+                                        <div className='mediarelease__inner__left__bottom__panel__page__each' style={{width:"30px",height:"30px"}}>
+                                            {pageLen}
+                                        </div>
+                                    </div>
+                                    <div className='mediarelease__inner__left__bottom__panel__line'>
+                                        
+                                    </div>
+                                    <div className='mediarelease__inner__left__bottom__panel__left' onClick={()=>{pageChange("inc")}}>
+                                        <img src={arrow_right} style={{width:"80%",height:"80%"}}/>
+                                    </div>
+                                </div> 
+                            </div>
+                            
+                            </>
+                        )
+                    }
+                    <SocialFeed/>
+                </div>
             </div>
             <Footer2/>
             <Footer/>

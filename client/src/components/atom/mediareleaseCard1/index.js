@@ -7,7 +7,7 @@ const MediaReleaseCard1=(props)=>{
     
     return(
     <>
-    <div key={props.id} className='mediareleasecard1__outer'>
+    <div key={props.id} className='mediareleasecard1__outer'  data-aos="fade-right">
         <div className='mediareleasecard1__outer__date'>
             <div className='mediareleasecard1__outer__date__left'>
                 {props.date}
@@ -21,7 +21,7 @@ const MediaReleaseCard1=(props)=>{
             {props.info}
         </div>
         <div className='mediareleasecard1__outer__button' style={{display:props.buttonDisplay}}>
-            Share {'\u00A0'}<img src={share_img} style={{width:"15px",height:"15px"}}/>
+            Share {'\u00A0'}<img src={share_img} className="mediareleasecard1__share__icon"/>
         </div>
     </div>
     </>

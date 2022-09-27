@@ -168,3 +168,54 @@
     color: #FFFFFF;
     background-color: #2F528E;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (min-width:1500px)
+{
+    .footer2__inner{
+        width:90%;
+    }
+}
+
+@media screen and (min-width:1700px)
+{
+    .footer2__inner{
+        width:80%;
+    }
+}
+
+@media screen and (min-width:2000px)
+{
+    .footer2__inner{
+        width:70%;
+    }
+}
+
+
+@media screen and (min-width:2100px)
+{
+    .footer2__inner{
+        width:65%;
+    }
+}
+
+@media screen and (min-width:2462px)
+{
+    .footer2__inner{
+        width:55%;
+    }
+}
