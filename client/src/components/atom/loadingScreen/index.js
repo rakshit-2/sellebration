@@ -1,17 +1,14 @@
+import { DotWave } from '@uiball/loaders'
 
-import './index.css';
-const LoadingScreen = () => {
+const LoadingScreen = (props) => {
   return(
-      <>
-      
-        <div class="square" id="one"></div>
-        <div class="square" id="two"></div>
-        <div class="square" id="three"></div>
-        <div class="square" id="four"></div>
-        <div class="square" id="five"></div>
 
-      
-      </>
+    <DotWave
+     size={60}
+     lineWeight={5}
+     speed={1.4} 
+     color="black" 
+    />
   );
 };
  
