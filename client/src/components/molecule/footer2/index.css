@@ -79,6 +79,7 @@
     height:2px;
     background-color:#2F528E ;
     margin-bottom: 1rem;
+    display: none;
 }
 .footer2__inner__left__each{
     width:100%;
@@ -302,5 +303,8 @@
     }
     .footer2__line{
         display: none;
+    }
+    .footer2__line2{
+        display: block;
     }
 }
