@@ -25,6 +25,8 @@ return (
             </div>
             <div className="footer2__line">
             </div>
+            <div className="footer2__line2">
+            </div>
             <div className="footer2__inner__left">
                 <div className="footer2__inner__left__each">
                     <img src={call} className="footer2__inner__left__each__img"/>

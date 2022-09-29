@@ -28,7 +28,7 @@ return (
                 
                 <div className='event__inner__section2__right__middle__each'>
                     <div className='event__inner__section2__right__middle__inner'>
-
+                    facebook
                     </div>
                     <div className='event__inner__section2__right__middle__text'>
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text. Lorem Ipsum
@@ -59,7 +59,7 @@ return (
                 
                 <div className='event__inner__section2__right__middle__each'>
                     <div className='event__inner__section2__right__middle__inner'>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text. Lorem Ipsum
+                    twitter
                     </div>
                     <div className='event__inner__section2__right__middle__text'>
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text. Lorem Ipsum
