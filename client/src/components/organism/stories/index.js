@@ -9,6 +9,8 @@ import test from './../../assets/image/test.png';
 import Footer from './../../molecule/footer/index';
 import Footer2 from './../../molecule/footer2/index';
 import alert from './../../assets/image/event/alert.svg';
+import back_img from './../../assets/image/stories_img/background_img.svg';
+// background_img.svg
 
 const Stories=(props)=>{
     const[all,setAll]=useState();
@@ -213,6 +215,9 @@ const Stories=(props)=>{
             
             
             <div className="stories__inner__section1">
+                <div className='stories__inner__section1__img'>
+
+                </div>
                 <div className="stories__inner__section1__inner">
                     <div className="stories__inner__section1__inner__top">
                         Home / media
@@ -224,91 +229,91 @@ const Stories=(props)=>{
             </div>
 
             
-
-            <div className='stories__inner__section2'>
-                {
-                    storiesLoading ? (
-                        <div className='loading__outer'>
-                            <LoadingScreen/>    
-                        </div>
-                        
-                    ):(
-                        <>
-                        <div className='stories__inner__section2__left__panel'>
-                            <select className='stories__inner__section2__left__panel__field' onChange={(e)=>[setCname(e.target.value)]}>
-                                {company.map((ele)=>{
-                                    const{id,name}=ele;
-                                    return(
-                                        <option key={id} value={name}>{name}</option>
-                                    )
-                                })}
-                            </select>
-                            <select className='stories__inner__section2__left__panel__field' onChange={(e)=>[setTname(e.target.value)]}>
-                                {topic.map((ele)=>{
-                                    const{id,topic}=ele;
-                                    return(
-                                        <option key={id} value={topic}>{topic}</option>
-                                    )
-                                })}
-                            </select>
-                            <div className='stories__inner__section2__button__filter' onClick={()=>{filterClicked()}}>
-                                Filters
-                            </div>
-                        </div>
-                            <div className='event__wronddata__modale' style={{display:errHiding}}>
-                                <div className='event__wronddata__modale__text'>
-                                    <img src={alert} className="event__wronddata__modale__text__img"></img>{'\u00A0'}{'\u00A0'}Invalid Information Entered 
-                                </div>
-                            </div>
-                            <div className='stories__inner__section2__display'>
-                                <div className='stories__inner__section2__col'>
-                                    {displayerData.slice(splitting[0],splitting[1]).map((ele)=>{
-                                        const{id,name,date,info,topic,link}=ele;
-                                        var year=date.slice(0,4);
-                                        var month=parseInt(date.slice(5, 7));
-                                        var day=date.slice(8,10);
-                                        var date_value=day+" "+monthLis[month-1]+" "+year;
-                                        return(
-                                            <StoriesCard1 id={id} name={name} date={date_value} info={info} topic={topic} link={link} img={test}/> 
-                                        )
-                                    })}
-                                </div>
-                                <div className='stories__inner__section2__col'>
-                                    {displayerData.slice(splitting[2],splitting[3]).map((ele)=>{
-                                        const{id,name,date,info,topic,link}=ele;
-                                        var year=date.slice(0,4);
-                                        var month=parseInt(date.slice(5, 7));
-                                        var day=date.slice(8,10);
-                                        var date_value=day+" "+monthLis[month-1]+" "+year;
-                                        return(
-                                            <StoriesCard1 id={id} name={name} date={date_value} info={info} topic={topic} link={link} img={test}/>
-                                        )
-                                    })}
-                                </div>
-                                <div className='stories__inner__section2__col'>
-                                    {displayerData.slice(splitting[4],splitting[5]).map((ele)=>{
-                                        const{id,name,date,info,topic,link}=ele;
-                                        var year=date.slice(0,4);
-                                        var month=parseInt(date.slice(5, 7));
-                                        var day=date.slice(8,10);
-                                        var date_value=day+" "+monthLis[month-1]+" "+year;
-                                        return(
-                                            <StoriesCard1 id={id} name={name} date={date_value} info={info} topic={topic} link={link} img={test}/>
-                                        )
-                                    })}
-                                </div>
-                            </div>
-                            <div className='stories__inner__section2__loadmore' style={{display:loadMore}}>
-                                <div className='stories__inner__section2__loadmore__button'  onClick={()=>{changeLen()}}>
-                                    Load More
-                                </div>
+            <div className='stories__inner__inner'>
+                <div className='stories__inner__section2'>
+                    {
+                        storiesLoading ? (
+                            <div className='loading__outer'>
+                                <LoadingScreen/>    
                             </div>
                             
-                        </>
-                    )
-                }
+                        ):(
+                            <>
+                            <div className='stories__inner__section2__left__panel'>
+                                <select className='stories__inner__section2__left__panel__field' onChange={(e)=>[setCname(e.target.value)]}>
+                                    {company.map((ele)=>{
+                                        const{id,name}=ele;
+                                        return(
+                                            <option key={id} value={name}>{name}</option>
+                                        )
+                                    })}
+                                </select>
+                                <select className='stories__inner__section2__left__panel__field' onChange={(e)=>[setTname(e.target.value)]}>
+                                    {topic.map((ele)=>{
+                                        const{id,topic}=ele;
+                                        return(
+                                            <option key={id} value={topic}>{topic}</option>
+                                        )
+                                    })}
+                                </select>
+                                <div className='stories__inner__section2__button__filter' onClick={()=>{filterClicked()}}>
+                                    Filters
+                                </div>
+                            </div>
+                                <div className='event__wronddata__modale' style={{display:errHiding}}>
+                                    <div className='event__wronddata__modale__text'>
+                                        <img src={alert} className="event__wronddata__modale__text__img"></img>{'\u00A0'}{'\u00A0'}Invalid Information Entered 
+                                    </div>
+                                </div>
+                                <div className='stories__inner__section2__display'>
+                                    <div className='stories__inner__section2__col'>
+                                        {displayerData.slice(splitting[0],splitting[1]).map((ele)=>{
+                                            const{id,name,date,info,topic,link}=ele;
+                                            var year=date.slice(0,4);
+                                            var month=parseInt(date.slice(5, 7));
+                                            var day=date.slice(8,10);
+                                            var date_value=day+" "+monthLis[month-1]+" "+year;
+                                            return(
+                                                <StoriesCard1 id={id} name={name} date={date_value} info={info} topic={topic} link={link} img={test}/> 
+                                            )
+                                        })}
+                                    </div>
+                                    <div className='stories__inner__section2__col'>
+                                        {displayerData.slice(splitting[2],splitting[3]).map((ele)=>{
+                                            const{id,name,date,info,topic,link}=ele;
+                                            var year=date.slice(0,4);
+                                            var month=parseInt(date.slice(5, 7));
+                                            var day=date.slice(8,10);
+                                            var date_value=day+" "+monthLis[month-1]+" "+year;
+                                            return(
+                                                <StoriesCard1 id={id} name={name} date={date_value} info={info} topic={topic} link={link} img={test}/>
+                                            )
+                                        })}
+                                    </div>
+                                    <div className='stories__inner__section2__col'>
+                                        {displayerData.slice(splitting[4],splitting[5]).map((ele)=>{
+                                            const{id,name,date,info,topic,link}=ele;
+                                            var year=date.slice(0,4);
+                                            var month=parseInt(date.slice(5, 7));
+                                            var day=date.slice(8,10);
+                                            var date_value=day+" "+monthLis[month-1]+" "+year;
+                                            return(
+                                                <StoriesCard1 id={id} name={name} date={date_value} info={info} topic={topic} link={link} img={test}/>
+                                            )
+                                        })}
+                                    </div>
+                                </div>
+                                <div className='stories__inner__section2__loadmore' style={{display:loadMore}}>
+                                    <div className='stories__inner__section2__loadmore__button'  onClick={()=>{changeLen()}}>
+                                        Load More
+                                    </div>
+                                </div>
+                                
+                            </>
+                        )
+                    }
+                </div>
             </div>
-
             <Footer2/>
 
             <Footer/>
