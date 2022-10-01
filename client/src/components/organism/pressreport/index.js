@@ -168,6 +168,10 @@ const PressReport=(props)=>{
             }
            
         }
+        window.scrollTo({
+            top: 500,
+            behavior: 'smooth'
+        });
     }
 
 
@@ -178,6 +182,10 @@ const PressReport=(props)=>{
     
     function pageChange(x)
     {
+        window.scrollTo({
+            top: 500,
+            behavior: 'smooth'
+        });
         if(x==="inc")
         {
             
@@ -200,6 +208,7 @@ const PressReport=(props)=>{
             }
             
         }
+        
     }
     
 
