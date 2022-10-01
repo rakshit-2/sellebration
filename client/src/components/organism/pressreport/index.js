@@ -267,29 +267,30 @@ return (
                                         )
                                     })} 
                                 </div>
-                                <div className='pressreport__inner__left__bottom__panel'>
-                                    <div className='pressreport__inner__left__bottom__panel__left' onClick={()=>{pageChange("dec")}}>
-                                        <img src={arrow_left} style={{width:"80%",height:"80%"}}/>
+                                <div className='mediarelease__inner__left__bottom__panel'>
+                                    <div className='mediarelease__inner__left__bottom__panel__left' onClick={()=>{pageChange("dec")}}>
+                                        <img src={arrow_left} className="media_arrow"/>
                                     </div>
-                                    <div className='pressreport__inner__left__bottom__panel__line'>
+                                    <div className='mediarelease__inner__left__bottom__panel__line'>
                                         
                                     </div>
-                                    <div className='pressreport__inner__left__bottom__panel__page'>
-                                        <div className='pressreport__inner__left__bottom__panel__page__each' style={{width:"50px",height:"50px",backgroundColor:"#0AB1EE"}}>
+                                    <div className='mediarelease__inner__left__bottom__panel__page'>
+                                        <div className='mediarelease__inner__left__bottom__panel__page__each1'>
                                             {pageCount}
                                         </div>
-                                        {'\u00A0'} of {'\u00A0'}
-                                        <div className='pressreport__inner__left__bottom__panel__page__each' style={{width:"30px",height:"30px"}}>
+                                        <span className='media__span'>{'\u00A0'} of {'\u00A0'}</span>
+                                        <span className='media__span2'> - </span>
+                                        <div className='mediarelease__inner__left__bottom__panel__page__each2'>
                                             {pageLen}
                                         </div>
                                     </div>
-                                    <div className='pressreport__inner__left__bottom__panel__line'>
+                                    <div className='mediarelease__inner__left__bottom__panel__line'>
                                         
                                     </div>
-                                    <div className='pressreport__inner__left__bottom__panel__left' onClick={()=>{pageChange("inc")}}>
-                                        <img src={arrow_right} style={{width:"80%",height:"80%"}}/>
+                                    <div className='mediarelease__inner__left__bottom__panel__left' onClick={()=>{pageChange("inc")}}>
+                                        <img src={arrow_right} className="media_arrow"/>
                                     </div>
-                                </div> 
+                                </div>  
                             </div>
                             
                             </>

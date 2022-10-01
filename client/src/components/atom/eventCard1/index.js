@@ -19,11 +19,11 @@ const EventCard1=(props)=>{
                     {props.info}
                 </div>
                 <div className='event__inner__section2__left__each__right__button'>
-                    <div className='event__inner__section2__button'>
+                    <div className='event__inner__section2__button__card'>
                         Know more
                     </div>
-                    <div className='event__inner__section2__button'>
-                        Share {'\u00A0'}<img src={share_img} style={{width:"15px",height:"15px"}}/>
+                    <div className='event__inner__section2__button__card'>
+                        Share {'\u00A0'}<img src={share_img} style={{width:"10px",height:"10px"}}/>
                     </div>
                 </div>
             </div>
