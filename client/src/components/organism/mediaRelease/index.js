@@ -146,6 +146,10 @@ const MediaRelease=(props)=>{
             }
            
         }
+        window.scrollTo({
+            top: 300,
+            behavior: 'smooth'
+        });
     }
 
 
@@ -178,6 +182,10 @@ const MediaRelease=(props)=>{
             }
             
         }
+        window.scrollTo({
+            top: 400,
+            behavior: 'smooth'
+        });
     }
     
 
@@ -236,7 +244,7 @@ return (
                                         var date_value=day+" "+monthLis[month-1]+" "+year;
 
                                         return(
-                                            <MediaReleaseCard1 id={id} date={date_value} info={info} link={link} nameDisplay={"none"} buttonDisplay={"flex"}/>
+                                            <MediaReleaseCard1 id={id} date={date_value} info={info} link={link} flag={0}/>
                                         )
                                     })} 
                                 </div>

@@ -268,7 +268,7 @@
 .mediarelease__inner__left__bottom__panel__page__each2{
     width:30px;
     height:30px;
-    background-color:#0AB1EE;
+    /* background-color:#0AB1EE; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -514,7 +514,6 @@
     .mediarelease__inner__left__bottom__panel__page__each2{
         width:30px;
         height:30px;
-        background-color:#0AB1EE;
         display: flex;
         align-items: center;
         justify-content: center;

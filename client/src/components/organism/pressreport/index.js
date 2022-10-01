@@ -168,6 +168,10 @@ const PressReport=(props)=>{
             }
            
         }
+        window.scrollTo({
+            top: 500,
+            behavior: 'smooth'
+        });
     }
 
 
@@ -178,6 +182,10 @@ const PressReport=(props)=>{
     
     function pageChange(x)
     {
+        window.scrollTo({
+            top: 500,
+            behavior: 'smooth'
+        });
         if(x==="inc")
         {
             
@@ -200,6 +208,7 @@ const PressReport=(props)=>{
             }
             
         }
+        
     }
     
 
@@ -207,95 +216,97 @@ return (
     <>
     <div className="pressreport__outer">
         <div className="pressreport__inner">
-            <Navbar navDisplay={props.navDisplay} openNav={props.openNav}  closeNav={props.closeNav}/>
-            <div className="pressreport__inner__section1">
-                <div className="pressreport__inner__section1__inner">
-                    <div className="pressreport__inner__section1__inner__top">
-                        Home / media
-                    </div>
-                    <div className="pressreport__inner__section1__inner__bottom">
-                        Press Report
+                <Navbar navDisplay={props.navDisplay} openNav={props.openNav}  closeNav={props.closeNav}/>
+                <div className="pressreport__inner__section1">
+                    <div className="pressreport__inner__section1__inner">
+                        <div className="pressreport__inner__section1__inner__top">
+                            Home / media
+                        </div>
+                        <div className="pressreport__inner__section1__inner__bottom">
+                            Press Report
+                        </div>
                     </div>
                 </div>
-            </div>
 
+            <div className="pressreport__inner__inner">
+                <div className='pressreport__inner__section2'>
+                    {
+                        presseRportLoading ? (
+                            <div className='loading__outer' style={{width:"70%"}}>
+                                <LoadingScreen/>    
+                            </div>
+                            
+                        ):(
+                            <>
+                            <div className='pressreport__inner__section2__left'>
+                                <div className='pressreport__inner__section2__left__panel'>
+                                    <select className='pressreport__inner__section2__left__panel__field' onChange={(e)=>[setCname(e.target.value)]}>
+                                        {company.map((ele)=>{
+                                            const{id,name}=ele;
+                                            return(
+                                                <option key={id} value={name}>{name}</option>
+                                            )
+                                        })}
+                                    </select>
+                                    <div className='pressreport__inner__section2__left__panel__field'>
+                                        From {'\u00A0'}<img src={calendar_img} style={{width:"20px",height:"20px"}}/> {'\u00A0'}: {'\u00A0'} <input type="date" className='pressreport__inner__section2__left__panel__fieldinn'  onChange={(e)=>{setFromDate(e.target.value)}}/>
+                                    </div>
+                                    <div className='pressreport__inner__section2__left__panel__field'>
+                                        To {'\u00A0'}<img src={calendar_img} style={{width:"20px",height:"20px"}}/> {'\u00A0'}:  {'\u00A0'}<input type="date" className='pressreport__inner__section2__left__panel__fieldinn'  onChange={(e)=>{setToDate(e.target.value)}}/>
+                                    </div>
+                                    <div className='pressreport__inner__section2__button' onClick={()=>{filterClicked()}}>
+                                        Filters
+                                    </div>
+                                </div>
+                                <div className='pressreport__wronddata__modale' style={{display:errHiding}}>
+                                    <div className='pressreport__wronddata__modale__text'>
+                                        <img src={alert} className="pressreport__wronddata__modale__text__img"></img>{'\u00A0'}{'\u00A0'}Invalid Information Entered 
+                                    </div>
+                                </div>
+                                <div className='pressreport__inner__section2__left__display'  data-aos="fade-right">
+                                    {displayerData.slice(splicing.start, splicing.end).map((ele)=>{
+                                        const{id,name,date,info,link}=ele;
+                                        var year=date.slice(0,4);
+                                        var month=parseInt(date.slice(5, 7));
+                                        var day=date.slice(8,10);
+                                        var date_value=day+" "+monthLis[month-1]+" "+year;
 
-            <div className='pressreport__inner__section2'>
-                {
-                    presseRportLoading ? (
-                        <div className='loading__outer' style={{width:"70%"}}>
-                            <LoadingScreen/>    
-                        </div>
-                        
-                    ):(
-                        <>
-                        <div className='pressreport__inner__section2__left'>
-                            <div className='pressreport__inner__section2__left__panel'>
-                                <select className='pressreport__inner__section2__left__panel__field' onChange={(e)=>[setCname(e.target.value)]}>
-                                    {company.map((ele)=>{
-                                        const{id,name}=ele;
                                         return(
-                                            <option key={id} value={name}>{name}</option>
+                                            <MediaReleaseCard1 id={id} name={name} date={date_value} info={info} link={link} flag={1}/>
                                         )
-                                    })}
-                                </select>
-                                <div className='pressreport__inner__section2__left__panel__field'>
-                                    From {'\u00A0'}<img src={calendar_img} style={{width:"20px",height:"20px"}}/> {'\u00A0'}: {'\u00A0'} <input type="date" className='pressreport__inner__section2__left__panel__fieldinn'  onChange={(e)=>{setFromDate(e.target.value)}}/>
+                                    })} 
                                 </div>
-                                <div className='pressreport__inner__section2__left__panel__field'>
-                                    To {'\u00A0'}<img src={calendar_img} style={{width:"20px",height:"20px"}}/> {'\u00A0'}:  {'\u00A0'}<input type="date" className='pressreport__inner__section2__left__panel__fieldinn'  onChange={(e)=>{setToDate(e.target.value)}}/>
-                                </div>
-                                <div className='pressreport__inner__section2__button' onClick={()=>{filterClicked()}}>
-                                    Filters
-                                </div>
-                            </div>
-                            <div className='pressreport__wronddata__modale' style={{display:errHiding}}>
-                                <div className='pressreport__wronddata__modale__text'>
-                                    <img src={alert} className="pressreport__wronddata__modale__text__img"></img>{'\u00A0'}{'\u00A0'}Invalid Information Entered 
-                                </div>
-                            </div>
-                            <div className='pressreport__inner__section2__left__display'  data-aos="fade-right">
-                                {displayerData.slice(splicing.start, splicing.end).map((ele)=>{
-                                    const{id,name,date,info,link}=ele;
-                                    var year=date.slice(0,4);
-                                    var month=parseInt(date.slice(5, 7));
-                                    var day=date.slice(8,10);
-                                    var date_value=day+" "+monthLis[month-1]+" "+year;
-
-                                    return(
-                                        <MediaReleaseCard1 id={id} name={name} date={date_value} info={info} link={link} nameDisplay={"flex"} buttonDisplay={"none"}/>
-                                     )
-                                })} 
-                            </div>
-                            <div className='pressreport__inner__left__bottom__panel'>
-                                <div className='pressreport__inner__left__bottom__panel__left' onClick={()=>{pageChange("dec")}}>
-                                    <img src={arrow_left} style={{width:"80%",height:"80%"}}/>
-                                </div>
-                                <div className='pressreport__inner__left__bottom__panel__line'>
-                                    
-                                </div>
-                                <div className='pressreport__inner__left__bottom__panel__page'>
-                                    <div className='pressreport__inner__left__bottom__panel__page__each' style={{width:"50px",height:"50px",backgroundColor:"#0AB1EE"}}>
-                                        {pageCount}
+                                <div className='mediarelease__inner__left__bottom__panel'>
+                                    <div className='mediarelease__inner__left__bottom__panel__left' onClick={()=>{pageChange("dec")}}>
+                                        <img src={arrow_left} className="media_arrow"/>
                                     </div>
-                                    {'\u00A0'} of {'\u00A0'}
-                                    <div className='pressreport__inner__left__bottom__panel__page__each' style={{width:"30px",height:"30px"}}>
-                                        {pageLen}
+                                    <div className='mediarelease__inner__left__bottom__panel__line'>
+                                        
                                     </div>
-                                </div>
-                                <div className='pressreport__inner__left__bottom__panel__line'>
-                                    
-                                </div>
-                                <div className='pressreport__inner__left__bottom__panel__left' onClick={()=>{pageChange("inc")}}>
-                                    <img src={arrow_right} style={{width:"80%",height:"80%"}}/>
-                                </div>
-                            </div> 
-                        </div>
-                        
-                        </>
-                    )
-                }
-                <SocialFeed/>
+                                    <div className='mediarelease__inner__left__bottom__panel__page'>
+                                        <div className='mediarelease__inner__left__bottom__panel__page__each1'>
+                                            {pageCount}
+                                        </div>
+                                        <span className='media__span'>{'\u00A0'} of {'\u00A0'}</span>
+                                        <span className='media__span2'> - </span>
+                                        <div className='mediarelease__inner__left__bottom__panel__page__each2'>
+                                            {pageLen}
+                                        </div>
+                                    </div>
+                                    <div className='mediarelease__inner__left__bottom__panel__line'>
+                                        
+                                    </div>
+                                    <div className='mediarelease__inner__left__bottom__panel__left' onClick={()=>{pageChange("inc")}}>
+                                        <img src={arrow_right} className="media_arrow"/>
+                                    </div>
+                                </div>  
+                            </div>
+                            
+                            </>
+                        )
+                    }
+                    <SocialFeed/>
+                </div>
             </div>
             <Footer2/>
             <Footer/>

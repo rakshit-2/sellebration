@@ -11,11 +11,20 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    overflow: hidden;
 }
-
+.pressreport__inner__inner{
+    width:100%;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    
+}
 .pressreport__inner__section1{
     width:100%;
-    height:45vh;
+    height:40rem;
     display: flex;
     align-items: flex-end;
     justify-content: center;
@@ -83,6 +92,7 @@
     margin-bottom: 3rem;
 }
 .pressreport__inner__section2__left__panel__field{
+    
     min-width:13rem;
     padding:10px;
     border: none;
@@ -90,13 +100,14 @@
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 600;
-    font-size: 18px;
+    font-size: 13px;
     line-height: 20px;
     text-transform: capitalize;
     color: #000000;
     background-color: #C9C9C9;
     margin-right: 0.5rem;
     display: flex;
+    justify-content: center;
     align-items:center;
 }
 .pressreport__inner__section2__left__panel__fieldinn{
@@ -105,14 +116,14 @@
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 600;
-    font-size: 15px;
+    font-size: 13px;
     line-height: 20px;
     text-transform: capitalize;
     outline: none;
 }
 .pressreport__inner__section2__button{
     width:fit-content;
-    padding: 12px;
+    padding: 15px;
     padding-left: 2rem;
     padding-right: 2rem;
     min-width: 6rem;
@@ -240,3 +251,239 @@
     color: #000000;
 }
 
+
+
+
+
+
+
+
+@media screen and (min-width:1500px)
+{
+    .pressreport__inner__inner{
+        width:90%;
+    }
+}
+
+@media screen and (min-width:1700px)
+{
+    .pressreport__inner__inner{
+        width:80%;
+    }
+}
+
+@media screen and (min-width:2000px)
+{
+    .pressreport__inner__inner{
+        width:70%;
+    }
+}
+
+
+@media screen and (min-width:2100px)
+{
+    .pressreport__inner__inner{
+        width:65%;
+    }
+}
+
+@media screen and (min-width:2462px)
+{
+    .pressreport__inner__inner{
+        width:55%;
+    }
+}
+
+
+
+
+@media screen and (max-width:1330px)
+{
+    .pressreport__inner__section1{
+        height:30rem;
+    }
+    .pressreport__inner__section2__left__panel{
+        width:100%;
+        justify-content: center;
+        height:fit-content;
+        flex-wrap: wrap;
+    }
+    .pressreport__inner__section2__button{
+        margin:1rem;
+        padding: 1rem;
+    }
+    .pressreport__inner__section2__left__panel__field{
+        margin:1rem
+    }
+    .pressreport__inner__section2__left__panel__field{
+        margin:1rem;
+        font-size: 15px;
+        margin-right: 0rem;
+    }
+    .pressreport__inner__section2__left__panel__fieldinn{
+        font-size: 14px;
+    }
+}
+@media screen and (max-width:1165px)
+{
+    .pressreport__inner__section2{
+        width:95%;
+        
+    }
+    
+    
+    .pressreport__inner__section2__button{
+        padding: 14px;
+        font-weight: 800;
+        font-size: 15px;
+    }
+    
+}
+
+
+
+@media screen and (max-width:1100px)
+{
+    @keyframes errDisplayOut {
+        0%{
+            opacity: 1;
+            height: 10rem;
+        }
+        100%{
+            opacity: 0;
+            height: 1rem;
+            overflow: hidden;
+        }
+    }
+    .pressreport__wronddata__modale{
+        width:100%;
+        height:10rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        animation-duration: 0.5s;
+        animation-delay: 2.5s;
+        z-index: -10;
+        animation-name: errDisplayOut;
+        transform: 1s;
+    }
+    .pressreport__wronddata__modale__text{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40%;
+        height: 3rem;
+        border-radius: 10px;
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 15px;
+        line-height: 20px;
+        text-transform: capitalize;
+        color: rgb(255, 68, 0);
+        border:3px solid rgb(255, 68, 0);
+    }
+    .pressreport__wronddata__modale__text__img{
+        width:40px;
+        height:40px
+    }
+}
+@media screen and (max-width:1030px)
+{
+    .pressreport__inner__section1{
+        height:20rem;
+    }
+    .pressreport__inner__section1__inner__top{
+        font-weight: 700;
+        font-size: 16px;
+    }
+    .pressreport__inner__section1__inner__bottom{
+        font-weight: 800;
+        font-size: 30px;
+    }
+    
+}
+@media screen and (max-width:1023px)
+{
+    .pressreport__inner__section2__left{
+        width:100%;
+    }
+    .pressreport__inner__section2{
+        width:93%;
+        flex-wrap: wrap;
+         justify-content: center;
+    }
+}
+
+@media screen and (max-width:770px)
+{
+    .pressreport__inner__section1__inner__top{
+        font-weight: 700;
+        font-size: 14px;
+    }
+    .pressreport__inner__section1__inner__bottom{
+        font-weight: 800;
+        font-size: 25px;
+    }
+    .pressreport__inner__section1__inner__bottom{
+        line-height: 10px;
+    }
+    .pressreport__inner__section2__left{
+        margin-bottom: 5rem;
+         
+    }
+}
+
+
+
+@media screen and (max-width:430px)
+{
+    /* .pressreport__inner__left__bottom__panel__left{
+        width:35px;
+        height:35px;
+    } */
+    .media_arrow{
+        width:70%;
+        height:70%;
+    }
+    /* .pressreport__inner__left__bottom__panel__line{
+        display: none;
+    } */
+    .pressreport__inner__left__bottom__panel__line{
+        width:10%;
+        height:1px;
+        margin-right: 5px;
+        margin-left: 5px;
+        background-color: grey;
+    }
+    /* .pressreport__inner__left__bottom__panel__page{
+        width:60%;
+    } */
+    .pressreport__inner__left__bottom__panel__page__each1{
+        width:40px;
+        height:40px;
+        font-weight: 800;
+        font-size: 18px;
+        line-height: 14px;
+    }
+    .pressreport__inner__section2__left{
+        margin-bottom: 3rem;
+         
+    }
+    .pressreport__inner__left__bottom__panel__page__each2{
+        width:30px;
+        height:30px;
+        background-color:#0AB1EE;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 24px;
+        text-transform: capitalize;
+        color: #000000;
+    }
+}

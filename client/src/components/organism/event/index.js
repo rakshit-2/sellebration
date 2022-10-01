@@ -200,6 +200,10 @@ const Event=(props)=>{
             }
             
         }
+        window.scrollTo({
+            top: 120,
+            behavior: 'smooth'
+          });
     }
 return (
     <>
@@ -213,90 +217,93 @@ return (
                     </div>
                 </div>
             </div>
-            <div className='event__inner__section2'>
-                {
-                    eventLoading ? (
-                        <div className='loading__outer' style={{width:"70%"}}>
-                            <LoadingScreen/>    
-                        </div>
-                        
-                    ):(
-                        <>
-                        <div className='event__inner__section2__left'>
-                            <div className='event__inner__section2__left__panel'>
-                                <select className='event__inner__section2__left__panel__field' onChange={(e)=>[setCname(e.target.value)]}>
-                                    {company.map((ele)=>{
-                                        const{id,name}=ele;
+            <div className='event__inner__inner'>
+
+                <div className='event__inner__section2'>
+                    {
+                        eventLoading ? (
+                            <div className='loading__outer' style={{width:"70%"}}>
+                                <LoadingScreen/>    
+                            </div>
+                            
+                        ):(
+                            <>
+                            <div className='event__inner__section2__left'>
+                                <div className='event__inner__section2__left__panel'>
+                                    <select className='event__inner__section2__left__panel__field' onChange={(e)=>[setCname(e.target.value)]}>
+                                        {company.map((ele)=>{
+                                            const{id,name}=ele;
+                                            return(
+                                                <option key={id} value={name}>{name}</option>
+                                            )
+                                        })}
+                                        
+                                    </select>
+                                    <div className='event__inner__section2__left__panel__field'>
+                                        From {'\u00A0'}<img src={calendar_img} style={{width:"20px",height:"20px"}}/> {'\u00A0'}: {'\u00A0'} <input type="date" className='event__inner__section2__left__panel__fieldinn'  onChange={(e)=>{setFromDate(e.target.value)}}/>
+                                    </div>
+                                    <div className='event__inner__section2__left__panel__field'>
+                                        To {'\u00A0'}<img src={calendar_img} style={{width:"20px",height:"20px"}}/> {'\u00A0'}:  {'\u00A0'}<input type="date" className='event__inner__section2__left__panel__fieldinn'  onChange={(e)=>{setToDate(e.target.value)}}/>
+                                    </div>
+                                    <div className='event__inner__section2__button' onClick={()=>{filterClicked()}}>
+                                        Filters
+                                    </div>
+                                </div>
+                                <div className='event__wronddata__modale' style={{display:errHiding}}>
+                                    <div className='event__wronddata__modale__text'>
+                                        <img src={alert} className="event__wronddata__modale__text__img"></img>{'\u00A0'}{'\u00A0'}Invalid Information Entered 
+                                    </div>
+                                </div>
+                                <div className='event__inner__section2__left__display'  data-aos="fade-right">
+                                    {displayerData.slice(splicing.start, splicing.end).map((ele)=>{
+                                        const{id,name,date,info,link,img}=ele;
+                                        var year=date.slice(0,4);
+                                        var month=parseInt(date.slice(5, 7));
+                                        var day=date.slice(8,10);
+                                        var date_value=day+" "+monthLis[month-1]+" "+year;
+
                                         return(
-                                            <option key={id} value={name}>{name}</option>
+                                            <EventCard1 test={test} id={id} name={name} info={info} link={link} img={img} date_value={date_value} />
                                         )
                                     })}
-                                    
-                                </select>
-                                <div className='event__inner__section2__left__panel__field'>
-                                    From {'\u00A0'}<img src={calendar_img} style={{width:"20px",height:"20px"}}/> {'\u00A0'}: {'\u00A0'} <input type="date" className='event__inner__section2__left__panel__fieldinn'  onChange={(e)=>{setFromDate(e.target.value)}}/>
                                 </div>
-                                <div className='event__inner__section2__left__panel__field'>
-                                    To {'\u00A0'}<img src={calendar_img} style={{width:"20px",height:"20px"}}/> {'\u00A0'}:  {'\u00A0'}<input type="date" className='event__inner__section2__left__panel__fieldinn'  onChange={(e)=>{setToDate(e.target.value)}}/>
-                                </div>
-                                <div className='event__inner__section2__button' onClick={()=>{filterClicked()}}>
-                                    Filters
-                                </div>
-                            </div>
-                            <div className='event__wronddata__modale' style={{display:errHiding}}>
-                                <div className='event__wronddata__modale__text'>
-                                    <img src={alert} className="event__wronddata__modale__text__img"></img>{'\u00A0'}{'\u00A0'}Invalid Information Entered 
-                                </div>
-                            </div>
-                            <div className='event__inner__section2__left__display'  data-aos="fade-right">
-                                {displayerData.slice(splicing.start, splicing.end).map((ele)=>{
-                                    const{id,name,date,info,link,img}=ele;
-                                    var year=date.slice(0,4);
-                                    var month=parseInt(date.slice(5, 7));
-                                    var day=date.slice(8,10);
-                                    var date_value=day+" "+monthLis[month-1]+" "+year;
-
-                                    return(
-                                        <EventCard1 test={test} id={id} name={name} info={info} link={link} img={img} date_value={date_value} />
-                                    )
-                                })}
-                            </div>
-                            <div className='event__inner__left__bottom__panel'>
-                                <div className='event__inner__left__bottom__panel__left' onClick={()=>{pageChange("dec")}}>
-                                    <img src={arrow_left} style={{width:"80%",height:"80%"}}/>
-                                </div>
-                                <div className='event__inner__left__bottom__panel__line'>
-                                    
-                                </div>
-                                <div className='event__inner__left__bottom__panel__page'>
-                                    <div className='event__inner__left__bottom__panel__page__each' style={{width:"50px",height:"50px",backgroundColor:"#0AB1EE"}}>
-                                        {pageCount}
+                                <div className='mediarelease__inner__left__bottom__panel'>
+                                    <div className='mediarelease__inner__left__bottom__panel__left' onClick={()=>{pageChange("dec")}}>
+                                        <img src={arrow_left} className="media_arrow"/>
                                     </div>
-                                    {'\u00A0'} of {'\u00A0'}
-                                    <div className='event__inner__left__bottom__panel__page__each' style={{width:"30px",height:"30px"}}>
-                                        {pageLen}
+                                    <div className='mediarelease__inner__left__bottom__panel__line'>
+                                        
                                     </div>
-                                </div>
-                                <div className='event__inner__left__bottom__panel__line'>
-                                    
-                                </div>
-                                <div className='event__inner__left__bottom__panel__left' onClick={()=>{pageChange("inc")}}>
-                                    <img src={arrow_right} style={{width:"80%",height:"80%"}}/>
-                                </div>
-                            </div> 
-                        </div>
-                        
-                        </>         
-                        )
-                    }
+                                    <div className='mediarelease__inner__left__bottom__panel__page'>
+                                        <div className='mediarelease__inner__left__bottom__panel__page__each1'>
+                                            {pageCount}
+                                        </div>
+                                        <span className='media__span'>{'\u00A0'} of {'\u00A0'}</span>
+                                        <span className='media__span2'> - </span>
+                                        <div className='mediarelease__inner__left__bottom__panel__page__each2'>
+                                            {pageLen}
+                                        </div>
+                                    </div>
+                                    <div className='mediarelease__inner__left__bottom__panel__line'>
+                                        
+                                    </div>
+                                    <div className='mediarelease__inner__left__bottom__panel__left' onClick={()=>{pageChange("inc")}}>
+                                        <img src={arrow_right} className="media_arrow"/>
+                                    </div>
+                                </div> 
+                            </div>
+                            
+                            </>         
+                            )
+                        }
 
 
 
 
-                <SocialFeed />
+                    <SocialFeed />
 
+                </div>
             </div>
-
 
             <Footer2/>
             <Footer/>
