@@ -10,6 +10,7 @@ import {useState,useEffect} from 'react';
 
 
 
+
 const BringChange=(props)=>{
 
   // scroll to top
@@ -46,7 +47,7 @@ return (
                 </div>
                 <div className="bringchange__sec2__buttons">
                 {BringChangeData.buttonData.map((ele)=>{
-                    const {id,pic,title}=ele;
+                    const {id,title}=ele;
                     if(id===idb)
                     {
                         console.log(id)
@@ -57,9 +58,6 @@ return (
                                 {title}
                             </div>
                             <img style={{display:"flex"}} className="bringchange__sec2__button1_img" src={button_image}/>
-                        </div>
-                        <div>
-                            <img className='bringchange__sec2__button1__images' src={pic}/>
                         </div>
                         </>
                         )
@@ -76,9 +74,18 @@ return (
                     
                     
                 })}
-                
                 </div>
-
+                {BringChangeData.imageData.map((ele)=>{
+                    const{id,pic}=ele;
+                    if(id===idb){
+                        return(
+                        <div>
+                            <img className='bringchange__sec2__button1__images' src={pic}/>
+                        </div>
+                        )
+                    }
+                
+                })}
             </div>
             <div className="bringchange__sec3">
                 <div className="bringchange__sec3__head">
