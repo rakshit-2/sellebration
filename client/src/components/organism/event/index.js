@@ -200,6 +200,10 @@ const Event=(props)=>{
             }
             
         }
+        window.scrollTo({
+            top: 120,
+            behavior: 'smooth'
+          });
     }
 return (
     <>

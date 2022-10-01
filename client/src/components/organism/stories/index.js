@@ -168,6 +168,10 @@ const Stories=(props)=>{
     filterAllData(displayerData.length,[]);
     setLen(displayerData.length);
     setLodeMore("none");
+    window.scrollTo({
+        top: 200,
+        behavior: 'smooth'
+    });
   }
 
 
@@ -206,6 +210,10 @@ const Stories=(props)=>{
         }
 
     }
+    window.scrollTo({
+        top: 500,
+        behavior: 'smooth'
+    });
   }
   return (
     <>

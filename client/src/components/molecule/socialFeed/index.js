@@ -11,7 +11,7 @@ const SocialFeed=(props)=>{
     })
 return (
     <>
-    <div className='event__inner__section2__right'  data-aos="fade-left">
+    <div className='event__inner__section2__right'>
         <div className='event__inner__section2__right__top'>
             Social feeds
         </div>

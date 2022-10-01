@@ -146,6 +146,10 @@ const MediaRelease=(props)=>{
             }
            
         }
+        window.scrollTo({
+            top: 300,
+            behavior: 'smooth'
+        });
     }
 
 
@@ -178,6 +182,10 @@ const MediaRelease=(props)=>{
             }
             
         }
+        window.scrollTo({
+            top: 400,
+            behavior: 'smooth'
+        });
     }
     
 
