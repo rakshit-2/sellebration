@@ -211,6 +211,9 @@ return (
         <div className="event__inner">
             <Navbar navDisplay={props.navDisplay} openNav={props.openNav}  closeNav={props.closeNav}/>
             <div className="event__inner__section1">
+                <div className='event__inner__section1__img'>
+
+                </div>
                 <div className="event__inner__section1__inner">
                     <div className="event__inner__section1__inner__left">
                         Events
