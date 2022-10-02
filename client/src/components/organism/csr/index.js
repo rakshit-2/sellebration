@@ -13,6 +13,7 @@ import CsrCardData from './../../assets/store/csrcardData';
 import CsrSection4 from '../../molecule/csrSection4';
 import CsrInitiativeData from '../../assets/store/csrinitiativeData';
 import CsrCard2 from '../../atom/csrCard2';
+import CsrCard3 from '../../atom/csrCard3';
 import csr_pdf_img from './../../assets/image/csr_img/csr_policy_img.svg';
 import { useEffect } from 'react';
 
@@ -43,75 +44,9 @@ return (
                 <div style={{width:"100%",height:"fit-content",overflow:"hidden"}}>
                 {CsrCardData.map((ele)=>{
                     const{id,heading,img,text,button}=ele;
-                    if(id%2===0)
-                    {
-                        return(
-                            <div className='csr__inner__section3' data-aos="fade-left">
-                                <div className='csr__inner__section3__each1'>
-                                    <div className='csr__inner__section3__each1__inner'>
-                                        <img src={img} className="csr__section3__img"/>
-                                    </div>
-                                </div>
-                                <div className='csr__inner__section3__each2'>
-                                    <div className='csr__inner__section3__each2__inner'>
-                                        <div className='csr__inner__section3__each2__inner__up'>
-                                            <div className='csr__inner__section3__each2__inner__heading'>
-                                                {heading}
-                                            </div>
-                                            <div className='csr__inner__section3__each2__inner__text'>
-                                                {text}
-                                            </div>
-                                        </div>
-                                        <div className='csr__inner__section3__each2__inner__down'>
-                                            <div className='csr__button'>
-                                                {button}
-                                            </div>
-                                        </div>
-                                        <div className='csr__inner__section3__each2__inner__down2'>
-                                            <div className='csr__button'>
-                                                More..
-                                            </div>
-                                        </div>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                        )
-                    }
-                    else
-                    {
-                        return (
-                            <div className='csr__inner__section3'  data-aos="fade-right">
-                                <div className='csr__inner__section3__each1' style={{justifyContent:"flex-end"}}>
-                                    <div className='csr__inner__section3__each1__inner'>
-                                        <img src={img} className="csr__section3__img"/>
-                                    </div>
-                                </div>
-                                <div className='csr__inner__section3__each2' style={{justifyContent:"flex-start"}}>
-                                    <div className='csr__inner__section3__each2__inner'>
-                                        <div className='csr__inner__section3__each2__inner__up'>
-                                            <div className='csr__inner__section3__each2__inner__heading'>
-                                                {heading}
-                                            </div>
-                                            <div className='csr__inner__section3__each2__inner__text'>
-                                                {text}
-                                            </div>
-                                        </div>
-                                        <div className='csr__inner__section3__each2__inner__down'>
-                                            <div className='csr__button'>
-                                                {button}
-                                            </div>
-                                        </div>
-                                        <div className='csr__inner__section3__each2__inner__down2'>
-                                            <div className='csr__button'>
-                                                More..
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        )
-                    }
+                    return(
+                        <CsrCard3 id={id} heading={heading} img={img} text={text} button={button} flag={true}/>
+                    )
                 })}
                 </div>
 
