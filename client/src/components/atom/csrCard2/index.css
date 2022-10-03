@@ -59,7 +59,12 @@
 
 
 
-
+@media screen and (max-width:1030px)
+{
+    .csr__inner__section5__display__each__img{
+        height:200px;
+    }
+}
 
 
 @media screen and (max-width:983px)
