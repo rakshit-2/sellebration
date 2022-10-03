@@ -70,7 +70,7 @@
 }
 .csr__inner__section3__each2__inner{
     width:600px;
-    height:400px;
+    height:fit-content;
     padding:30px;
     background-color: white;
     display: flex;
@@ -169,8 +169,8 @@
     margin-bottom: 1rem;
     font-family: 'Montserrat';
     font-style: normal;
-    font-weight: 500;
-    font-size: 40px;
+    font-weight: 800;
+    font-size: 36px;
     line-height: 36px;
     letter-spacing: 0.05em;
     color: rgba(0, 0, 0, 0.77);
@@ -178,8 +178,15 @@
     align-items: center;
     justify-content: center;
 }
-
 .csr__inner__section5__display{
+    width:100%;
+    height:fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.csr__inner__inner{
     width:100%;
     height:fit-content;
     display: flex;
@@ -300,7 +307,6 @@
 {
     .csr__inner__section3__each2__inner{
         width:500px;
-        height:400px;
     }
     .csr__inner__section3__each1__inner{
         width:500px;
