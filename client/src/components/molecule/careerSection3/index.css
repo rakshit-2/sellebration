@@ -21,7 +21,6 @@
     display: flex;
     align-items: flex-start;
     justify-content: center;
-
 }
 .career__inner__section3__right__left{
     width:60px;
@@ -44,10 +43,11 @@
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 500;
-    font-size: 24px;
+    font-size: 18px;
     line-height: 28px;
+    color:black;
     text-transform: capitalize;
-    color: #FFFFFF;
+    /* color: #FFFFFF; */
 }
 .career__inner__section3__right__right__line{
     width:80%;
