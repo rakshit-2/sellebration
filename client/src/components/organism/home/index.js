@@ -143,7 +143,7 @@ const Home=(props)=>{
             <Navbar navDisplay={props.navDisplay} openNav={props.openNav}  closeNav={props.closeNav}/>
             <div className="home__inner__section1">
                 <div className="home__inner__section1__img__outer">
-                    {/* <img src={map} className="home__inner__section1__img"/> */}
+                    <img src={map} className="home__inner__section1__img"/>
                 </div>
             </div>
                 <div className="home__inner__inner">
