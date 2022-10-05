@@ -1,12 +1,20 @@
 
 .career__inner__section5{
     width:100%;
-    height:40rem;
+    height:fit-content;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
     margin-bottom: 4rem;
+}
+.career__inner__section5__inner{
+    width:100%;
+    height:fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
 }
 .career__inner__section5__head{
     width:100%;
@@ -19,8 +27,8 @@
     justify-content: center;
     font-family: 'Montserrat';
     font-style: normal;
-    font-weight: 700;
-    font-size: 45px;
+    font-weight: 800;
+    font-size: 36px;
     line-height: 59px;
     text-transform: capitalize;
     color: #374E91;
@@ -33,8 +41,8 @@
     justify-content: center;
     font-family: 'Montserrat';
     font-style: normal;
-    font-weight: 400;
-    font-size: 30px;
+    font-weight: 600;
+    font-size: 25px;
     line-height: 39px;
     color: #374E91;
 }
@@ -45,8 +53,13 @@
     align-items: center;
     justify-content: space-around;
 }
+.career__inner__section5__display1{
+    width:100%;
+    height:fit-content;
+    display: none;
+}
 .career__inner__section5__display__each{
-    width:280px;
+    width:fit-content;
     height:fit-content;
     display: flex;
     flex-direction: column;
@@ -55,8 +68,8 @@
     margin:4rem;
 }
 .career__inner__section5__display__each__img{
-    width:90%;
-    height:230px;
+    width:180px;
+    height:180px;
     border-radius: 50%;
     margin-bottom: 2rem;
 }
@@ -67,8 +80,115 @@
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 600;
-    font-size: 28px;
+    font-size: 18px;
     line-height: 39px;
     text-align: center;
     text-transform: capitalize;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (min-width:1500px)
+{
+    .career__inner__section5__inner{
+        width:90%;
+    }
+}
+
+@media screen and (min-width:1700px)
+{
+    .career__inner__section5__inner{
+        width:80%;
+    }
+}
+
+@media screen and (min-width:2000px)
+{
+    .career__inner__section5__inner{
+        width:70%;
+    }
+}
+
+@media screen and (min-width:2100px)
+{
+    .career__inner__section5__inner{
+        width:65%;
+    }
+}
+
+@media screen and (min-width:2462px)
+{
+    .career__inner__section5__inner{
+        width:55%;
+    }
+}
+
+@media screen and (max-width:1118px)
+{
+    .career__inner__section5__head{
+        font-weight: 800;
+        font-size: 25px;
+        line-height: 29px;
+    }
+    .career__inner__section5__head__small{
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 39px;
+    }
+    .career__inner__section5__display__each{
+        margin:2rem;
+    }
+    .career__inner__section5__display__each__text{
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 20px;
+    }
+}
+@media screen and (max-width:922px)
+{
+    .career__inner__section5__head__small{
+        font-size: 16px;
+        text-align: center;
+    }
+    .career__inner__section5__display{
+        display: none;
+    }
+    .career__inner__section5__display__each{
+        margin:auto;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+    .career__inner__section5__display1{
+        display: block;
+    }
+}
+
+@media screen and (max-width:696px)
+{
+    .career__inner__section5__head{
+        font-weight: 800;
+        font-size: 20px;
+        line-height: 29px;
+    }
+    .career__inner__section5__head__small{
+        font-size: 14px;
+        line-height: 16px;
+        text-align: center;
+    }
 }

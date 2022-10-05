@@ -9,7 +9,8 @@ const CareerSection1=(props)=>{
 return (
     <>
     <div className="career__inner__section1">
-        <div className="career__inner__section1__inner">
+        
+        <div className="career__inner__section1__inner" data-aos="fade-left">
             <div className='career__inner__section1__inner__head'>
                 <div className='career__inner__section1__inner__head__left'>
                     {CareerData.section1.heading}
