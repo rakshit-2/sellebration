@@ -1,7 +1,6 @@
 
 import './index.css';
 import Navbar from './../NavBar/index';
-import Footer from '../../molecule/footer';
 import err_img from './../../assets/image/err.jpg';
 
 const Err=(props)=>{

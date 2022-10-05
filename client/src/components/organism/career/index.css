@@ -241,6 +241,9 @@
     .career__inner__section7__inner{
         width:90%;
     }
+    .career__inner__section8__inner{
+        width:90%;
+    }
 }
 
 @media screen and (min-width:1700px)
@@ -252,6 +255,9 @@
         width:80%;
     }
     .career__inner__section7__inner{
+        width:80%;
+    }
+    .career__inner__section8__inner{
         width:80%;
     }
 }
@@ -267,6 +273,9 @@
     .career__inner__section7__inner{
         width:70%;
     }
+    .career__inner__section8__inner{
+        width:70%;
+    }
 }
 
 @media screen and (min-width:2100px)
@@ -280,6 +289,9 @@
     .career__inner__section7__inner{
         width:65%;
     }
+    .career__inner__section8__inner{
+        width:65%;
+    }
 }
 
 @media screen and (min-width:2462px)
@@ -291,6 +303,9 @@
         width:55%;
     }
     .career__inner__section7__inner{
+        width:55%;
+    }
+    .career__inner__section8__inner{
         width:55%;
     }
 }
