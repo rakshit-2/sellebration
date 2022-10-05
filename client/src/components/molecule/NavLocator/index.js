@@ -5,33 +5,33 @@ import { useNavigate } from 'react-router-dom';
 
 
 const NavLocator=(props)=>{
-    const navigate = useNavigate();
-    function onclickfunction(x,info)
-    {
-        var link=["/","/ourprofile","/leadership","/womenleadership","/visionvalue","/milestone",
-                "/bussinessbrand","/bussinessbrand","/csr",
-                "/csr","/bringchange","/OurStrategy",
-                "/StoriesofHope","/csr","/Media","/mediarelease","/pressreoprt",
-                "/Stories","/event","/Downloads","/OurLogo","/Innovation","/investor",
-                "/career","/contactus"];
-        var check=["About Us","Our Profile","Leadership","Women Leaders","Vision&Values",
-                    "Milestones","Businesses & Brands","Sustainability","CSR",
-                    "CSR At Sellebration","Bringing The Change","Our Strategy",
-                    "Stories of Hope","CSR Policy","Media","Media Releases","Media Reports",
-                    "Stories","Events","Downloads","Our Logo","Innovation","Investors",
-                    "Careers","Contact Us"]
+    // const navigate = useNavigate();
+    // function onclickfunction(x,info)
+    // {
+    //     var link=["/","/ourprofile","/leadership","/womenleadership","/visionvalue","/milestone",
+    //             "/bussinessbrand","/bussinessbrand","/csr",
+    //             "/csr","/bringchange","/OurStrategy",
+    //             "/StoriesofHope","/csr","/Media","/mediarelease","/pressreoprt",
+    //             "/Stories","/event","/Downloads","/logo","/Innovation","/investor",
+    //             "/career","/contactus"];
+    //     var check=["About Us","Our Profile","Leadership","Women Leaders","Vision&Values",
+    //                 "Milestones","Businesses & Brands","Sustainability","CSR",
+    //                 "CSR At Sellebration","Bringing The Change","Our Strategy",
+    //                 "Stories of Hope","CSR Policy","Media","Media Releases","Media Reports",
+    //                 "Stories","Events","Downloads","Our Logo","Innovation","Investors",
+    //                 "Careers","Contact Us"]
             
-        for(var i=0;i<check.length;i++)
-        {
-            if(info===check[i])
-            {
-                props.closeNavClicked();
-                navigate(link[i]);
-                return;
-            }
-        }
+    //     for(var i=0;i<check.length;i++)
+    //     {
+    //         if(info===check[i])
+    //         {
+    //             props.closeNavClicked();
+    //             navigate(link[i]);
+    //             return;
+    //         }
+    //     }
         
-    }
+    // }
     return (
     <>
     <div className='navlocator__outer'>

@@ -13,7 +13,7 @@ const NavLocatorEach=(props)=>{
                 "/bussinessbrand","/bussinessbrand","/csr",
                 "/csr","/bringchange","/OurStrategy",
                 "/StoriesofHope","/csr","/Media","/mediarelease","/pressreoprt",
-                "/Stories","/event","/Downloads","/OurLogo","/Innovation","/investor",
+                "/Stories","/event","/Downloads","/logo","/Innovation","/investor",
                 "/career","/contactus"];
         var check=["About Us","Our Profile","Leadership","Women Leaders","Vision&Values",
                     "Milestones","Businesses & Brands","Sustainability","CSR",
