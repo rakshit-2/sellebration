@@ -154,7 +154,7 @@ const Innovation=(props)=>{
                                 )
                             }
                             <div className='innovation__sec1__bottom__inner_title2'>
-                                <div className='innovation__sec1__bottom__inner_title__inner2'>
+                                <div className='innovation__sec1__bottom__inner_title__inner2' onClick={()=>{navigate('/stories')}}>
                                     More stories
                                 </div>
                             </div>
