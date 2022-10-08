@@ -54,7 +54,7 @@
     position: relative;
 }
 .leadership__inner__seaction1__button{
-    
+    text-decoration: none;
     width:fit-content;
     padding: 10px;
     padding-left: 2rem;
@@ -70,9 +70,12 @@
     font-weight: 800;
     color: white;
     background-color: #0AB1EE;
+    cursor: pointer;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
-
+.leadership__inner__seaction1__button:hover{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
 
 .leadership__inner__seaction2{
     width:100%;

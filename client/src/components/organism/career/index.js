@@ -2,7 +2,7 @@
 import './index.css';
 import Navbar from './../NavBar/index';
 import Footer from './../../molecule/footer/index';
-
+import { useNavigate } from 'react-router-dom';
 import section8_img from './../../assets/image/career/section8_background.svg';
 import { useEffect } from 'react';
 
@@ -15,7 +15,7 @@ import Section6 from './../../molecule/careerSection6/index';
 
 const Career=(props)=>{
 
-
+    const navigate = useNavigate();
     // scroll to top
 
     useEffect(() => {
@@ -78,7 +78,7 @@ return (
                             <div className='career__inner__section7__inner__mid'>
                                 Become part of the league of exceptional women at the celebration, as they embrace the world of success and transcend barriers.
                             </div>
-                            <div className='career__inner__section7__button'>
+                            <div className='career__inner__section7__button' onClick={()=>{navigate('/womenleadership')}}>
                                 EXPLORE
                             </div>
                     </div>

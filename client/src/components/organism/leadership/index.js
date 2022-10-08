@@ -4,9 +4,9 @@ import Nabvbar from './../NavBar/index';
 import Axios from 'axios';
 import ApiLink from '../../assets/store/apiLink';
 import {useState,useEffect} from 'react';
-
-
-import img from './../../assets/image/test.png';
+import { useNavigate } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
+import img from './../../assets/image/backtest.jpg';
 import Carousel from "react-multi-carousel";
 import LeadershipPanelData from './../../assets/store/leadershippanelData';
 import LeadershipCard1 from '../../atom/leadershipCard1';
@@ -19,9 +19,8 @@ import profile from './../../assets/image/profile.png';
 const Leadership=(props)=>{
 
 
-
+    const navigate = useNavigate();
     // scroll to top
-
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
@@ -117,12 +116,12 @@ return (
             <div className='leadership__inner__seaction1' >
                 <img src={img} className="leadership__top__image"/>
                 <div className='leadership__inner__seaction1__inner'>
-                    <div className='leadership__inner__seaction1__button'>
+                    <div className='leadership__inner__seaction1__button' onClick={()=>{navigate('/ourprofile')}}>
                         View Profile
                     </div>
-                    <div className='leadership__inner__seaction1__button'>
+                    <HashLink to='/visionvalue#message' smooth  className='leadership__inner__seaction1__button'>
                         Chairman’s message
-                    </div>
+                    </HashLink>
                 </div>
             </div>
             

@@ -1,6 +1,7 @@
 .footer__outer{
     width:100%;
     height:fit-content;
+    z-index: 10;
     /* overflow-x: hidden; */
 }
 .footer__inner{

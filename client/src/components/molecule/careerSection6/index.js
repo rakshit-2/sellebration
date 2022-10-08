@@ -2,9 +2,11 @@
 import './index.css';
 import CareerData from './../../assets/store/careerData';
 import Carousel from "react-multi-carousel";
+import { HashLink } from 'react-router-hash-link';
+
+
 
 const CareerSection6=(props)=>{
-
 
     const responsive = {
         desktop: {
@@ -61,9 +63,9 @@ return (
             <div className='career__inner__section6__middle'>
                 {CareerData.section6.heading}
             </div>
-            <div className='career__inner__section6__button'>
+            <HashLink to='/csr#initiatives' smooth className='career__inner__section6__button'>
                 EXPLORE OUR INITIATIVES
-            </div>
+            </HashLink>
         </div>
     </div>
     </>

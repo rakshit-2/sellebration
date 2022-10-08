@@ -5,7 +5,7 @@ return (
     <>
     <div className='csr__inner__section2'>
         <div className='csr__inner__section2__head'>
-            A ray of sunshine
+            A Ray Of Sunshine
         </div>
         <div className='csr__inner__section2__img'>
         </div>

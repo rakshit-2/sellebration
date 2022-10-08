@@ -1,7 +1,7 @@
 
 import './index.css';
 import { useEffect ,useState} from 'react';
-
+import { useNavigate } from 'react-router-dom';
 
 import Navbar from './../NavBar/index';
 import Footer from './../../molecule/footer/index';
@@ -27,7 +27,7 @@ const WomenLeadership=(props)=>{
 
   const[betterData,setBetterData]=useState();
   const[betterLoading,setBetterLoading]=useState(true);
-
+  const navigate = useNavigate();
     // scroll to top
 
     useEffect(() => {
@@ -169,16 +169,16 @@ return (
               </div>
 
               <div className='womenleader__sec4'>
-                <div className='womenleader__sec4__inner'>
-                        <div>
-                          <img src={icon}/>
-                        </div>
-                        <div className='womenleader__sec4__inner__info' >
-                        See more inspiring world of women stories
-                        </div>
-                        <div className='womenleader__sec4__inner__info2' >
-                        See more...
-                        </div>
+                <div className='womenleader__sec4__inner' onClick={()=>{navigate('/stories')}}>
+                  <div>
+                    <img src={icon}/>
+                  </div>
+                  <div className='womenleader__sec4__inner__info'>
+                    See more inspiring world of women stories
+                  </div>
+                  <div className='womenleader__sec4__inner__info2'>
+                    See more...
+                  </div>
                 </div>
               </div>
               

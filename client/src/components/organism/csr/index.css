@@ -102,8 +102,8 @@
     width:100%;
     font-family: 'Montserrat';
     font-style: normal;
-    font-weight: 400;
-    font-size: 36px;
+    font-weight: 800;
+    font-size: 30px;
     line-height: 36px;
     letter-spacing: 0.05em;
     color: #0AB1EE;
@@ -144,6 +144,9 @@
     cursor: pointer;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
+.csr__button:hover{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
 
 
 .csr__section3__img{
@@ -161,6 +164,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+    margin-top: 3rem;
 }
 .csr__inner__section5__heading{
     width:100%;

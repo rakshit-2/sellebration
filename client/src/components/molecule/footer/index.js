@@ -1,7 +1,18 @@
 import './index.css';
+import { useNavigate } from 'react-router-dom';
 import FooterData from './../../assets/store/footerData';
 
+
 const Footer=(props)=>{
+    const navigate = useNavigate();
+    function footerLinkClicked(link)
+    {
+        navigate(link);
+        return;
+    }
+
+
+
 return (
     <>
     <div className='footer__outer'>
@@ -9,9 +20,9 @@ return (
             <div className='footer__inner__top'>
                 <div className='footer__inner__top__left'>
                 {FooterData.top.left.map((item) => {
-                    const {id,data}=item;
+                    const {id,data,link}=item;
                     return(
-                        <div key={id} className='footer__inner__top__left__each'>
+                        <div key={id} className='footer__inner__top__left__each' onClick={()=>{footerLinkClicked(link)}}>
                             {data}
                         </div>
                     )

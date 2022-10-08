@@ -14,13 +14,13 @@ import ApiLink from '../../assets/store/apiLink';
 import LoadingScreen from '../../atom/loadingScreen';
 import img from './../../assets/image/test.png';
 import innovation_back from './../../assets/image/innovation_img/innovation_back.png';
-
+import { useNavigate } from 'react-router-dom';
 
 
 
 const Innovation=(props)=>{
 
-
+    const navigate = useNavigate();
     const[insight,setInsight]=useState()
     const[insightLoading,setInsightLoading]=useState(true)
 
@@ -107,7 +107,7 @@ const Innovation=(props)=>{
                                 Innovation insights
                             </div>
                             <div className='innovation__sec1__bottom__inner_title'>
-                                <div className='innovation__sec1__bottom__inner_title__inner'>
+                                <div className='innovation__sec1__bottom__inner_title__inner'onClick={()=>{navigate('/stories')}}>
                                     More stories
                                 </div>
                             </div>

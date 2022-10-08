@@ -1,6 +1,10 @@
 import './index.css';
-
+import { useNavigate } from 'react-router-dom';
 const CsrCard3=(props)=>{
+
+    const navigate = useNavigate();
+
+    
     if(props.id%2===0)
     {
         return(
@@ -23,7 +27,7 @@ const CsrCard3=(props)=>{
                         {props.flag ? (
                             <>
                             <div className='csr__inner__section3__each2__inner__down'>
-                                <div className='csr__button'>
+                                <div className='csr__button' onClick={()=>{navigate('/career')}}>
                                     {props.button}
                                 </div>
                             </div>
@@ -46,7 +50,7 @@ const CsrCard3=(props)=>{
     else
     {
         return (
-            <div className='csr__inner__section3'  data-aos="fade-right">
+            <div className='csr__inner__section3' data-aos="fade-right">
                 <div className='csr__inner__section3__each1' style={{justifyContent:"flex-end"}}>
                     <div className='csr__inner__section3__each1__inner'>
                         <img src={props.img} className="csr__section3__img"/>
@@ -65,7 +69,7 @@ const CsrCard3=(props)=>{
                         {props.flag ? (
                             <>
                             <div className='csr__inner__section3__each2__inner__down'>
-                                <div className='csr__button'>
+                                <div className='csr__button' onClick={()=>{navigate('/career')}}>
                                     {props.button}
                                 </div>
                             </div>

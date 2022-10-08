@@ -2,7 +2,7 @@
 import './index.css';
 import Axios from 'axios';
 import {useState,useEffect} from 'react';
-
+import { useNavigate } from 'react-router-dom';
 
 
 import ApiLink from './../../assets/store/apiLink';
@@ -25,7 +25,7 @@ import LoadingScreen from './../../atom/loadingScreen/index'
 const Home=(props)=>{
 
 
-
+    const navigate = useNavigate();
   // scroll to top
 
   useEffect(() => {
@@ -182,7 +182,7 @@ const Home=(props)=>{
                                 
                             </div>
                             <div className="home__inner__section2__panel__right">
-                                <div className="home__inner__section2__panel__right__button">
+                                <div className="home__inner__section2__panel__right__button" onClick={()=>{navigate('/stories')}}>
                                     View All
                                 </div>
                             </div>
@@ -257,7 +257,7 @@ const Home=(props)=>{
                                 )
                             }
                             <div className='home__inner__section3__viewmore'>
-                                <div className='home__inner__section3__viewmorebutton'>
+                                <div className='home__inner__section3__viewmorebutton' onClick={()=>{navigate('/mediarelease')}}>
                                     View All
                                 </div>
                             </div>

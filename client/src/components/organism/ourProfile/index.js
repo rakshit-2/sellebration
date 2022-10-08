@@ -1,13 +1,27 @@
 import Navbar from './../NavBar/index';
 import './index.css';
+import { useEffect } from 'react';
 import CardType2 from '../../atom/cardType2';
 import items from './../../assets/store/OurProfileData.js';
 import logo from './../../assets/image/test.png';
 import CardType3 from '../../atom/cardType3';
 import Footer from './../../molecule/footer/index';
 import Carousel from "react-multi-carousel";
+import { useNavigate } from 'react-router-dom';
+
+
 
 const OurProfile=(props)=>{
+
+  const navigate = useNavigate();
+
+  
+  useEffect(() => {
+    window.scrollTo(0, 0);
+}, []);
+
+
+
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1181 },
@@ -126,7 +140,7 @@ const OurProfile=(props)=>{
                     </div>
                 </div>
                 <div className="OurProfile__team__leaderboad">
-                  <div className="OurProfile__team__leaderboad__button">
+                  <div className="OurProfile__team__leaderboad__button" onClick={()=>{navigate('/leadership')}}>
                     View Leadership
                   </div>
                 </div>

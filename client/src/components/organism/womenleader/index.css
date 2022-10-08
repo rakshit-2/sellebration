@@ -120,8 +120,12 @@
     justify-content: center;
     align-items: center;
     border-radius: 20px;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
-
+.womenleader__sec4__inner:hover{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
 .womenleader__sec4__inner__info{
     padding-left: 1rem;
     font-family: 'Montserrat';
@@ -129,12 +133,13 @@
     font-weight: 600;
     font-size: 18px;
     line-height: 20px;
+    
     /* identical to box height, or 83% */
-
     text-transform: capitalize;
-
     color: #FFFFFF;
+    
 }
+
 
 
 .womenleader__sec4__inner__info2{
