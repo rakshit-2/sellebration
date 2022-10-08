@@ -19,8 +19,8 @@
     justify-content: center;
     font-family: 'Montserrat';
     font-style: normal;
-    font-weight: 500;
-    font-size: 40px;
+    font-weight: 700;
+    font-size: 36px;
     line-height: 36px;
     letter-spacing: 0.05em;
     color: #FFFFFF;
@@ -30,5 +30,5 @@
     height:40rem;
     background-repeat: no-repeat;
     background-size:inherit;
-    background-image: url('./../../assets/image/test1.png');
+    background-image: url('./../../assets/image/backtest.jpg');
 }

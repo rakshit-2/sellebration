@@ -34,7 +34,7 @@ import Stories from './components/organism/stories/index';
 import Downloads from './components/organism/downloads';
 import Logo from './components/organism/logo';
 import OurProfile from './components/organism/ourProfile';
-
+import Navbar from './components/organism/NavBar/index';
 
 
 const App=(props)=>{
@@ -52,6 +52,10 @@ const App=(props)=>{
       nav:"none",
       nav1:"block",
   });
+  const[pageScroll,setPageScroll]=useState({
+      hope:0,
+      startegy:0,
+  });
 
   function openNav(x)
   {
@@ -64,8 +68,21 @@ const App=(props)=>{
   }
 
 
- 
-
+  function changePageState(x)
+  {
+    if(x==="hope")
+    {
+      setPageScroll({hope:1,startegy:0});
+    }
+    else if(x==="startegy")
+    {
+      setPageScroll({hope:0,startegy:1});
+    }
+  }
+  function revertScroll()
+  {
+      setPageScroll({hope:0,startegy:0});
+  }
 
 
 
@@ -84,12 +101,13 @@ const App=(props)=>{
 
   return (
     <>
+    
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home navDisplay={navDisplay} openNav={openNav} closeNav={closeNav}/>} ></Route>
+        <Route path="/" element={<Home changePageState={changePageState} navDisplay={navDisplay} openNav={openNav} closeNav={closeNav}/>} ></Route>
         <Route path="/bringchange" element={<Bringchange  navDisplay={navDisplay} openNav={openNav} closeNav={closeNav}/>} ></Route>
         <Route path="/bussinessbrand" element={<Businessbrand  navDisplay={navDisplay} openNav={openNav} closeNav={closeNav}/>} ></Route>
-        <Route path="/csr" element={<Csr  navDisplay={navDisplay} openNav={openNav} closeNav={closeNav}/>} ></Route>
+        <Route path="/csr" element={<Csr revertScroll={revertScroll} pageScroll={pageScroll} navDisplay={navDisplay} openNav={openNav} closeNav={closeNav}/>} ></Route>
         <Route path="/leadership" element={<Leadership  navDisplay={navDisplay} openNav={openNav} closeNav={closeNav}/>} ></Route>
         <Route path="/milestone" element={<Milestone  navDisplay={navDisplay} openNav={openNav} closeNav={closeNav}/>} ></Route>
         <Route path="/visionvalue" element={<Visionvalue  navDisplay={navDisplay} openNav={openNav} closeNav={closeNav}/>} ></Route>

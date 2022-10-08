@@ -41,6 +41,7 @@ return (
                 )
             })}
         </div>
+        <p id="message"></p>
     </div>
     </>
 );

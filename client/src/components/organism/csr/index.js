@@ -40,7 +40,7 @@ return (
             <CsrSection1/>
 
             <CsrSection2/>
-            <div className='csr__inner__inner'>
+            <div className='csr__inner__inner'  id="startegy" >
                 <div style={{width:"100%",height:"fit-content",overflow:"hidden"}}>
                 {CsrCardData.map((ele)=>{
                     const{id,heading,img,text,button}=ele;
@@ -52,13 +52,16 @@ return (
 
 
             </div>
+            <p id="hope"></p>
+            <br></br>
+            <br></br>
             <div className='csr__inner__inner__special'>
                 <CsrSection4/>
             </div>
             
-            <div className='csr__inner__inner'>
+            <div className='csr__inner__inner' >
 
-                <div className='csr__inner__section5'>
+                <div className='csr__inner__section5' id="initiatives">
                     <div className='csr__inner__section5__heading'>
                         Our Initiatives
                     </div>
@@ -74,7 +77,7 @@ return (
 
                 
             </div>
-            <div className='csr__inner__section6'>
+            <div className='csr__inner__section6' id="csr_policy">
                     <div className='csr__inner__section6__inner'>
                         <div className='csr__inner__section6__inner__each'  data-aos="fade-left">
                             <div className='csr__inner__section6__inner__each__left'>
@@ -96,7 +99,7 @@ return (
                     </div>
 
                 </div>
-            <Footer/>
+            <Footer />
         </div>
     </div>
     </>

@@ -1,6 +1,6 @@
 import './index.css';
 import { useNavigate } from 'react-router-dom';
-
+import { HashLink } from 'react-router-hash-link';
 
 
 const NavLocatorEach=(props)=>{
@@ -24,6 +24,7 @@ const NavLocatorEach=(props)=>{
             
         for(var i=0;i<check.length;i++)
         {
+            console.log(info)
             if(info===check[i])
             {
                 props.closeNavClicked();
@@ -31,7 +32,6 @@ const NavLocatorEach=(props)=>{
                 navigate(link[i]);
                 return;
             }
-            
         }
         
     }
@@ -91,15 +91,40 @@ const NavLocatorEach=(props)=>{
             }
             else
             {
-                return (
-                    <>
-                    <div key={id} className="navlocatoreach__each__each" onClick={()=>{onclickfunction(id,info)}}>
-                        {info}
-                    </div>
-                    </>
-                );
+                if(info==="CSR Policy")
+                {
+                    return (
+                        <>
+                        <HashLink to='/csr#csr_policy' smooth className="navlocatoreach__each__each"  onClick={()=>{onclickfunction(id,info)}}>{info}</HashLink>
+                        </>
+                    );
+                }
+                else if(info==="Stories of Hope")
+                {
+                    return (
+                        <>
+                        <HashLink to='/csr#hope' smooth className="navlocatoreach__each__each"  onClick={()=>{onclickfunction(id,info)}}>{info}</HashLink>
+                        </>
+                    );
+                }
+                else if(info==="Our Strategy")
+                {
+                    return (
+                        <>
+                        <HashLink to='/csr#startegy' smooth className="navlocatoreach__each__each"  onClick={()=>{onclickfunction(id,info)}}>{info}</HashLink>
+                        </>
+                    );
+                }
+                else{
+                    return (
+                        <>
+                        <div key={id} className="navlocatoreach__each__each" onClick={()=>{onclickfunction(id,info)}}>
+                            {info}
+                        </div>
+                        </>
+                    );
+                }
             }
-            
         })}
         </>
     );

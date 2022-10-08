@@ -27,9 +27,11 @@ return (
             <VisionValueSection1/>
 
             <VisionValueSection2/>
+            
+            
             <div className='vision__inner__inner'>
                 <div className="vision__bottom">
-                    <div className="vision__bottom__head">
+                    <div className="vision__bottom__head" >
                         Why Do We Follow This?
                     </div>
                     <div  className="vision__bottom__content"  data-aos="fade-up">

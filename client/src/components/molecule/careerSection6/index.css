@@ -76,7 +76,12 @@
     text-transform: capitalize;
     color: #FFFFFF;
     background-color: #0AB1EE;
+    cursor: pointer;
+    text-decoration: none;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+.career__inner__section6__button:hover{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 

@@ -10,15 +10,15 @@ import youtube from './../image/home_img/nav_youtube_img.svg';
 const FooterData={
  top:{
     left:[
-        {id:0,data:"About Us"},
-        {id:1,data:"Businesses"},
-        {id:2,data:"Investors"},
-        {id:3,data:"CSR"},
-        {id:4,data:"Sustainability"},
-        {id:5,data:"Innovation"},
-        {id:6,data:"Media"},
-        {id:7,data:"Careers"},
-        {id:8,data:"Contact Us"},
+        {id:0,data:"About Us",link:'/'},
+        {id:1,data:"Businesses",link:'/bussinessbrand'},
+        {id:2,data:"Investors",link:'/investor'},
+        {id:3,data:"CSR",link:'/csr'},
+        {id:4,data:"Sustainability",link:'/noroute'},
+        {id:5,data:"Innovation",link:'/Innovation'},
+        {id:6,data:"Media",link:'/mediarelease'},
+        {id:7,data:"Careers",link:'/career'},
+        {id:8,data:"Contact Us",link:'/contactus'},
     ],
     right:[
         {id:0,img:twitter},
